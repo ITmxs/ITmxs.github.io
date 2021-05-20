@@ -27,7 +27,7 @@ a {
 
 /* ================================ 设置header样式 ============================== */
 .header {
-	padding: 90px;
+	padding: 10px;
 	background: -webkit-linear-gradient(200deg, #FFFFFF 0%, #EBEBEB 80%); /* Safari 5.1 - 6.0 */
     background: -o-linear-gradient(200deg, #FFFFFF 0%, #EBEBEB 80%); /* Opera 11.1 - 12.0 */
     background: -moz-linear-gradient(200deg, #FFFFFF 0%, #EBEBEB 80%); /* Firefox 3.6 - 15 */
