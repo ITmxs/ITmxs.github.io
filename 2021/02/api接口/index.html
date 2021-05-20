@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>《API接口》 - Lucklyの博客 - 在阅读中遇见自己</title><meta name="Description" content="遇见便是缘分."><meta property="og:title" content="《API接口》" />
+<meta property="og:description" content="今天我就来单纯做个API的“搬砖工”，方便广大开发同学，你想要的这一篇就足够了。（tips：部分接口来源于第三方，需注册会员就可以免费使用）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luckly.work/2021/02/api%E6%8E%A5%E5%8F%A3/" />
+<meta property="article:published_time" content="2021-02-24T16:52:30+08:00" />
+<meta property="article:modified_time" content="2021-02-24T16:52:30+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="《API接口》"/>
+<meta name="twitter:description" content="今天我就来单纯做个API的“搬砖工”，方便广大开发同学，你想要的这一篇就足够了。（tips：部分接口来源于第三方，需注册会员就可以免费使用）"/>
+<meta name="application-name" content="Lucklyの博客 - 在阅读中遇见自己">
+<meta name="apple-mobile-web-app-title" content="Lucklyの博客 - 在阅读中遇见自己"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://luckly.work/2021/02/api%E6%8E%A5%E5%8F%A3/" /><link rel="prev" href="https://luckly.work/2021/02/%E5%9F%BA%E9%87%91%E5%AE%9A%E6%8A%95/" /><link rel="next" href="https://luckly.work/2021/02/%E4%BD%A0%E7%9A%84%E9%A2%86%E5%AF%BC%E4%B8%8D%E7%A7%B0%E8%81%8C/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "《API接口》",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/luckly.work\/2021\/02\/api%E6%8E%A5%E5%8F%A3\/"
+        },"genre": "post","wordcount":  454 ,
+        "url": "https:\/\/luckly.work\/2021\/02\/api%E6%8E%A5%E5%8F%A3\/","datePublished": "2021-02-24T16:52:30+08:00","dateModified": "2021-02-24T16:52:30+08:00","publisher": {
+            "@type": "Organization",
+            "name": "Luckly"},"author": {
+                "@type": "Person",
+                "name": "Luckly"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><div class="logo-wrapper">
+  <a href="/%20/" class="logo">遇见</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+      <a class="menu-item-link" href="/">首页</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/post/">归档</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/categories/">分类</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/tags/">标签</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/about/">关于我</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/friend/">友链</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="https://github.com/ITmxs/">阅读清单</a>
+    </li>
+  </ul>
+</nav><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">《API接口》</h1><div class="content" id="content"><p>今天我就来单纯做个API的“搬砖工”，方便广大开发同学，你想要的这一篇就足够了。（tips：部分接口来源于第三方，需注册会员就可以免费使用）</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://luckly007.oss-cn-beijing.aliyuncs.com/images/20210224165252.jpeg"
+        data-srcset="https://luckly007.oss-cn-beijing.aliyuncs.com/images/20210224165252.jpeg, https://luckly007.oss-cn-beijing.aliyuncs.com/images/20210224165252.jpeg 1.5x, https://luckly007.oss-cn-beijing.aliyuncs.com/images/20210224165252.jpeg 2x"
+        data-sizes="auto"
+        alt="https://luckly007.oss-cn-beijing.aliyuncs.com/images/20210224165252.jpeg"
+        title="img" /></p>
+<p>先上一些我觉得好玩的API接口：</p>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https%3A//binaryify.github.io/NeteaseCloudMusicApi/%23/" target="_blank" rel="noopener noreffer">网易云音乐</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//github.com/TonnyL/Zhihu_Zhuanlan_APIs/wiki" target="_blank" rel="noopener noreffer">知乎专栏</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//my.oschina.net/skiden/blog/102025" target="_blank" rel="noopener noreffer">百度音乐</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//github.com/ZongweiBai/DoubanOpenDaily/blob/b87473b90911e687d291e847b133b5c4c4a700a3/app/src/main/java/com/monosky/daily/constant/APIConstData.java" target="_blank" rel="noopener noreffer">豆瓣一刻</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//gank.io/api" target="_blank" rel="noopener noreffer">干货集中营</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.apishop.net/%23/api/detail/%3FproductID%3D88" target="_blank" rel="noopener noreffer">二十四节气查询</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.apishop.net/%23/api/detail/%3FproductID%3D122" target="_blank" rel="noopener noreffer">笑话大全</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.apishop.net/%23/api/detail/%3FproductID%3D203" target="_blank" rel="noopener noreffer">炉石传说卡牌</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//github.com/kaolafm/api" target="_blank" rel="noopener noreffer">考拉FM</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//open.qingting.fm/" target="_blank" rel="noopener noreffer">蜻蜓FM</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//developer.musixmatch.com/" target="_blank" rel="noopener noreffer">Musixmatch</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//developer.spotify.com/" target="_blank" rel="noopener noreffer">Spotify</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//disqus.com/api/docs/" target="_blank" rel="noopener noreffer">Disqus</a></li>
+</ul>
+<p>**《<a href="https://link.zhihu.com/?target=https%3A//www.jiuzhang.com/course/77/%3Futm_source%3Dsc-zhanswer-cyc0721" target="_blank" rel="noopener noreffer">系统架构设计 System Design 2020 版</a>》**全新升级，加入通过大量调研，票选最高的系统设计和热门知识点，总共覆盖了18大系统架构设计的知识点和面试题。</p>
+<p>现在开放<strong>免费试听，体验《<a href="https://link.zhihu.com/?target=https%3A//www.jiuzhang.com/course/77/%3Futm_source%3Dsc-zhanswer-cyc0721" target="_blank" rel="noopener noreffer">网站系统，API设计与短网址</a>》</strong>。</p>
+<p>此外，还有许多实用的API接口：</p>
+<h2 id="平台接口">平台接口：</h2>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https%3A//market.aliyun.com/data" target="_blank" rel="noopener noreffer">阿里云市场</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.juhe.cn/docs" target="_blank" rel="noopener noreffer">聚合数据</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.avatardata.cn/Docs" target="_blank" rel="noopener noreffer">阿凡达数据</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//wx.jdcloud.com/api" target="_blank" rel="noopener noreffer">API-免费API数据接口平台-京东万象</a></li>
+<li><a href="https://link.zhihu.com/?target=http%3A//api.yesapi.cn/docs.php" target="_blank" rel="noopener noreffer">小白开放平台</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.binstd.com/api/" target="_blank" rel="noopener noreffer">进制数据</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.apishop.net/%23/" target="_blank" rel="noopener noreffer">APIShop</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.idataapi.cn/" target="_blank" rel="noopener noreffer">iDataAPI</a></li>
+</ul>
+<h2 id="技术接口">技术接口：</h2>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.oschina.net/openapi" target="_blank" rel="noopener noreffer">开源中国</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.v2ex.com/p/7v9TEc53" target="_blank" rel="noopener noreffer">V2EX</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//help.coding.net/docs/project/open/webhook.html" target="_blank" rel="noopener noreffer">Coding</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//cnodejs.org/api" target="_blank" rel="noopener noreffer">CNode</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.diycode.cc/api" target="_blank" rel="noopener noreffer">diycode</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.wanandroid.com/blog/show/2" target="_blank" rel="noopener noreffer">玩Android</a></li>
+</ul>
+<h2 id="地图接口">地图接口：</h2>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https%3A//lbs.amap.com/" target="_blank" rel="noopener noreffer">高德地图</a></li>
+<li><a href="https://link.zhihu.com/?target=http%3A//lbsyun.baidu.com/" target="_blank" rel="noopener noreffer">百度地图</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//lbs.qq.com/" target="_blank" rel="noopener noreffer">腾讯地图</a></li>
+<li><a href="https://link.zhihu.com/?target=http%3A//map.sogou.com/api/" target="_blank" rel="noopener noreffer">搜狗地图</a></li>
+</ul>
+<h2 id="新闻信息">新闻信息：</h2>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https%3A//developer.nytimes.com/" target="_blank" rel="noopener noreffer">纽约时报</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//developer.usatoday.com/docs/" target="_blank" rel="noopener noreffer">今日美国</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.brewerydb.com/developers" target="_blank" rel="noopener noreffer">BrewereyDB</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.diigo.com/api_dev" target="_blank" rel="noopener noreffer">Diigo</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//developer.feedly.com/" target="_blank" rel="noopener noreffer">feedly</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//docs.genius.com/" target="_blank" rel="noopener noreffer">Genius</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.goodreads.com/api" target="_blank" rel="noopener noreffer">goodreads</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//github.com/HackerNews/API" target="_blank" rel="noopener noreffer">HackerNews</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.inoreader.com/developers/" target="_blank" rel="noopener noreffer">Inoreader</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.instapaper.com/api" target="_blank" rel="noopener noreffer">Instapaper</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//docs.narro.co/%23introduction" target="_blank" rel="noopener noreffer">Narro</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//newsblur.com/api" target="_blank" rel="noopener noreffer">Newsblur</a></li>
+<li><a href="https://link.zhihu.com/?target=http%3A//www.npr.org/api/index" target="_blank" rel="noopener noreffer">NRP</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//pinboard.in/api" target="_blank" rel="noopener noreffer">Pinboard</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//getpocket.com/developer/" target="_blank" rel="noopener noreffer">Pocket</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//api.producthunt.com/v1/docs" target="_blank" rel="noopener noreffer">Product Hunt</a></li>
+</ul>
+<h2 id="健身">健身：</h2>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https%3A//developers.adidas.com/services" target="_blank" rel="noopener noreffer">Adidas AG</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//dev.fitbit.com/" target="_blank" rel="noopener noreffer">Fitbit</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//jawbone.com/up/developer" target="_blank" rel="noopener noreffer">Jawbone UP</a></li>
+</ul>
+<h2 id="天气查询接口">天气查询接口：</h2>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.kancloud.cn/ccjin/yingq/603579" target="_blank" rel="noopener noreffer">免费天气查询</a></li>
+<li><a href="https://link.zhihu.com/?target=http%3A//www.yytianqi.com/" target="_blank" rel="noopener noreffer">丫丫天气</a></li>
+<li><a href="https://link.zhihu.com/?target=http%3A//wiki.swarma.net/index.php/%E5%BD%A9%E4%BA%91%E5%A4%A9%E6%B0%94API/v2" target="_blank" rel="noopener noreffer">彩云天气</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.seniverse.com/" target="_blank" rel="noopener noreffer">心知天气</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.heweather.com/" target="_blank" rel="noopener noreffer">和风天气</a></li>
+</ul>
+<h2 id="快递查询接口">快递查询接口：</h2>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.kuaidi100.com/openapi/applyapi.shtml" target="_blank" rel="noopener noreffer">快递100</a></li>
+<li><a href="https://link.zhihu.com/?target=http%3A//www.kuaidi.com/openapi.html" target="_blank" rel="noopener noreffer">快递网</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.51tracking.com/api-index-cn" target="_blank" rel="noopener noreffer">TrackingMore</a></li>
+</ul>
+<h2 id="ai">AI：</h2>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https%3A//aim.baidu.com/" target="_blank" rel="noopener noreffer">百度AI市场</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.sojson.com/api/semantic.html" target="_blank" rel="noopener noreffer">智能机器人</a></li>
+</ul>
+<h2 id="笔记">笔记：</h2>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https%3A//docs.microsoft.com/en-us/previous-versions/office/office-365-api/%3Fredirectedfrom%3DMSDN" target="_blank" rel="noopener noreffer">OneNote</a></li>
+<li><a href="https://link.zhihu.com/?target=http%3A//note.youdao.com/open/" target="_blank" rel="noopener noreffer">有道云笔记</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//dev.yinxiang.com/" target="_blank" rel="noopener noreffer">印象笔记</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//www.wiz.cn/manual/plugin/" target="_blank" rel="noopener noreffer">为知笔记</a></li>
+</ul>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Luckly</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>解决 Mac launchpad 启动台 Gitter 图标无法删除的问题 - Lucklyの博客 - 在阅读中遇见自己</title><meta name="Description" content="遇见便是缘分."><meta property="og:title" content="解决 Mac launchpad 启动台 Gitter 图标无法删除的问题" />
+<meta property="og:description" content="Mac 删除应用非常简单，将应用拖到回收站就删除了。或者进入应用程序文件夹，选中程序，command &#43; delete 就删除了应用，这也是删除文件的快捷键。
+但是，安装 Gitter 后，删除了应用程序，图标一直删除不了。
+我的 Mac 版本是 10.14.4 ，尝试以下方法，均无法删除 Gitter 图标。
+
+拖到回收站删除，无效
+长按图标，图标抖动后， Gitter 图标没有出现 X，无效
+命令行运行如下命令,无效
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luckly.work/2019/04/%E8%A7%A3%E5%86%B3-mac-launchpad-%E5%90%AF%E5%8A%A8%E5%8F%B0-gitter-%E5%9B%BE%E6%A0%87%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4%E7%9A%84%E9%97%AE%E9%A2%98/" />
+<meta property="article:published_time" content="2019-04-25T21:12:56+08:00" />
+<meta property="article:modified_time" content="2019-04-25T21:12:56+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="解决 Mac launchpad 启动台 Gitter 图标无法删除的问题"/>
+<meta name="twitter:description" content="Mac 删除应用非常简单，将应用拖到回收站就删除了。或者进入应用程序文件夹，选中程序，command &#43; delete 就删除了应用，这也是删除文件的快捷键。
+但是，安装 Gitter 后，删除了应用程序，图标一直删除不了。
+我的 Mac 版本是 10.14.4 ，尝试以下方法，均无法删除 Gitter 图标。
+
+拖到回收站删除，无效
+长按图标，图标抖动后， Gitter 图标没有出现 X，无效
+命令行运行如下命令,无效
+"/>
+<meta name="application-name" content="Lucklyの博客 - 在阅读中遇见自己">
+<meta name="apple-mobile-web-app-title" content="Lucklyの博客 - 在阅读中遇见自己"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://luckly.work/2019/04/%E8%A7%A3%E5%86%B3-mac-launchpad-%E5%90%AF%E5%8A%A8%E5%8F%B0-gitter-%E5%9B%BE%E6%A0%87%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4%E7%9A%84%E9%97%AE%E9%A2%98/" /><link rel="prev" href="https://luckly.work/2019/04/react-%E4%B8%8E-react-native-%E4%BD%BF%E7%94%A8%E5%90%8C%E4%B8%80%E4%B8%AA-meteor-%E5%90%8E%E5%8F%B0/" /><link rel="next" href="https://luckly.work/2019/04/hugo-github-pages-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "解决 Mac launchpad 启动台 Gitter 图标无法删除的问题",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/luckly.work\/2019\/04\/%E8%A7%A3%E5%86%B3-mac-launchpad-%E5%90%AF%E5%8A%A8%E5%8F%B0-gitter-%E5%9B%BE%E6%A0%87%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4%E7%9A%84%E9%97%AE%E9%A2%98\/"
+        },"genre": "post","keywords": "Gitter","wordcount":  273 ,
+        "url": "https:\/\/luckly.work\/2019\/04\/%E8%A7%A3%E5%86%B3-mac-launchpad-%E5%90%AF%E5%8A%A8%E5%8F%B0-gitter-%E5%9B%BE%E6%A0%87%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4%E7%9A%84%E9%97%AE%E9%A2%98\/","datePublished": "2019-04-25T21:12:56+08:00","dateModified": "2019-04-25T21:12:56+08:00","publisher": {
+            "@type": "Organization",
+            "name": "Luckly"},"author": {
+                "@type": "Person",
+                "name": "Luckly"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><div class="logo-wrapper">
+  <a href="/%20/" class="logo">遇见</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+      <a class="menu-item-link" href="/">首页</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/post/">归档</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/categories/">分类</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/tags/">标签</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/about/">关于我</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/friend/">友链</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="https://github.com/ITmxs/">阅读清单</a>
+    </li>
+  </ul>
+</nav><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">解决 Mac launchpad 启动台 Gitter 图标无法删除的问题</h1><div class="content" id="content"><p>Mac 删除应用非常简单，将应用拖到回收站就删除了。或者进入应用程序文件夹，选中程序，<strong>command + delete</strong> 就删除了应用，这也是删除文件的快捷键。</p>
+<p>但是，安装 <strong>Gitter</strong> 后，删除了应用程序，图标一直删除不了。</p>
+<p>我的 Mac 版本是 10.14.4 ，尝试以下方法，均无法删除 <strong>Gitter</strong> 图标。</p>
+<ol>
+<li>拖到回收站删除，无效</li>
+<li>长按图标，图标抖动后， <strong>Gitter</strong> 图标没有出现 <strong>X</strong>，无效</li>
+<li>命令行运行如下命令,无效</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">defaults write com.apple.dock ResetLaunchPad -bool true<span class="p">;</span>killall Dock
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="解决方法">解决方法</h2>
+<p>最后找到如下命令，成功删除了 <strong>Gitter</strong> 图标。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sqlite3 <span class="k">$(</span>find /private/var/folders <span class="se">\(</span> -name com.apple.dock.launchpad -a -user <span class="nv">$USER</span> <span class="se">\)</span> 2&gt; /dev/null<span class="k">)</span>/db/db <span class="s2">&#34;DELETE FROM apps WHERE title=&#39;Gitter&#39;;&#34;</span> <span class="o">&amp;&amp;</span> killall Dock
+</code></pre></td></tr></table>
+</div>
+</div><p>将命令中 <strong>Gitter</strong> 替换成你要删除的图标名称，大小写敏感，写成 <strong>gitter</strong> 就没有删除成功，名称换成 <strong>Gitter</strong> ，就删除成功了，大功告成。</p>
+<h2 id="参考">参考</h2>
+<ol>
+<li><a href="https://apple.stackexchange.com/questions/144756/how-to-remove-an-icon-from-launchpad-that-does-not-appear-in-the-finder" target="_blank" rel="noopener noreffer">https://apple.stackexchange.com/questions/144756/how-to-remove-an-icon-from-launchpad-that-does-not-appear-in-the-finder</a></li>
+</ol>
+<blockquote>
+<p>文章首发 <a href="https://nusr.github.io/" target="_blank" rel="noopener noreffer">https://nusr.github.io/</a></p>
+</blockquote></div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Luckly</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

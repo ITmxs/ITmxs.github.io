@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Leetcode 题解 - Lucklyの博客 - 在阅读中遇见自己</title><meta name="Description" content="遇见便是缘分."><meta property="og:title" content="Leetcode 题解" />
+<meta property="og:description" content="
+
+    
+    
+    
+    
+
+Leetcode Solutions
+
+    Language: javascript c mysql
+    
+    Last updated: 2019-01-04
+    
+    https://github.com/nusr/leetcode
+    
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luckly.work/2019/01/leetcode-%E9%A2%98%E8%A7%A3/" />
+<meta property="article:published_time" content="2019-01-31T17:12:18+08:00" />
+<meta property="article:modified_time" content="2019-01-31T17:12:18+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 题解"/>
+<meta name="twitter:description" content="
+
+    
+    
+    
+    
+
+Leetcode Solutions
+
+    Language: javascript c mysql
+    
+    Last updated: 2019-01-04
+    
+    https://github.com/nusr/leetcode
+    
+"/>
+<meta name="application-name" content="Lucklyの博客 - 在阅读中遇见自己">
+<meta name="apple-mobile-web-app-title" content="Lucklyの博客 - 在阅读中遇见自己"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://luckly.work/2019/01/leetcode-%E9%A2%98%E8%A7%A3/" /><link rel="prev" href="https://luckly.work/2019/01/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8E%A8%E8%8D%90%E4%BD%A0%E4%BD%BF%E7%94%A8kindle/" /><link rel="next" href="https://luckly.work/2019/04/vue/cli-3.0-%E4%BD%BF%E7%94%A8-svg-sprite-loader-%E5%8A%A0%E8%BD%BD%E6%9C%AC%E5%9C%B0-svg-%E6%96%87%E4%BB%B6/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Leetcode 题解",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/luckly.work\/2019\/01\/leetcode-%E9%A2%98%E8%A7%A3\/"
+        },"genre": "post","keywords": "Leetcode, Algorithm","wordcount":  640 ,
+        "url": "https:\/\/luckly.work\/2019\/01\/leetcode-%E9%A2%98%E8%A7%A3\/","datePublished": "2019-01-31T17:12:18+08:00","dateModified": "2019-01-31T17:12:18+08:00","publisher": {
+            "@type": "Organization",
+            "name": "Luckly"},"author": {
+                "@type": "Person",
+                "name": "Luckly"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><div class="logo-wrapper">
+  <a href="/%20/" class="logo">遇见</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+      <a class="menu-item-link" href="/">首页</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/post/">归档</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/categories/">分类</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/tags/">标签</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/about/">关于我</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/friend/">友链</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="https://github.com/ITmxs/">阅读清单</a>
+    </li>
+  </ul>
+</nav><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Leetcode 题解</h1><div class="content" id="content"><p align="center"><img width="300" src="https://raw.githubusercontent.com/Ma63d/leetcode-spider/master/img/site-logo.png"></p>
+<p align="center">
+    <img src="https://img.shields.io/badge/Solved/Total(Locked)-104/957(162)-green.svg?style=flat-square" alt="">
+    <img src="https://img.shields.io/badge/Hard-1-blue.svg?style=flat-square" alt="">
+    <img src="https://img.shields.io/badge/Medium-11-blue.svg?style=flat-square" alt="">
+    <img src="https://img.shields.io/badge/Easy-92-blue.svg?style=flat-square" alt="">
+</p>
+<h3 align="center">Leetcode Solutions</h3>
+<p align="center">
+    <b>Language: javascript c mysql</b>
+    <br>
+    <b>Last updated: 2019-01-04</b>
+    <br>
+    <a href="https://github.com/nusr/leetcode">https://github.com/nusr/leetcode</a>
+    <br>
+</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Problems</th>
+<th>Solutions</th>
+<th>Difficulty</th>
+<th>Acceptance</th>
+<th>Paid-Only</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>001</td>
+<td><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener noreffer">two-sum</a></td>
+<td><a href="https://nusr.github.io/blog/001.two-sum" target="_blank" rel="noopener noreffer">c,javascript</a></td>
+<td>Easy</td>
+<td>39.69%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>002</td>
+<td><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank" rel="noopener noreffer">add-two-numbers</a></td>
+<td><a href="https://nusr.github.io/blog/002.add-two-numbers" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Medium</td>
+<td>30.01%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>007</td>
+<td><a href="https://leetcode.com/problems/reverse-integer/" target="_blank" rel="noopener noreffer">reverse-integer</a></td>
+<td><a href="https://nusr.github.io/blog/007.reverse-integer" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>24.87%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>008</td>
+<td><a href="https://leetcode.com/problems/string-to-integer-atoi/" target="_blank" rel="noopener noreffer">string-to-integer-atoi</a></td>
+<td><a href="https://nusr.github.io/blog/008.string-to-integer-atoi" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Medium</td>
+<td>14.34%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>009</td>
+<td><a href="https://leetcode.com/problems/palindrome-number/" target="_blank" rel="noopener noreffer">palindrome-number</a></td>
+<td><a href="https://nusr.github.io/blog/009.palindrome-number" target="_blank" rel="noopener noreffer">javascript,c</a></td>
+<td>Easy</td>
+<td>40.67%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>013</td>
+<td><a href="https://leetcode.com/problems/roman-to-integer/" target="_blank" rel="noopener noreffer">roman-to-integer</a></td>
+<td><a href="https://nusr.github.io/blog/013.roman-to-integer" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>50.84%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>020</td>
+<td><a href="https://leetcode.com/problems/valid-parentheses/" target="_blank" rel="noopener noreffer">valid-parentheses</a></td>
+<td><a href="https://nusr.github.io/blog/020.valid-parentheses" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>35.40%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>021</td>
+<td><a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank" rel="noopener noreffer">merge-two-sorted-lists</a></td>
+<td><a href="https://nusr.github.io/blog/021.merge-two-sorted-lists" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>44.75%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>027</td>
+<td><a href="https://leetcode.com/problems/remove-element/" target="_blank" rel="noopener noreffer">remove-element</a></td>
+<td><a href="https://nusr.github.io/blog/027.remove-element" target="_blank" rel="noopener noreffer">c,javascript</a></td>
+<td>Easy</td>
+<td>42.90%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>028</td>
+<td><a href="https://leetcode.com/problems/implement-strstr/" target="_blank" rel="noopener noreffer">implement-strstr</a></td>
+<td><a href="https://nusr.github.io/blog/028.implement-strstr" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>30.73%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>035</td>
+<td><a href="https://leetcode.com/problems/search-insert-position/" target="_blank" rel="noopener noreffer">search-insert-position</a></td>
+<td><a href="https://nusr.github.io/blog/035.search-insert-position" target="_blank" rel="noopener noreffer">c,javascript</a></td>
+<td>Easy</td>
+<td>40.21%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>050</td>
+<td><a href="https://leetcode.com/problems/powx-n/" target="_blank" rel="noopener noreffer">powx-n</a></td>
+<td><a href="https://nusr.github.io/blog/050.powx-n" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Medium</td>
+<td>27.17%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>053</td>
+<td><a href="https://leetcode.com/problems/maximum-subarray/" target="_blank" rel="noopener noreffer">maximum-subarray</a></td>
+<td><a href="https://nusr.github.io/blog/053.maximum-subarray" target="_blank" rel="noopener noreffer">javascript,c</a></td>
+<td>Easy</td>
+<td>42.17%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>058</td>
+<td><a href="https://leetcode.com/problems/length-of-last-word/" target="_blank" rel="noopener noreffer">length-of-last-word</a></td>
+<td><a href="https://nusr.github.io/blog/058.length-of-last-word" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>32.09%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>065</td>
+<td><a href="https://leetcode.com/problems/valid-number/" target="_blank" rel="noopener noreffer">valid-number</a></td>
+<td><a href="https://nusr.github.io/blog/065.valid-number" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Hard</td>
+<td>13.57%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>066</td>
+<td><a href="https://leetcode.com/problems/plus-one/" target="_blank" rel="noopener noreffer">plus-one</a></td>
+<td><a href="https://nusr.github.io/blog/066.plus-one" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>40.36%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>067</td>
+<td><a href="https://leetcode.com/problems/add-binary/" target="_blank" rel="noopener noreffer">add-binary</a></td>
+<td><a href="https://nusr.github.io/blog/067.add-binary" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>37.10%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>069</td>
+<td><a href="https://leetcode.com/problems/sqrtx/" target="_blank" rel="noopener noreffer">sqrtx</a></td>
+<td><a href="https://nusr.github.io/blog/069.sqrtx" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>30.13%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>070</td>
+<td><a href="https://leetcode.com/problems/climbing-stairs/" target="_blank" rel="noopener noreffer">climbing-stairs</a></td>
+<td><a href="https://nusr.github.io/blog/070.climbing-stairs" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>42.73%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>083</td>
+<td><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/" target="_blank" rel="noopener noreffer">remove-duplicates-from-sorted-list</a></td>
+<td><a href="https://nusr.github.io/blog/083.remove-duplicates-from-sorted-list" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>41.51%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>100</td>
+<td><a href="https://leetcode.com/problems/same-tree/" target="_blank" rel="noopener noreffer">same-tree</a></td>
+<td><a href="https://nusr.github.io/blog/100.same-tree" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>49.02%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>102</td>
+<td><a href="https://leetcode.com/problems/binary-tree-level-order-traversal/" target="_blank" rel="noopener noreffer">binary-tree-level-order-traversal</a></td>
+<td><a href="https://nusr.github.io/blog/102.binary-tree-level-order-traversal" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Medium</td>
+<td>46.07%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>104</td>
+<td><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/" target="_blank" rel="noopener noreffer">maximum-depth-of-binary-tree</a></td>
+<td><a href="https://nusr.github.io/blog/104.maximum-depth-of-binary-tree" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>58.24%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>107</td>
+<td><a href="https://leetcode.com/problems/binary-tree-level-order-traversal-ii/" target="_blank" rel="noopener noreffer">binary-tree-level-order-traversal-ii</a></td>
+<td><a href="https://nusr.github.io/blog/107.binary-tree-level-order-traversal-ii" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>44.89%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>110</td>
+<td><a href="https://leetcode.com/problems/balanced-binary-tree/" target="_blank" rel="noopener noreffer">balanced-binary-tree</a></td>
+<td><a href="https://nusr.github.io/blog/110.balanced-binary-tree" target="_blank" rel="noopener noreffer">c,javascript</a></td>
+<td>Easy</td>
+<td>39.93%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>111</td>
+<td><a href="https://leetcode.com/problems/minimum-depth-of-binary-tree/" target="_blank" rel="noopener noreffer">minimum-depth-of-binary-tree</a></td>
+<td><a href="https://nusr.github.io/blog/111.minimum-depth-of-binary-tree" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>34.54%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>118</td>
+<td><a href="https://leetcode.com/problems/pascals-triangle/" target="_blank" rel="noopener noreffer">pascals-triangle</a></td>
+<td><a href="https://nusr.github.io/blog/118.pascals-triangle" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>43.51%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>119</td>
+<td><a href="https://leetcode.com/problems/pascals-triangle-ii/" target="_blank" rel="noopener noreffer">pascals-triangle-ii</a></td>
+<td><a href="https://nusr.github.io/blog/119.pascals-triangle-ii" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>41.09%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>121</td>
+<td><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/" target="_blank" rel="noopener noreffer">best-time-to-buy-and-sell-stock</a></td>
+<td><a href="https://nusr.github.io/blog/121.best-time-to-buy-and-sell-stock" target="_blank" rel="noopener noreffer">c,javascript</a></td>
+<td>Easy</td>
+<td>45.45%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>125</td>
+<td><a href="https://leetcode.com/problems/valid-palindrome/" target="_blank" rel="noopener noreffer">valid-palindrome</a></td>
+<td><a href="https://nusr.github.io/blog/125.valid-palindrome" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>29.54%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>136</td>
+<td><a href="https://leetcode.com/problems/single-number/" target="_blank" rel="noopener noreffer">single-number</a></td>
+<td><a href="https://nusr.github.io/blog/136.single-number" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>58.07%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>144</td>
+<td><a href="https://leetcode.com/problems/binary-tree-preorder-traversal/" target="_blank" rel="noopener noreffer">binary-tree-preorder-traversal</a></td>
+<td><a href="https://nusr.github.io/blog/144.binary-tree-preorder-traversal" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Medium</td>
+<td>49.51%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>160</td>
+<td><a href="https://leetcode.com/problems/intersection-of-two-linked-lists/" target="_blank" rel="noopener noreffer">intersection-of-two-linked-lists</a></td>
+<td><a href="https://nusr.github.io/blog/160.intersection-of-two-linked-lists" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>31.21%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>167</td>
+<td><a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/" target="_blank" rel="noopener noreffer">two-sum-ii-input-array-is-sorted</a></td>
+<td><a href="https://nusr.github.io/blog/167.two-sum-ii-input-array-is-sorted" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>48.39%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>169</td>
+<td><a href="https://leetcode.com/problems/majority-element/" target="_blank" rel="noopener noreffer">majority-element</a></td>
+<td><a href="https://nusr.github.io/blog/169.majority-element" target="_blank" rel="noopener noreffer">c,javascript</a></td>
+<td>Easy</td>
+<td>50.68%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>175</td>
+<td><a href="https://leetcode.com/problems/combine-two-tables/" target="_blank" rel="noopener noreffer">combine-two-tables</a></td>
+<td><a href="https://nusr.github.io/blog/175.combine-two-tables" target="_blank" rel="noopener noreffer">mysql</a></td>
+<td>Easy</td>
+<td>47.55%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>189</td>
+<td><a href="https://leetcode.com/problems/rotate-array/" target="_blank" rel="noopener noreffer">rotate-array</a></td>
+<td><a href="https://nusr.github.io/blog/189.rotate-array" target="_blank" rel="noopener noreffer">javascript,c</a></td>
+<td>Easy</td>
+<td>28.06%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>190</td>
+<td><a href="https://leetcode.com/problems/reverse-bits/" target="_blank" rel="noopener noreffer">reverse-bits</a></td>
+<td><a href="https://nusr.github.io/blog/190.reverse-bits" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>29.43%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>191</td>
+<td><a href="https://leetcode.com/problems/number-of-1-bits/" target="_blank" rel="noopener noreffer">number-of-1-bits</a></td>
+<td><a href="https://nusr.github.io/blog/191.number-of-1-bits" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>41.18%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>202</td>
+<td><a href="https://leetcode.com/problems/happy-number/" target="_blank" rel="noopener noreffer">happy-number</a></td>
+<td><a href="https://nusr.github.io/blog/202.happy-number" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>43.68%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>203</td>
+<td><a href="https://leetcode.com/problems/remove-linked-list-elements/" target="_blank" rel="noopener noreffer">remove-linked-list-elements</a></td>
+<td><a href="https://nusr.github.io/blog/203.remove-linked-list-elements" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>34.87%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>204</td>
+<td><a href="https://leetcode.com/problems/count-primes/" target="_blank" rel="noopener noreffer">count-primes</a></td>
+<td><a href="https://nusr.github.io/blog/204.count-primes" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>27.66%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>206</td>
+<td><a href="https://leetcode.com/problems/reverse-linked-list/" target="_blank" rel="noopener noreffer">reverse-linked-list</a></td>
+<td><a href="https://nusr.github.io/blog/206.reverse-linked-list" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>51.36%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>217</td>
+<td><a href="https://leetcode.com/problems/contains-duplicate/" target="_blank" rel="noopener noreffer">contains-duplicate</a></td>
+<td><a href="https://nusr.github.io/blog/217.contains-duplicate" target="_blank" rel="noopener noreffer">c,javascript</a></td>
+<td>Easy</td>
+<td>49.94%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>226</td>
+<td><a href="https://leetcode.com/problems/invert-binary-tree/" target="_blank" rel="noopener noreffer">invert-binary-tree</a></td>
+<td><a href="https://nusr.github.io/blog/226.invert-binary-tree" target="_blank" rel="noopener noreffer">javascript,c</a></td>
+<td>Easy</td>
+<td>56.23%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>231</td>
+<td><a href="https://leetcode.com/problems/power-of-two/" target="_blank" rel="noopener noreffer">power-of-two</a></td>
+<td><a href="https://nusr.github.io/blog/231.power-of-two" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>41.42%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>234</td>
+<td><a href="https://leetcode.com/problems/palindrome-linked-list/" target="_blank" rel="noopener noreffer">palindrome-linked-list</a></td>
+<td><a href="https://nusr.github.io/blog/234.palindrome-linked-list" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>34.84%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>237</td>
+<td><a href="https://leetcode.com/problems/delete-node-in-a-linked-list/" target="_blank" rel="noopener noreffer">delete-node-in-a-linked-list</a></td>
+<td><a href="https://nusr.github.io/blog/237.delete-node-in-a-linked-list" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>50.88%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>242</td>
+<td><a href="https://leetcode.com/problems/valid-anagram/" target="_blank" rel="noopener noreffer">valid-anagram</a></td>
+<td><a href="https://nusr.github.io/blog/242.valid-anagram" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>50.10%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>258</td>
+<td><a href="https://leetcode.com/problems/add-digits/" target="_blank" rel="noopener noreffer">add-digits</a></td>
+<td><a href="https://nusr.github.io/blog/258.add-digits" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>53.14%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>263</td>
+<td><a href="https://leetcode.com/problems/ugly-number/" target="_blank" rel="noopener noreffer">ugly-number</a></td>
+<td><a href="https://nusr.github.io/blog/263.ugly-number" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>40.21%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>268</td>
+<td><a href="https://leetcode.com/problems/missing-number/" target="_blank" rel="noopener noreffer">missing-number</a></td>
+<td><a href="https://nusr.github.io/blog/268.missing-number" target="_blank" rel="noopener noreffer">javascript,c</a></td>
+<td>Easy</td>
+<td>46.92%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>283</td>
+<td><a href="https://leetcode.com/problems/move-zeroes/" target="_blank" rel="noopener noreffer">move-zeroes</a></td>
+<td><a href="https://nusr.github.io/blog/283.move-zeroes" target="_blank" rel="noopener noreffer">c,javascript</a></td>
+<td>Easy</td>
+<td>53.11%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>326</td>
+<td><a href="https://leetcode.com/problems/power-of-three/" target="_blank" rel="noopener noreffer">power-of-three</a></td>
+<td><a href="https://nusr.github.io/blog/326.power-of-three" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>41.21%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>342</td>
+<td><a href="https://leetcode.com/problems/power-of-four/" target="_blank" rel="noopener noreffer">power-of-four</a></td>
+<td><a href="https://nusr.github.io/blog/342.power-of-four" target="_blank" rel="noopener noreffer">javascript,c</a></td>
+<td>Easy</td>
+<td>39.82%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>344</td>
+<td><a href="https://leetcode.com/problems/reverse-string/" target="_blank" rel="noopener noreffer">reverse-string</a></td>
+<td><a href="https://nusr.github.io/blog/344.reverse-string" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>62.22%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>345</td>
+<td><a href="https://leetcode.com/problems/reverse-vowels-of-a-string/" target="_blank" rel="noopener noreffer">reverse-vowels-of-a-string</a></td>
+<td><a href="https://nusr.github.io/blog/345.reverse-vowels-of-a-string" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>40.43%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>349</td>
+<td><a href="https://leetcode.com/problems/intersection-of-two-arrays/" target="_blank" rel="noopener noreffer">intersection-of-two-arrays</a></td>
+<td><a href="https://nusr.github.io/blog/349.intersection-of-two-arrays" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>51.75%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>350</td>
+<td><a href="https://leetcode.com/problems/intersection-of-two-arrays-ii/" target="_blank" rel="noopener noreffer">intersection-of-two-arrays-ii</a></td>
+<td><a href="https://nusr.github.io/blog/350.intersection-of-two-arrays-ii" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>46.07%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>367</td>
+<td><a href="https://leetcode.com/problems/valid-perfect-square/" target="_blank" rel="noopener noreffer">valid-perfect-square</a></td>
+<td><a href="https://nusr.github.io/blog/367.valid-perfect-square" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>39.09%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>371</td>
+<td><a href="https://leetcode.com/problems/sum-of-two-integers/" target="_blank" rel="noopener noreffer">sum-of-two-integers</a></td>
+<td><a href="https://nusr.github.io/blog/371.sum-of-two-integers" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>51.26%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>387</td>
+<td><a href="https://leetcode.com/problems/first-unique-character-in-a-string/" target="_blank" rel="noopener noreffer">first-unique-character-in-a-string</a></td>
+<td><a href="https://nusr.github.io/blog/387.first-unique-character-in-a-string" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>48.35%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>389</td>
+<td><a href="https://leetcode.com/problems/find-the-difference/" target="_blank" rel="noopener noreffer">find-the-difference</a></td>
+<td><a href="https://nusr.github.io/blog/389.find-the-difference" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>52.40%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>396</td>
+<td><a href="https://leetcode.com/problems/rotate-function/" target="_blank" rel="noopener noreffer">rotate-function</a></td>
+<td><a href="https://nusr.github.io/blog/396.rotate-function" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Medium</td>
+<td>34.62%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>434</td>
+<td><a href="https://leetcode.com/problems/number-of-segments-in-a-string/" target="_blank" rel="noopener noreffer">number-of-segments-in-a-string</a></td>
+<td><a href="https://nusr.github.io/blog/434.number-of-segments-in-a-string" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>36.49%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>441</td>
+<td><a href="https://leetcode.com/problems/arranging-coins/" target="_blank" rel="noopener noreffer">arranging-coins</a></td>
+<td><a href="https://nusr.github.io/blog/441.arranging-coins" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>37.11%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>442</td>
+<td><a href="https://leetcode.com/problems/find-all-duplicates-in-an-array/" target="_blank" rel="noopener noreffer">find-all-duplicates-in-an-array</a></td>
+<td><a href="https://nusr.github.io/blog/442.find-all-duplicates-in-an-array" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Medium</td>
+<td>59.12%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>461</td>
+<td><a href="https://leetcode.com/problems/hamming-distance/" target="_blank" rel="noopener noreffer">hamming-distance</a></td>
+<td><a href="https://nusr.github.io/blog/461.hamming-distance" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>69.72%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>476</td>
+<td><a href="https://leetcode.com/problems/number-complement/" target="_blank" rel="noopener noreffer">number-complement</a></td>
+<td><a href="https://nusr.github.io/blog/476.number-complement" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>61.78%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>485</td>
+<td><a href="https://leetcode.com/problems/max-consecutive-ones/" target="_blank" rel="noopener noreffer">max-consecutive-ones</a></td>
+<td><a href="https://nusr.github.io/blog/485.max-consecutive-ones" target="_blank" rel="noopener noreffer">javascript,c</a></td>
+<td>Easy</td>
+<td>54.14%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>504</td>
+<td><a href="https://leetcode.com/problems/base-7/" target="_blank" rel="noopener noreffer">base-7</a></td>
+<td><a href="https://nusr.github.io/blog/504.base-7" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>44.32%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>507</td>
+<td><a href="https://leetcode.com/problems/perfect-number/" target="_blank" rel="noopener noreffer">perfect-number</a></td>
+<td><a href="https://nusr.github.io/blog/507.perfect-number" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>32.78%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>520</td>
+<td><a href="https://leetcode.com/problems/detect-capital/" target="_blank" rel="noopener noreffer">detect-capital</a></td>
+<td><a href="https://nusr.github.io/blog/520.detect-capital" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>52.06%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>535</td>
+<td><a href="https://leetcode.com/problems/encode-and-decode-tinyurl/" target="_blank" rel="noopener noreffer">encode-and-decode-tinyurl</a></td>
+<td><a href="https://nusr.github.io/blog/535.encode-and-decode-tinyurl" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Medium</td>
+<td>75.13%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>541</td>
+<td><a href="https://leetcode.com/problems/reverse-string-ii/" target="_blank" rel="noopener noreffer">reverse-string-ii</a></td>
+<td><a href="https://nusr.github.io/blog/541.reverse-string-ii" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>44.72%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>551</td>
+<td><a href="https://leetcode.com/problems/student-attendance-record-i/" target="_blank" rel="noopener noreffer">student-attendance-record-i</a></td>
+<td><a href="https://nusr.github.io/blog/551.student-attendance-record-i" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>45.04%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>557</td>
+<td><a href="https://leetcode.com/problems/reverse-words-in-a-string-iii/" target="_blank" rel="noopener noreffer">reverse-words-in-a-string-iii</a></td>
+<td><a href="https://nusr.github.io/blog/557.reverse-words-in-a-string-iii" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>62.40%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>561</td>
+<td><a href="https://leetcode.com/problems/array-partition-i/" target="_blank" rel="noopener noreffer">array-partition-i</a></td>
+<td><a href="https://nusr.github.io/blog/561.array-partition-i" target="_blank" rel="noopener noreffer">c,javascript</a></td>
+<td>Easy</td>
+<td>67.77%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>595</td>
+<td><a href="https://leetcode.com/problems/big-countries/" target="_blank" rel="noopener noreffer">big-countries</a></td>
+<td><a href="https://nusr.github.io/blog/595.big-countries" target="_blank" rel="noopener noreffer">mysql</a></td>
+<td>Easy</td>
+<td>72.43%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>617</td>
+<td><a href="https://leetcode.com/problems/merge-two-binary-trees/" target="_blank" rel="noopener noreffer">merge-two-binary-trees</a></td>
+<td><a href="https://nusr.github.io/blog/617.merge-two-binary-trees" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>68.47%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>620</td>
+<td><a href="https://leetcode.com/problems/not-boring-movies/" target="_blank" rel="noopener noreffer">not-boring-movies</a></td>
+<td><a href="https://nusr.github.io/blog/620.not-boring-movies" target="_blank" rel="noopener noreffer">mysql</a></td>
+<td>Easy</td>
+<td>60.44%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>627</td>
+<td><a href="https://leetcode.com/problems/swap-salary/" target="_blank" rel="noopener noreffer">swap-salary</a></td>
+<td><a href="https://nusr.github.io/blog/627.swap-salary" target="_blank" rel="noopener noreffer">mysql</a></td>
+<td>Easy</td>
+<td>68.12%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>637</td>
+<td><a href="https://leetcode.com/problems/average-of-levels-in-binary-tree/" target="_blank" rel="noopener noreffer">average-of-levels-in-binary-tree</a></td>
+<td><a href="https://nusr.github.io/blog/637.average-of-levels-in-binary-tree" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>57.41%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>654</td>
+<td><a href="https://leetcode.com/problems/maximum-binary-tree/" target="_blank" rel="noopener noreffer">maximum-binary-tree</a></td>
+<td><a href="https://nusr.github.io/blog/654.maximum-binary-tree" target="_blank" rel="noopener noreffer">c,javascript</a></td>
+<td>Medium</td>
+<td>71.08%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>657</td>
+<td><a href="https://leetcode.com/problems/robot-return-to-origin/" target="_blank" rel="noopener noreffer">robot-return-to-origin</a></td>
+<td><a href="https://nusr.github.io/blog/657.robot-return-to-origin" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>70.17%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>700</td>
+<td><a href="https://leetcode.com/problems/search-in-a-binary-search-tree/" target="_blank" rel="noopener noreffer">search-in-a-binary-search-tree</a></td>
+<td><a href="https://nusr.github.io/blog/700.search-in-a-binary-search-tree" target="_blank" rel="noopener noreffer">c</a></td>
+<td>Easy</td>
+<td>64.86%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>701</td>
+<td><a href="https://leetcode.com/problems/insert-into-a-binary-search-tree/" target="_blank" rel="noopener noreffer">insert-into-a-binary-search-tree</a></td>
+<td><a href="https://nusr.github.io/blog/701.insert-into-a-binary-search-tree" target="_blank" rel="noopener noreffer">javascript,c</a></td>
+<td>Medium</td>
+<td>71.43%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>709</td>
+<td><a href="https://leetcode.com/problems/to-lower-case/" target="_blank" rel="noopener noreffer">to-lower-case</a></td>
+<td><a href="https://nusr.github.io/blog/709.to-lower-case" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>75.25%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>728</td>
+<td><a href="https://leetcode.com/problems/self-dividing-numbers/" target="_blank" rel="noopener noreffer">self-dividing-numbers</a></td>
+<td><a href="https://nusr.github.io/blog/728.self-dividing-numbers" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>68.17%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>771</td>
+<td><a href="https://leetcode.com/problems/jewels-and-stones/" target="_blank" rel="noopener noreffer">jewels-and-stones</a></td>
+<td><a href="https://nusr.github.io/blog/771.jewels-and-stones" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>82.32%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>804</td>
+<td><a href="https://leetcode.com/problems/unique-morse-code-words/" target="_blank" rel="noopener noreffer">unique-morse-code-words</a></td>
+<td><a href="https://nusr.github.io/blog/804.unique-morse-code-words" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>72.79%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>832</td>
+<td><a href="https://leetcode.com/problems/flipping-an-image/" target="_blank" rel="noopener noreffer">flipping-an-image</a></td>
+<td><a href="https://nusr.github.io/blog/832.flipping-an-image" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>70.36%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>852</td>
+<td><a href="https://leetcode.com/problems/peak-index-in-a-mountain-array/" target="_blank" rel="noopener noreffer">peak-index-in-a-mountain-array</a></td>
+<td><a href="https://nusr.github.io/blog/852.peak-index-in-a-mountain-array" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>68.20%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>867</td>
+<td><a href="https://leetcode.com/problems/transpose-matrix/" target="_blank" rel="noopener noreffer">transpose-matrix</a></td>
+<td><a href="https://nusr.github.io/blog/867.transpose-matrix" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>63.43%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>868</td>
+<td><a href="https://leetcode.com/problems/binary-gap/" target="_blank" rel="noopener noreffer">binary-gap</a></td>
+<td><a href="https://nusr.github.io/blog/868.binary-gap" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>59.17%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>872</td>
+<td><a href="https://leetcode.com/problems/leaf-similar-trees/" target="_blank" rel="noopener noreffer">leaf-similar-trees</a></td>
+<td><a href="https://nusr.github.io/blog/872.leaf-similar-trees" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>61.40%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>876</td>
+<td><a href="https://leetcode.com/problems/middle-of-the-linked-list/" target="_blank" rel="noopener noreffer">middle-of-the-linked-list</a></td>
+<td><a href="https://nusr.github.io/blog/876.middle-of-the-linked-list" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>63.02%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>884</td>
+<td><a href="https://leetcode.com/problems/uncommon-words-from-two-sentences/" target="_blank" rel="noopener noreffer">uncommon-words-from-two-sentences</a></td>
+<td><a href="https://nusr.github.io/blog/884.uncommon-words-from-two-sentences" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>60.41%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>905</td>
+<td><a href="https://leetcode.com/problems/sort-array-by-parity/" target="_blank" rel="noopener noreffer">sort-array-by-parity</a></td>
+<td><a href="https://nusr.github.io/blog/905.sort-array-by-parity" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>71.56%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>922</td>
+<td><a href="https://leetcode.com/problems/sort-array-by-parity-ii/" target="_blank" rel="noopener noreffer">sort-array-by-parity-ii</a></td>
+<td><a href="https://nusr.github.io/blog/922.sort-array-by-parity-ii" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>66.26%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>929</td>
+<td><a href="https://leetcode.com/problems/unique-email-addresses/" target="_blank" rel="noopener noreffer">unique-email-addresses</a></td>
+<td><a href="https://nusr.github.io/blog/929.unique-email-addresses" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Easy</td>
+<td>79.78%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>938</td>
+<td><a href="https://leetcode.com/problems/range-sum-of-bst/" target="_blank" rel="noopener noreffer">range-sum-of-bst</a></td>
+<td><a href="https://nusr.github.io/blog/938.range-sum-of-bst" target="_blank" rel="noopener noreffer">javascript</a></td>
+<td>Medium</td>
+<td>80.73%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>961</td>
+<td><a href="https://leetcode.com/problems/n-repeated-element-in-size-2n-array/" target="_blank" rel="noopener noreffer">n-repeated-element-in-size-2n-array</a></td>
+<td><a href="https://nusr.github.io/blog/961.n-repeated-element-in-size-2n-array" target="_blank" rel="noopener noreffer">javascript,c</a></td>
+<td>Easy</td>
+<td>73.70%</td>
+<td>No</td>
+</tr>
+<tr>
+<td>965</td>
+<td><a href="https://leetcode.com/problems/univalued-binary-tree/" target="_blank" rel="noopener noreffer">univalued-binary-tree</a></td>
+<td><a href="https://nusr.github.io/blog/965.univalued-binary-tree" target="_blank" rel="noopener noreffer">javascript,c</a></td>
+<td>Easy</td>
+<td>72.55%</td>
+<td>No</td>
+</tr>
+</tbody>
+</table></div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Luckly</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

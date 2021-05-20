@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Node.js 多版本安装 - Lucklyの博客 - 在阅读中遇见自己</title><meta name="Description" content="Node.js 的版本更新非常快，所有有时需要在多个版本之间切换，就需要安装多个版本的 Node.js."><meta property="og:title" content="Node.js 多版本安装" />
+<meta property="og:description" content="Node.js 的版本更新非常快，所有有时需要在多个版本之间切换，就需要安装多个版本的 Node.js." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luckly.work/2018/10/node.js-%E5%A4%9A%E7%89%88%E6%9C%AC%E5%AE%89%E8%A3%85/" />
+<meta property="article:published_time" content="2018-10-01T15:37:44+08:00" />
+<meta property="article:modified_time" content="2018-10-01T15:37:44+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Node.js 多版本安装"/>
+<meta name="twitter:description" content="Node.js 的版本更新非常快，所有有时需要在多个版本之间切换，就需要安装多个版本的 Node.js."/>
+<meta name="application-name" content="Lucklyの博客 - 在阅读中遇见自己">
+<meta name="apple-mobile-web-app-title" content="Lucklyの博客 - 在阅读中遇见自己"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://luckly.work/2018/10/node.js-%E5%A4%9A%E7%89%88%E6%9C%AC%E5%AE%89%E8%A3%85/" /><link rel="prev" href="https://luckly.work/1/01/" /><link rel="next" href="https://luckly.work/2018/10/node.js-%E7%A7%8D%E5%AD%90%E4%B8%8B%E8%BD%BD%E5%99%A8/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Node.js 多版本安装",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/luckly.work\/2018\/10\/node.js-%E5%A4%9A%E7%89%88%E6%9C%AC%E5%AE%89%E8%A3%85\/"
+        },"genre": "post","keywords": "Node.js","wordcount":  904 ,
+        "url": "https:\/\/luckly.work\/2018\/10\/node.js-%E5%A4%9A%E7%89%88%E6%9C%AC%E5%AE%89%E8%A3%85\/","datePublished": "2018-10-01T15:37:44+08:00","dateModified": "2018-10-01T15:37:44+08:00","publisher": {
+            "@type": "Organization",
+            "name": "Luckly"},"author": {
+                "@type": "Person",
+                "name": "Luckly"
+            },"description": "Node.js 的版本更新非常快，所有有时需要在多个版本之间切换，就需要安装多个版本的 Node.js."
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><div class="logo-wrapper">
+  <a href="/%20/" class="logo">遇见</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+      <a class="menu-item-link" href="/">首页</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/post/">归档</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/categories/">分类</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/tags/">标签</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/about/">关于我</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/friend/">友链</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="https://github.com/ITmxs/">阅读清单</a>
+    </li>
+  </ul>
+</nav><main class="main">
+                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">Node.js 多版本安装</h1><div class="content" id="content"><p>Node.js® is a JavaScript runtime built on Chrome&rsquo;s V8 JavaScript engine（Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境）。</p>
+<ul>
+<li>Node.js 跨平台，支持 Windows、 Linux、Mac,</li>
+<li>2018.10.8 Node.js 最新版本 10.11.0</li>
+<li>Node.js 的包管理器 npm，是全球最大的开源库生态系统。</li>
+</ul>
+<h2 id="单个-nodejs-版本的安装">单个 Node.js 版本的安装</h2>
+<p>Node.js 单个版本的安装非常简单，根据自己的操作系统，从<a href="https://node.js.org" target="_blank" rel="noopener noreffer">官网</a>下载安装程序，按照默认安装即可。国外的网站，下载速度较慢，国内有<a href="http://node.js.cn/download/" target="_blank" rel="noopener noreffer">镜像网站</a>,下载较快。</p>
+<h3 id="windows-安装遇到的坑">windows 安装遇到的坑</h3>
+<p>使用 npm install 安装包时报错，卸载了 Node.js 重新安装，依然报错</p>
+<p><strong>解决方法：安装盘文件系统为 FAT32，改为 NTFS，就可以安装包，不会报错了</strong></p>
+<h2 id="多个-nodejs-版本的安装">多个 Node.js 版本的安装</h2>
+<p>Node.js 的版本更新非常快，所有有时需要在多个版本之间切换，就需要安装多个版本的 Node.js.
+Node.js 多个版本的安装，需要借助相应的工具。 MAC 和 Linux 用户，可以使用以下的安装工具。</p>
+<ul>
+<li><a href="https://github.com/creationix/nvm" target="_blank" rel="noopener noreffer">nvm</a></li>
+<li><a href="https://github.com/tj/n" target="_blank" rel="noopener noreffer">n</a></li>
+</ul>
+<p>我使用的是 windows,上面两种方式都不可以使用，可以使用 <a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="noopener noreffer">nvm-windows</a>,下载安装包，按照默认安装即可。</p>
+<h2 id="nvm-windows-安装-nodejs">nvm-windows 安装 Node.js</h2>
+<p>安装 nvm-windows 后，nodejs 依然还没有安装。打开 PowerShell 、 CMD 、 git bash(推荐),在命令行输入 <code>nvm</code> 回车会 nvm 所有可以使用的命令，说说常用的几个命令。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104838685-1317602773.png"
+        data-srcset="https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104838685-1317602773.png, https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104838685-1317602773.png 1.5x, https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104838685-1317602773.png 2x"
+        data-sizes="auto"
+        alt="https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104838685-1317602773.png"
+        title="https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104838685-1317602773.png" /></p>
+<p><strong>获取所有可以安装的 Node.js 版本</strong></p>
+<p><code>nvm list available</code></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104855297-1627992804.png"
+        data-srcset="https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104855297-1627992804.png, https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104855297-1627992804.png 1.5x, https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104855297-1627992804.png 2x"
+        data-sizes="auto"
+        alt="https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104855297-1627992804.png"
+        title="https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104855297-1627992804.png" /></p>
+<p><code>LTS</code> 指最新稳定版本，<code>CURRENT</code> 指最新版本，一般安装 <code>LTS</code></p>
+<p><strong>安装指定版本的 Node.js</strong></p>
+<p><code>nvm install 10.11.0</code></p>
+<p><strong>列出所有已经安装的版本</strong></p>
+<p><code>nvm list</code></p>
+<p><strong>指定当前要使用的 Node.js 版本,只用指定使用的 Node.js 版本后，nodejs 的才真正安装了。</strong></p>
+<p><code>nvm use 10.11.0</code></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104913058-1588118055.png"
+        data-srcset="https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104913058-1588118055.png, https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104913058-1588118055.png 1.5x, https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104913058-1588118055.png 2x"
+        data-sizes="auto"
+        alt="https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104913058-1588118055.png"
+        title="https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104913058-1588118055.png" /></p>
+<p><strong>卸载某个 Node.js 版本</strong></p>
+<p><code>nvm uninstall 10.11.0</code></p>
+<h2 id="nodejs-包管理器">Node.js 包管理器</h2>
+<p>Node.js 包管理器一览表</p>
+<ul>
+<li>npm</li>
+<li>cnpm</li>
+<li>yarn</li>
+</ul>
+<p>npm 是 Node.js 自带的包管理器，但是默认下载依赖包的地址是国外服务器，下载速度较慢。使用 npm ,下载包两小时，敲代码 5 分钟。阿里巴巴是 Node.js 前端非常重视 Node.js 的使用，于是，淘宝开发了 cnpm,使用与 npm 一致，默认下载是国内地址，下载速度快得飞起。下载地址<a href="https://npm.taobao.org/" target="_blank" rel="noopener noreffer">https://npm.taobao.org</a></p>
+<p><a href="https://yarnpkg.com/zh-Hans/" target="_blank" rel="noopener noreffer">yarn</a> 是 facebook 开发的新一代包管理器，主要是解决依赖包的安装问题。支持离线安装依赖包，同时依赖包的安装顺序不会出错。</p>
+<h3 id="npm-yarn-命令对照表">npm yarn 命令对照表</h3>
+<table>
+<thead>
+<tr>
+<th>npm</th>
+<th>Yarn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>npm install</td>
+<td>yarn install</td>
+</tr>
+<tr>
+<td>(N/A)</td>
+<td>yarn install &ndash;flat</td>
+</tr>
+<tr>
+<td>(N/A)</td>
+<td>yarn install &ndash;har</td>
+</tr>
+<tr>
+<td>(N/A)</td>
+<td>yarn install &ndash;no-lockfile</td>
+</tr>
+<tr>
+<td>(N/A)</td>
+<td>yarn install &ndash;pure-lockfile</td>
+</tr>
+<tr>
+<td>npm install [package]</td>
+<td>(N/A)</td>
+</tr>
+<tr>
+<td>npm install &ndash;save [package]</td>
+<td>yarn add [package]</td>
+</tr>
+<tr>
+<td>npm install &ndash;save-dev [package]</td>
+<td>yarn add [package][&ndash;dev/-d]</td>
+</tr>
+<tr>
+<td>(N/A)</td>
+<td>yarn add [package][&ndash;peer/-p]</td>
+</tr>
+<tr>
+<td>npm install &ndash;save-optional [package]</td>
+<td>yarn add [package][&ndash;optional/-o]</td>
+</tr>
+<tr>
+<td>npm install &ndash;save-exact [package]</td>
+<td>yarn add [package][&ndash;exact/-e]</td>
+</tr>
+<tr>
+<td>(N/A)</td>
+<td>yarn add [package][&ndash;tilde/-t]</td>
+</tr>
+<tr>
+<td>npm install &ndash;global [package]</td>
+<td>yarn global add [package]</td>
+</tr>
+<tr>
+<td>npm rebuild</td>
+<td>yarn install &ndash;force</td>
+</tr>
+<tr>
+<td>npm uninstall [package]</td>
+<td>(N/A)</td>
+</tr>
+<tr>
+<td>npm uninstall &ndash;save [package]</td>
+<td>yarn remove [package]</td>
+</tr>
+<tr>
+<td>npm uninstall &ndash;save-dev [package]</td>
+<td>yarn remove [package]</td>
+</tr>
+<tr>
+<td>npm uninstall &ndash;save-optional [package]</td>
+<td>yarn remove [package]</td>
+</tr>
+<tr>
+<td>npm cache clean</td>
+<td>yarn cache clean</td>
+</tr>
+<tr>
+<td>rm -rf node_modules &amp;&amp; npm install</td>
+<td>yarn upgrade</td>
+</tr>
+</tbody>
+</table>
+</div></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Luckly</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
