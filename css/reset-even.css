@@ -156,13 +156,13 @@ html body {
 
 /* ============================= 设置菜单项的标签、分类页面样式 ===================================== */
 .terms .terms-tags .terms-link {
-    margin: 10px 10px;
+    margin: 20px 20px;
     border-radius: 50em;
     padding: 5px 10px;
     background-color: #FFF2AB;
 }
 
-/* 设置菜单项的标签、分类页面的统计数字样式
+/* 设置菜单项的标签、分类页面的统计数字样式 */
 .terms .terms-tags .terms-link .terms-count {
     top: 5px;
     right: 6px;
@@ -172,7 +172,7 @@ html body {
     border-radius: 50%;
     background-color: #B45B3E;
     color: #fff;
-} */
+}
 
 /* ========================= 设置底部heart跳动样式动画 =============================== */
 .footer .copyright .copyright-year .heart {
