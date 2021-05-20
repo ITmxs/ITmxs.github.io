@@ -1,32 +1,30 @@
-.icon-juejin, .icon-cnblogs, .icon-v2ex {
-    background-size: 100%;
-    background-repeat: no-repeat;
+/* =============================== custom.css ================================== */
+/* 去除顶部border */
+
+/* 设置版心 */
+
+/* 设置a标签样式 */
+a {
+	color: rgba(139,69,19,0.8);
 }
 
-.icon-juejin {
-    top: 2px;
-    background-image: url(/images/juejin.svg);
-    width: 35px;
-    height: 35px;
+/* 设置文章目录单行省略 */
+.toc-link {
+	display: inline-block;
+	width: 100%;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-a.iconfont {
-    position: relative;
-}
+/* 设置页面最小高度，我的电脑100vh为722.4，window.innerHeight为722，导致出现了一小段垂直滚动条，网上说清除body的margin解决不了这个问题，然后我用了calc减去10px刚好，兼容ie9+ */
 
-/*a.iconfont:hover::after {
-    content: attr(data-title);
-    position: absolute;
-    top: -35px;
-    color: #34495e;
-    left: 0;
-}*/
 
-.icon-cnblogs {
-    background-image: url(/images/cnblogs.svg);
-    width: 30px;
-    height: 30px;
-}
+/* 设置main最小高度，保证标签、分类页面的footer在底部 */
+/* .main {
+	min-height: 722px;
+} */
+
 /* ================================ 设置header样式 ============================== */
 .header {
 	padding: 10px;
@@ -49,43 +47,28 @@ a.iconfont {
     line-height: 68px;
 }
 
-.icon-v2ex {
-    background-image: url(/images/v2ex.svg);
-    width: 30px;
-    height: 30px;
-}
+/* 设置title上横线
+.header .logo-wrapper .logo::before {
+    content: '';
+    position: absolute;
+	top: -10px;
+	left: 27px;
+    width: 16px;
+    height: 2px;
+    background-color: #333;
+} */
 
-body .icon-email:before {
-    content: "\e605";
-}
-
-body .icon-github:before {
-    content: "\e606";
-}
-
-body .footer .social-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.site-title {
-    font-size: 25px;
-    display: inline-block;
-}
-
-html .post .post-reward .qr-code .image {
-    width: unset;
-}
-
-html body {
-    border-top: 0;
-}
-
-.label-style {
-    font-size: 30px;
-    color: #34495e;
-}
+/* 设置title下横线
+.header .logo-wrapper .logo::after {
+    content: '';
+    position: absolute;
+	bottom: -10px;
+    left: 0;
+	left: 27px;
+    width: 16px;
+    height: 4px;
+    background-color: #333;
+} */
 
 /* ========================= 设置菜单栏icon偏移位置 ================================ */
 .menu-item {
@@ -156,7 +139,7 @@ html body {
 
 /* ============================= 设置菜单项的标签、分类页面样式 ===================================== */
 .terms .terms-tags .terms-link {
-    margin: 20px 20px;
+    margin: 10px 10px;
     border-radius: 50em;
     padding: 5px 10px;
     background-color: #FFF2AB;
@@ -164,8 +147,8 @@ html body {
 
 /* 设置菜单项的标签、分类页面的统计数字样式 */
 .terms .terms-tags .terms-link .terms-count {
-    top: 5px;
-    right: 6px;
+    top: -2px;
+    right: -1px;
     display: inline-block;
     width: 20px;
     height: 20px;
