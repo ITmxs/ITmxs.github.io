@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> - 早起的年轻人</title>
+    <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="早起的年轻人" /><meta name="description" content="字符串还支持 切片。索引可以提取单个字符，切片 则提取子字符串： &amp;gt;&amp;raquo; 1 2 3 4 &amp;gt;&amp;gt;&amp;gt; word[0:2] # characters from position 0 (included) to 2 (excluded) &amp;#39;Py&amp;#39; &amp;gt;&amp;gt;&amp;gt; word[2:5] # characters from position 2 (included) to 5 (excluded) &amp;#39;tho&amp;#39; 注意，输出结果包含切片" /><meta name="keywords" content="管理, Github, Vue, flutter, Go" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://luckly.work/post/python%E4%B8%AD%E7%9A%84%E5%88%87%E7%89%87/" />
+<link href="/post/python%E4%B8%AD%E7%9A%84%E5%88%87%E7%89%87/" rel="alternate" type="application/rss+xml" title="早起的年轻人" />
+<link href="/post/python%E4%B8%AD%E7%9A%84%E5%88%87%E7%89%87/" rel="feed" type="application/rss+xml" title="早起的年轻人" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.06658218.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/reset-even.css">
+
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="字符串还支持 切片。索引可以提取单个字符，切片 则提取子字符串： &gt;&raquo; 1 2 3 4 &gt;&gt;&gt; word[0:2] # characters from position 0 (included) to 2 (excluded) &#39;Py&#39; &gt;&gt;&gt; word[2:5] # characters from position 2 (included) to 5 (excluded) &#39;tho&#39; 注意，输出结果包含切片" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luckly.work/post/python%E4%B8%AD%E7%9A%84%E5%88%87%E7%89%87/" />
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="字符串还支持 切片。索引可以提取单个字符，切片 则提取子字符串： &gt;&raquo; 1 2 3 4 &gt;&gt;&gt; word[0:2] # characters from position 0 (included) to 2 (excluded) &#39;Py&#39; &gt;&gt;&gt; word[2:5] # characters from position 2 (included) to 5 (excluded) &#39;tho&#39; 注意，输出结果包含切片">
+
+<meta itemprop="wordCount" content="457">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="字符串还支持 切片。索引可以提取单个字符，切片 则提取子字符串： &gt;&raquo; 1 2 3 4 &gt;&gt;&gt; word[0:2] # characters from position 0 (included) to 2 (excluded) &#39;Py&#39; &gt;&gt;&gt; word[2:5] # characters from position 2 (included) to 5 (excluded) &#39;tho&#39; 注意，输出结果包含切片"/>
+
+</head>
+<body>
+<div id="mobile-navbar" class="mobile-navbar">
+    <div class="mobile-header-logo">
+        <a href="/" class="logo">早起的年轻人</a>
+    </div>
+    <div class="mobile-navbar-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+    <ul class="mobile-menu-list">
+        <a href="/">
+            <li class="mobile-menu-item" title="首页">首页</li>
+        </a>
+        <a href="/post/">
+            <li class="mobile-menu-item" title="归档">归档</li>
+        </a>
+        <a href="/categories/">
+            <li class="mobile-menu-item" title="分类">分类</li>
+        </a>
+        <a href="/tags/">
+            <li class="mobile-menu-item" title="标签">标签</li>
+        </a>
+        <a href="/about/">
+            <li class="mobile-menu-item" title="关于我">关于我</li>
+        </a>
+        <a href="/friend/">
+            <li class="mobile-menu-item" title="友链">友链</li>
+        </a>
+        <a href="https://github.com/ITmxs/">
+            <li class="mobile-menu-item" title="阅读清单">阅读清单</li>
+        </a>
+        
+    </ul>
+    <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+</nav>
+
+<div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/%20/" class="logo">早起的年轻人</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+      <a class="menu-item-link" href="/">首页</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/post/">归档</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/categories/">分类</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/tags/">标签</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/about/">关于我</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="/friend/">友链</a>
+    </li><li class="menu-item">
+      <a class="menu-item-link" href="https://github.com/ITmxs/">阅读清单</a>
+    </li>
+  </ul>
+</nav>
+        <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+
+    </header>
+
+
+    <main id="main" class="main">
+        <div class="content-wrapper">
+            <div id="content" class="content">
+                <article class="post">
+  
+  <header class="post-header">
+    <h1 class="post-title"></h1>
+
+    <div class="post-meta">
+      <span class="post-time"> 0001-01-01 00:00 </span>
+      
+      <span class="more-meta"> 约 457 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+      <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+    </div>
+  </header>
+
+  <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="0001-01-01T00:00:00" title="January 1, 0001">January 1, 0001</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+  <div class="post-content">
+    <p>字符串还支持 <em>切片</em>。索引可以提取单个字符，<em>切片</em> 则提取子字符串：</p>
+<p>&gt;&raquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; word[0:2]  # characters from position 0 (included) to 2 (excluded)
+&#39;Py&#39;
+&gt;&gt;&gt; word[2:5]  # characters from position 2 (included) to 5 (excluded)
+&#39;tho&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>注意，输出结果包含切片开始，但不包含切片结束。因此，<code>s[:i] + s[i:]</code> 总是等于 <code>s</code>：</p>
+<p>&gt;&raquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; word[:2] + word[2:]
+&#39;Python&#39;
+&gt;&gt;&gt; word[:4] + word[4:]
+&#39;Python&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>切片索引的默认值很有用；省略开始索引时，默认值为 0，省略结束索引时，默认为到字符串的结尾：</p>
+<p>&gt;&raquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; word[:2]   # character from the beginning to position 2 (excluded)
+&#39;Py&#39;
+&gt;&gt;&gt; word[4:]   # characters from position 4 (included) to the end
+&#39;on&#39;
+&gt;&gt;&gt; word[-2:]  # characters from the second-last (included) to the end
+&#39;on&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>还可以这样理解切片，索引指向的是字符 <em>之间</em> ，第一个字符的左侧标为 0，最后一个字符的右侧标为 <em>n</em> ，<em>n</em> 是字符串长度。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"> +---+---+---+---+---+---+
+ | P | y | t | h | o | n |
+ +---+---+---+---+---+---+
+ 0   1   2   3   4   5   6
+-6  -5  -4  -3  -2  -1
+</code></pre></td></tr></table>
+</div>
+</div><p>第一行数字是字符串中索引 0&hellip;6 的位置，第二行数字是对应的负数索引位置。<em>i</em> 到 <em>j</em> 的切片由 <em>i</em> 和 <em>j</em> 之间所有对应的字符组成。</p>
+<p>对于使用非负索引的切片，如果两个索引都不越界，切片长度就是起止索引之差。例如， <code>word[1:3]</code> 的长度是 2。</p>
+<p>索引越界会报错：</p>
+<p>&gt;&raquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; word[42]  # the word only has 6 characters
+Traceback (most recent call last):
+  File &#34;&lt;stdin&gt;&#34;, line 1, in &lt;module&gt;
+IndexError: string index out of range
+</code></pre></td></tr></table>
+</div>
+</div><p>但是，切片会自动处理越界索引：</p>
+<p>&gt;&raquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; word[4:42]
+&#39;on&#39;
+&gt;&gt;&gt; word[42:]
+&#39;&#39;
+</code></pre></td></tr></table>
+</div>
+</div>
+  </div>
+
+  <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">早起的年轻人</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        0001-01-01 00:00
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a target="_blank" rel="license noopener" href="https://github.com/nusr/blog/blob/master/LICENSE">MIT</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/wechat.jpg">
+        <span>微信佛系打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝佛系打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+    
+    <nav class="post-nav">
+      <a class="prev" href="/post/2018/2018-10-01-install-multi-version-nodejs/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Node.js 多版本安装</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+      <a class="next" href="/post/%E5%BD%93%E5%AE%A2%E6%88%B7%E8%AF%B4%E4%B8%8D/">
+        <span class="next-text nav-default"></span>
+        <span class="next-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav>
+  </footer>
+  
+</article>
+            </div>
+            
+
+        </div>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="social-links">
+  <a href="852851198@qq.com" class="iconfont icon-email" title="email" rel="noopener" target="_blank" data-title="email"> </a>
+  <a href="https://github.com/ITmxs" class="iconfont icon-github" title="github" rel="noopener" target="_blank" data-title="github"> </a>
+  <a href="https://juejin.cn/user/3843548384077192" class="iconfont icon-juejin" title="juejin" rel="noopener" target="_blank" data-title="juejin"> </a>
+  <a href="https://www.zhihu.com/people/yimi-yang-guang-96-65" class="iconfont icon-zhihu" title="zhihu" rel="noopener" target="_blank" data-title="zhihu"> </a>
+  <a href="https://space.bilibili.com/480883651" class="iconfont icon-bilibili" title="bilibili" rel="noopener" target="_blank" data-title="bilibili"> </a>
+  <a href="https://luckly.work/index.xml" type="application/rss+xml" rel="noopener" target="_blank" class="iconfont icon-rss" title="rss"></a>
+
+
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy;
+    2020 -
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">早起的年轻人</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+    </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-CN".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.47f727f4.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-138883536-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

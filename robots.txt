@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://luckly.work/sitemap.xml
