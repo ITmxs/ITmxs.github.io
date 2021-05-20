@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on 早起的年轻人</title>
+    <title>Categories on Lucklyの博客 - 在阅读中遇见自己</title>
     <link>https://luckly.work/categories/</link>
-    <description>Recent content in Categories on 早起的年轻人</description>
+    <description>Recent content in Categories on Lucklyの博客 - 在阅读中遇见自己</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>en</language>
     <lastBuildDate>Thu, 18 Feb 2021 13:03:26 +0800</lastBuildDate><atom:link href="https://luckly.work/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>教学</title>
@@ -81,10 +81,10 @@
     
     <item>
       <title>YouTube视频下载</title>
-      <link>https://luckly.work/categories/YouTube%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD/</link>
+      <link>https://luckly.work/categories/youtube%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD/</link>
       <pubDate>Wed, 03 Feb 2021 20:51:01 +0800</pubDate>
       
-      <guid>https://luckly.work/categories/YouTube%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD/</guid>
+      <guid>https://luckly.work/categories/youtube%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD/</guid>
       <description></description>
     </item>
     
@@ -198,10 +198,10 @@
     
     <item>
       <title>Mac</title>
-      <link>https://luckly.work/categories/Mac/</link>
+      <link>https://luckly.work/categories/mac/</link>
       <pubDate>Wed, 01 May 2019 18:24:43 +0800</pubDate>
       
-      <guid>https://luckly.work/categories/Mac/</guid>
+      <guid>https://luckly.work/categories/mac/</guid>
       <description></description>
     </item>
     

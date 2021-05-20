@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mac on 早起的年轻人</title>
-    <link>https://luckly.work/categories/Mac/</link>
-    <description>Recent content in Mac on 早起的年轻人</description>
+    <title>Mac on Lucklyの博客 - 在阅读中遇见自己</title>
+    <link>https://luckly.work/categories/mac/</link>
+    <description>Recent content in Mac on Lucklyの博客 - 在阅读中遇见自己</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Wed, 01 May 2019 18:24:43 +0800</lastBuildDate><atom:link href="https://luckly.work/categories/Mac/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 01 May 2019 18:24:43 +0800</lastBuildDate><atom:link href="https://luckly.work/categories/mac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title> Mac OS 版本信息</title>
-      <link>https://luckly.work/post/awesome-macos-command-line-zh/glossary/</link>
+      <link>https://luckly.work/2019/05/mac-os-%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF/</link>
       <pubDate>Wed, 01 May 2019 18:24:43 +0800</pubDate>
       
-      <guid>https://luckly.work/post/awesome-macos-command-line-zh/glossary/</guid>
+      <guid>https://luckly.work/2019/05/mac-os-%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF/</guid>
       <description>版本 名称 发布日期 最新版本 Rhapsody Developer Release Grail1Z4 / Titan1U August 31, 1997 DR2 (May 14, 1998) Mac OS X Server 1.0 Hera March 16, 1999 1.2v3 (October 27, 2000) Mac OS X Developer Preview n/a March 16, 1999 DP4 (April 5, 2000) Mac OS X Public Beta Kodiak September 13, 2000 n/a Mac OS X 10.0 Cheetah March 24, 2001 10.0.4</description>
     </item>
     
     <item>
       <title>Awesome Mac OS Command Line</title>
-      <link>https://luckly.work/post/awesome-macos-command-line-zh/README/</link>
+      <link>https://luckly.work/2019/05/awesome-mac-os-command-line/</link>
       <pubDate>Wed, 01 May 2019 14:25:24 +0800</pubDate>
       
-      <guid>https://luckly.work/post/awesome-macos-command-line-zh/README/</guid>
+      <guid>https://luckly.work/2019/05/awesome-mac-os-command-line/</guid>
       <description>awesome-macos-command-line 的中文翻译，翻译不妥的地方，欢迎提 issue 或者 pull request 。 翻译本教程，见识了许多没用过的终端命令，加深了对 Mac 的认识。 精心为 OS X 挑选的 shell 命令和工具。 “你</description>
     </item>
     
     <item>
       <title>Awesome Mac OS Command Line 中文翻译</title>
-      <link>https://luckly.work/post/awesome-macos-command-line-zh/entry/</link>
+      <link>https://luckly.work/2019/05/awesome-mac-os-command-line-%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/</link>
       <pubDate>Wed, 01 May 2019 14:25:24 +0800</pubDate>
       
-      <guid>https://luckly.work/post/awesome-macos-command-line-zh/entry/</guid>
+      <guid>https://luckly.work/2019/05/awesome-mac-os-command-line-%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/herrbischoff/awesome-macos-command-line&#34;&gt;awesome-macos-command-line&lt;/a&gt; 收集了很多有趣的 Mac 终端命令。&lt;/p&gt;
 &lt;p&gt;看了一遍后，发现帮助很大。&lt;/p&gt;
 &lt;p&gt;见识许多没有使用过的命令，加深了对 Mac 的认识。&lt;/p&gt;
@@ -41,10 +41,10 @@
     
     <item>
       <title>代码片段</title>
-      <link>https://luckly.work/post/awesome-macos-command-line-zh/snippets/</link>
+      <link>https://luckly.work/2019/05/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</link>
       <pubDate>Wed, 01 May 2019 14:25:24 +0800</pubDate>
       
-      <guid>https://luckly.work/post/awesome-macos-command-line-zh/snippets/</guid>
+      <guid>https://luckly.work/2019/05/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;各种有用的 Bash 风格命令，可随时复制、粘贴。
 &lt;a href=&#34;https://github.com/nusr/awesome-macos-command-line-zh&#34;&gt;Awesome OS X Command Line&lt;/a&gt; 的一部分。&lt;/p&gt;
@@ -53,10 +53,10 @@
     
     <item>
       <title>函数</title>
-      <link>https://luckly.work/post/awesome-macos-command-line-zh/functions/</link>
+      <link>https://luckly.work/2019/05/%E5%87%BD%E6%95%B0/</link>
       <pubDate>Wed, 01 May 2019 14:25:24 +0800</pubDate>
       
-      <guid>https://luckly.work/post/awesome-macos-command-line-zh/functions/</guid>
+      <guid>https://luckly.work/2019/05/%E5%87%BD%E6%95%B0/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;OS X 特定 Bash 风格的好用函数集合。&lt;a href=&#34;https://github.com/nusr/awesome-macos-command-line-zh&#34;&gt;Awesome OS X Command Line&lt;/a&gt; 的一部分。&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -64,10 +64,10 @@
     
     <item>
       <title>自启动服务</title>
-      <link>https://luckly.work/post/awesome-macos-command-line-zh/launchagents/</link>
+      <link>https://luckly.work/2019/05/%E8%87%AA%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Wed, 01 May 2019 14:25:24 +0800</pubDate>
       
-      <guid>https://luckly.work/post/awesome-macos-command-line-zh/launchagents/</guid>
+      <guid>https://luckly.work/2019/05/%E8%87%AA%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;各种有用的自启动服务例子。 &lt;a href=&#34;https://github.com/nusr/awesome-macos-command-line-zh&#34;&gt;Awesome OS X Command Line&lt;/a&gt; 的一部分
 ``&lt;/p&gt;
@@ -76,10 +76,10 @@
     
     <item>
       <title>解决 Mac launchpad 启动台 Gitter 图标无法删除的问题</title>
-      <link>https://luckly.work/post/2019/2019-04-25-delete-mac-launchpad-icon/</link>
+      <link>https://luckly.work/2019/04/%E8%A7%A3%E5%86%B3-mac-launchpad-%E5%90%AF%E5%8A%A8%E5%8F%B0-gitter-%E5%9B%BE%E6%A0%87%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 25 Apr 2019 21:12:56 +0800</pubDate>
       
-      <guid>https://luckly.work/post/2019/2019-04-25-delete-mac-launchpad-icon/</guid>
+      <guid>https://luckly.work/2019/04/%E8%A7%A3%E5%86%B3-mac-launchpad-%E5%90%AF%E5%8A%A8%E5%8F%B0-gitter-%E5%9B%BE%E6%A0%87%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>&lt;p&gt;Mac 删除应用非常简单，将应用拖到回收站就删除了。或者进入应用程序文件夹，选中程序，&lt;strong&gt;command + delete&lt;/strong&gt; 就删除了应用，这也是删除文件的快捷键。&lt;/p&gt;
 &lt;p&gt;但是，安装 &lt;strong&gt;Gitter&lt;/strong&gt; 后，删除了应用程序，图标一直删除不了。&lt;/p&gt;
 &lt;p&gt;我的 Mac 版本是 10.14.4 ，尝试以下方法，均无法删除 &lt;strong&gt;Gitter&lt;/strong&gt; 图标。&lt;/p&gt;
@@ -92,10 +92,10 @@
     
     <item>
       <title>解决 mac HomeBrew 下载缓慢的问题</title>
-      <link>https://luckly.work/post/2019/2019-04-13-mac-homebrew/</link>
+      <link>https://luckly.work/2019/04/%E8%A7%A3%E5%86%B3-mac-homebrew-%E4%B8%8B%E8%BD%BD%E7%BC%93%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Sat, 13 Apr 2019 15:57:25 +0800</pubDate>
       
-      <guid>https://luckly.work/post/2019/2019-04-13-mac-homebrew/</guid>
+      <guid>https://luckly.work/2019/04/%E8%A7%A3%E5%86%B3-mac-homebrew-%E4%B8%8B%E8%BD%BD%E7%BC%93%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;文章首发 &lt;a href=&#34;https://nusr.github.io/&#34;&gt;https://nusr.github.io/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -112,10 +112,10 @@
     
     <item>
       <title>解决 mac 10.14.4 无法 sublime text 3207 安装 Package Control,以及安装第三方包报错 `Package Control There are no packages available for installation`</title>
-      <link>https://luckly.work/post/2019/2019-04-13-mac-sublime/</link>
+      <link>https://luckly.work/2019/04/%E8%A7%A3%E5%86%B3-mac-10.14.4-%E6%97%A0%E6%B3%95-sublime-text-3207-%E5%AE%89%E8%A3%85-package-control%E4%BB%A5%E5%8F%8A%E5%AE%89%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E6%8A%A5%E9%94%99-package-control-there-are-no-packages-available-for-installation/</link>
       <pubDate>Sat, 13 Apr 2019 14:58:13 +0800</pubDate>
       
-      <guid>https://luckly.work/post/2019/2019-04-13-mac-sublime/</guid>
+      <guid>https://luckly.work/2019/04/%E8%A7%A3%E5%86%B3-mac-10.14.4-%E6%97%A0%E6%B3%95-sublime-text-3207-%E5%AE%89%E8%A3%85-package-control%E4%BB%A5%E5%8F%8A%E5%AE%89%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E6%8A%A5%E9%94%99-package-control-there-are-no-packages-available-for-installation/</guid>
       <description>&lt;p&gt;下载最新的 sublime text 3207，无法安装 &lt;strong&gt;Package Control&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;根据&lt;a href=&#34;https://packagecontrol.io/installation&#34;&gt;官方提示&lt;/a&gt;，手动安装 &lt;strong&gt;Package Control&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;手动安装 &lt;strong&gt;Package Control&lt;/strong&gt; 后，无法安装第三方包。&lt;/p&gt;

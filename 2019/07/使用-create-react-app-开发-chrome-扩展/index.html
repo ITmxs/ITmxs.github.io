@@ -1,11 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>使用 Create-React-App 开发 Chrome 扩展 - Lucklyの博客 - 在阅读中遇见自己</title><meta name="Description" content="遇见便是缘分."><meta property="og:title" content="使用 Create-React-App 开发 Chrome 扩展" />
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>使用 Create-React-App 开发 Chrome 扩展 - Lucklyの博客 - 在阅读中遇见自己</title>
+    <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Luckly" /><meta name="description" content=" 整理 Kindle 标注、书签和笔记从未如此简单！
+ Kindle 标注管理应用 Kindle Mate 只支持 Windows，不支持 Mac。标注只是解析我的剪贴文本文件，配合 FileReader API，写个 Chrome 扩展解析文本文件就好了。
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://luckly.work/2019/07/%E4%BD%BF%E7%94%A8-create-react-app-%E5%BC%80%E5%8F%91-chrome-%E6%89%A9%E5%B1%95/" />
+<link href="/2019/07/%E4%BD%BF%E7%94%A8-create-react-app-%E5%BC%80%E5%8F%91-chrome-%E6%89%A9%E5%B1%95/" rel="alternate" type="application/rss+xml" title="Lucklyの博客 - 在阅读中遇见自己" />
+<link href="/2019/07/%E4%BD%BF%E7%94%A8-create-react-app-%E5%BC%80%E5%8F%91-chrome-%E6%89%A9%E5%B1%95/" rel="feed" type="application/rss+xml" title="Lucklyの博客 - 在阅读中遇见自己" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.06658218.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<meta property="og:title" content="使用 Create-React-App 开发 Chrome 扩展" />
 <meta property="og:description" content="
 整理 Kindle 标注、书签和笔记从未如此简单！
 
@@ -14,36 +52,73 @@ Kindle 标注管理应用 Kindle Mate 只支持 Windows，不支持 Mac。标注
 <meta property="og:url" content="https://luckly.work/2019/07/%E4%BD%BF%E7%94%A8-create-react-app-%E5%BC%80%E5%8F%91-chrome-%E6%89%A9%E5%B1%95/" />
 <meta property="article:published_time" content="2019-07-07T22:28:34+08:00" />
 <meta property="article:modified_time" content="2019-07-07T22:28:34+08:00" />
+<meta itemprop="name" content="使用 Create-React-App 开发 Chrome 扩展">
+<meta itemprop="description" content="
+整理 Kindle 标注、书签和笔记从未如此简单！
+
+Kindle 标注管理应用 Kindle Mate 只支持 Windows，不支持 Mac。标注只是解析我的剪贴文本文件，配合 FileReader API，写个 Chrome 扩展解析文本文件就好了。">
+<meta itemprop="datePublished" content="2019-07-07T22:28:34+08:00" />
+<meta itemprop="dateModified" content="2019-07-07T22:28:34+08:00" />
+<meta itemprop="wordCount" content="1318">
+
+
+
+<meta itemprop="keywords" content="“React”,Chrome," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 Create-React-App 开发 Chrome 扩展"/>
 <meta name="twitter:description" content="
 整理 Kindle 标注、书签和笔记从未如此简单！
 
 Kindle 标注管理应用 Kindle Mate 只支持 Windows，不支持 Mac。标注只是解析我的剪贴文本文件，配合 FileReader API，写个 Chrome 扩展解析文本文件就好了。"/>
-<meta name="application-name" content="Lucklyの博客 - 在阅读中遇见自己">
-<meta name="apple-mobile-web-app-title" content="Lucklyの博客 - 在阅读中遇见自己"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://luckly.work/2019/07/%E4%BD%BF%E7%94%A8-create-react-app-%E5%BC%80%E5%8F%91-chrome-%E6%89%A9%E5%B1%95/" /><link rel="prev" href="https://luckly.work/2019/05/%E4%BD%BF%E7%94%A8-rss-%E4%B8%BB%E5%8A%A8%E9%98%85%E8%AF%BB%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/" /><link rel="next" href="https://luckly.work/2021/01/%E5%BD%93%E4%B8%8B%E7%9A%84%E5%8A%9B%E9%87%8F%E4%B9%A6%E8%AF%84/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "使用 Create-React-App 开发 Chrome 扩展",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/luckly.work\/2019\/07\/%E4%BD%BF%E7%94%A8-create-react-app-%E5%BC%80%E5%8F%91-chrome-%E6%89%A9%E5%B1%95\/"
-        },"genre": "post","keywords": "“React”, Chrome","wordcount":  1318 ,
-        "url": "https:\/\/luckly.work\/2019\/07\/%E4%BD%BF%E7%94%A8-create-react-app-%E5%BC%80%E5%8F%91-chrome-%E6%89%A9%E5%B1%95\/","datePublished": "2019-07-07T22:28:34+08:00","dateModified": "2019-07-07T22:28:34+08:00","publisher": {
-            "@type": "Organization",
-            "name": "Luckly"},"author": {
-                "@type": "Person",
-                "name": "Luckly"
-            },"description": ""
-    }
-    </script></head>
-    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
-        <div id="mask"></div><div class="wrapper"><div class="logo-wrapper">
+</head>
+<body>
+<div id="mobile-navbar" class="mobile-navbar">
+    <div class="mobile-header-logo">
+        <a href="/" class="logo">遇见</a>
+    </div>
+    <div class="mobile-navbar-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+    <ul class="mobile-menu-list">
+        <a href="/">
+            <li class="mobile-menu-item" title="首页">首页</li>
+        </a>
+        <a href="/post/">
+            <li class="mobile-menu-item" title="归档">归档</li>
+        </a>
+        <a href="/categories/">
+            <li class="mobile-menu-item" title="分类">分类</li>
+        </a>
+        <a href="/tags/">
+            <li class="mobile-menu-item" title="标签">标签</li>
+        </a>
+        <a href="/about/">
+            <li class="mobile-menu-item" title="关于我">关于我</li>
+        </a>
+        <a href="/friend/">
+            <li class="mobile-menu-item" title="友链">友链</li>
+        </a>
+        <a href="https://github.com/ITmxs/">
+            <li class="mobile-menu-item" title="阅读清单">阅读清单</li>
+        </a>
+        
+    </ul>
+    <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+</nav>
+
+<div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
   <a href="/%20/" class="logo">遇见</a>
 </div>
 
@@ -65,17 +140,66 @@ Kindle 标注管理应用 Kindle Mate 只支持 Windows，不支持 Mac。标注
       <a class="menu-item-link" href="https://github.com/ITmxs/">阅读清单</a>
     </li>
   </ul>
-</nav><main class="main">
-                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">使用 Create-React-App 开发 Chrome 扩展</h1><div class="content" id="content"><blockquote>
+</nav>
+        <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+
+    </header>
+
+
+    <main id="main" class="main">
+        <div class="content-wrapper">
+            <div id="content" class="content">
+                <article class="post">
+  
+  <header class="post-header">
+    <h1 class="post-title">使用 Create-React-App 开发 Chrome 扩展</h1>
+
+    <div class="post-meta">
+      <span class="post-time"> 2019-07-07 </span>
+      <div class="post-category">
+        <a href="/categories/%E6%8A%80%E6%9C%AF/"> “技术” </a>
+        </div>
+      <span class="more-meta"> 约 1318 字 </span>
+      <span class="more-meta"> 预计阅读 3 分钟 </span>
+      <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+    </div>
+  </header>
+
+  <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#初始化项目">初始化项目</a></li>
+        <li><a href="#支持-sass">支持 Sass</a></li>
+        <li><a href="#读取文件">读取文件</a></li>
+        <li><a href="#解析文本">解析文本</a></li>
+        <li><a href="#配置-manifestjson">配置 manifest.json</a></li>
+        <li><a href="#上传到-chrome-网上应用商店">上传到 Chrome 网上应用商店</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+  <div class="post-content">
+    <blockquote>
 <p>整理 Kindle 标注、书签和笔记从未如此简单！</p>
 </blockquote>
-<p>Kindle 标注管理应用 <a href="https://kmate.me/cn/" target="_blank" rel="noopener noreffer">Kindle Mate</a> 只支持 Windows，不支持 Mac。标注只是解析<strong>我的剪贴</strong>文本文件，配合 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader" target="_blank" rel="noopener noreffer">FileReader</a> API，写个 Chrome 扩展解析文本文件就好了。</p>
+<p>Kindle 标注管理应用 <a href="https://kmate.me/cn/">Kindle Mate</a> 只支持 Windows，不支持 Mac。标注只是解析<strong>我的剪贴</strong>文本文件，配合 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader">FileReader</a> API，写个 Chrome 扩展解析文本文件就好了。</p>
 <ul>
 <li>
-<p><a href="https://chrome.google.com/webstore/detail/my-clippings/pcfdnhenjhhcbfbanepfegljllniecpe" target="_blank" rel="noopener noreffer">Chrome 下载地址</a></p>
+<p><a href="https://chrome.google.com/webstore/detail/my-clippings/pcfdnhenjhhcbfbanepfegljllniecpe">Chrome 下载地址</a></p>
 </li>
 <li>
-<p><a href="https://github.com/nusr/my-clippings" target="_blank" rel="noopener noreffer">Github 地址</a></p>
+<p><a href="https://github.com/nusr/my-clippings">Github 地址</a></p>
 </li>
 </ul>
 <h2 id="初始化项目">初始化项目</h2>
@@ -112,7 +236,7 @@ Kindle 标注管理应用 Kindle Mate 只支持 Windows，不支持 Mac。标注
 </div>
 </div><h2 id="读取文件">读取文件</h2>
 <p>读取的文件是 Kindle 中的 <strong>/documents/My Clippings.txt</strong> 文件，Kindle 设置任何语言都是这个文件。只不过在不同语言下的显示不一样。
-使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader" target="_blank" rel="noopener noreffer">FileReader</a> API 可以轻松读取文本文件。</p>
+使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader">FileReader</a> API 可以轻松读取文本文件。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -210,7 +334,7 @@ Kindle 标注管理应用 Kindle Mate 只支持 Windows，不支持 Mac。标注
 </div>
 </div><h2 id="配置-manifestjson">配置 manifest.json</h2>
 <p>发布 Chrome 应用需要配置 manifest.json 。
-更多设置可以查看<a href="https://developer.chrome.com/extensions/manifest" target="_blank" rel="noopener noreffer">开发文档</a></p>
+更多设置可以查看<a href="https://developer.chrome.com/extensions/manifest">开发文档</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -336,22 +460,112 @@ Kindle 标注管理应用 Kindle Mate 只支持 Windows，不支持 Mac。标注
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="上传到-chrome-网上应用商店">上传到 Chrome 网上应用商店</h2>
-<p>Chrome 网上应用商店上传地址是 <a href="https://chrome.google.com/webstore/developer/dashboard" target="_blank" rel="noopener noreffer">https://chrome.google.com/webstore/developer/dashboard</a>。</p>
+<p>Chrome 网上应用商店上传地址是 <a href="https://chrome.google.com/webstore/developer/dashboard">https://chrome.google.com/webstore/developer/dashboard</a>。</p>
 <p>上传应用需要支付 <strong>5 美元</strong>的开发者费用。对于没有信用卡的人来说，淘宝可以找到相关代付途径，或者寻求朋友帮助。</p>
 <p>支付完成就可以上传应用了，一个账号最多上传 <strong>20</strong> 个应用。</p>
 <blockquote>
-<p>首发 <a href="https://nusr.github.io/" target="_blank" rel="noopener noreffer">https://nusr.github.io/</a></p>
-</blockquote></div></div></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Luckly</a></span></div>
-        </div>
-    </footer></div>
+<p>首发 <a href="https://nusr.github.io/">https://nusr.github.io/</a></p>
+</blockquote>
+  </div>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
-                <i class="fas fa-arrow-up fa-fw"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-                <i class="fas fa-comment fa-fw"></i>
-            </a>
-        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+  <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Luckly</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-07-07
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+    <div class="post-tags">
+      <a href="/tags/react/">“React”</a>
+      <a href="/tags/chrome/">Chrome</a>
+      </div>
+    <nav class="post-nav">
+      <a class="prev" href="/2021/01/%E5%BD%93%E4%B8%8B%E7%9A%84%E5%8A%9B%E9%87%8F%E4%B9%A6%E8%AF%84/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">《当下的力量》书评</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+      <a class="next" href="/2019/05/%E4%BD%BF%E7%94%A8-rss-%E4%B8%BB%E5%8A%A8%E9%98%85%E8%AF%BB%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2/">
+        <span class="next-text nav-default">使用 RSS 主动阅读技术博客</span>
+        <span class="next-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav>
+  </footer>
+  
+</article>
+            </div>
+            
+
+        </div>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="social-links">
+  <a href="852851198@qq.com" class="iconfont icon-email" title="email" rel="noopener" target="_blank" data-title="email"> </a>
+  <a href="https://github.com/ITmxs" class="iconfont icon-github" title="github" rel="noopener" target="_blank" data-title="github"> </a>
+  <a href="https://juejin.cn/user/3843548384077192" class="iconfont icon-juejin" title="juejin" rel="noopener" target="_blank" data-title="juejin"> </a>
+  <a href="https://www.zhihu.com/people/yimi-yang-guang-96-65" class="iconfont icon-zhihu" title="zhihu" rel="noopener" target="_blank" data-title="zhihu"> </a>
+  <a href="https://space.bilibili.com/480883651" class="iconfont icon-bilibili" title="bilibili" rel="noopener" target="_blank" data-title="bilibili"> </a>
+  <a href="https://luckly.work/index.xml" type="application/rss+xml" rel="noopener" target="_blank" class="iconfont icon-rss" title="rss"></a>
+
+
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy;
+    2020 -
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Luckly</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+    </div>
+</div>
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.47f727f4.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
 </html>

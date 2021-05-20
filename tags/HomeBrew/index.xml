@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HomeBrew on 早起的年轻人</title>
-    <link>https://luckly.work/tags/HomeBrew/</link>
-    <description>Recent content in HomeBrew on 早起的年轻人</description>
+    <title>HomeBrew on Lucklyの博客 - 在阅读中遇见自己</title>
+    <link>https://luckly.work/tags/homebrew/</link>
+    <description>Recent content in HomeBrew on Lucklyの博客 - 在阅读中遇见自己</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Sat, 13 Apr 2019 15:57:25 +0800</lastBuildDate><atom:link href="https://luckly.work/tags/HomeBrew/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 13 Apr 2019 15:57:25 +0800</lastBuildDate><atom:link href="https://luckly.work/tags/homebrew/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>解决 mac HomeBrew 下载缓慢的问题</title>
-      <link>https://luckly.work/post/2019/2019-04-13-mac-homebrew/</link>
+      <link>https://luckly.work/2019/04/%E8%A7%A3%E5%86%B3-mac-homebrew-%E4%B8%8B%E8%BD%BD%E7%BC%93%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Sat, 13 Apr 2019 15:57:25 +0800</pubDate>
       
-      <guid>https://luckly.work/post/2019/2019-04-13-mac-homebrew/</guid>
+      <guid>https://luckly.work/2019/04/%E8%A7%A3%E5%86%B3-mac-homebrew-%E4%B8%8B%E8%BD%BD%E7%BC%93%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;文章首发 &lt;a href=&#34;https://nusr.github.io/&#34;&gt;https://nusr.github.io/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;

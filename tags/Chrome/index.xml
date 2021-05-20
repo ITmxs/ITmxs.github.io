@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Chrome on 早起的年轻人</title>
-    <link>https://luckly.work/tags/Chrome/</link>
-    <description>Recent content in Chrome on 早起的年轻人</description>
+    <title>Chrome on Lucklyの博客 - 在阅读中遇见自己</title>
+    <link>https://luckly.work/tags/chrome/</link>
+    <description>Recent content in Chrome on Lucklyの博客 - 在阅读中遇见自己</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Sun, 07 Jul 2019 22:28:34 +0800</lastBuildDate><atom:link href="https://luckly.work/tags/Chrome/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sun, 07 Jul 2019 22:28:34 +0800</lastBuildDate><atom:link href="https://luckly.work/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用 Create-React-App 开发 Chrome 扩展</title>
-      <link>https://luckly.work/post/2019/2019-07-07-create-react-app-chrome-extension/</link>
+      <link>https://luckly.work/2019/07/%E4%BD%BF%E7%94%A8-create-react-app-%E5%BC%80%E5%8F%91-chrome-%E6%89%A9%E5%B1%95/</link>
       <pubDate>Sun, 07 Jul 2019 22:28:34 +0800</pubDate>
       
-      <guid>https://luckly.work/post/2019/2019-07-07-create-react-app-chrome-extension/</guid>
+      <guid>https://luckly.work/2019/07/%E4%BD%BF%E7%94%A8-create-react-app-%E5%BC%80%E5%8F%91-chrome-%E6%89%A9%E5%B1%95/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;整理 Kindle 标注、书签和笔记从未如此简单！&lt;/p&gt;
 &lt;/blockquote&gt;

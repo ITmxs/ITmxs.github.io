@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sublime on 早起的年轻人</title>
-    <link>https://luckly.work/tags/Sublime/</link>
-    <description>Recent content in Sublime on 早起的年轻人</description>
+    <title>Sublime on Lucklyの博客 - 在阅读中遇见自己</title>
+    <link>https://luckly.work/tags/sublime/</link>
+    <description>Recent content in Sublime on Lucklyの博客 - 在阅读中遇见自己</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Sat, 13 Apr 2019 14:58:13 +0800</lastBuildDate><atom:link href="https://luckly.work/tags/Sublime/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 13 Apr 2019 14:58:13 +0800</lastBuildDate><atom:link href="https://luckly.work/tags/sublime/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>解决 mac 10.14.4 无法 sublime text 3207 安装 Package Control,以及安装第三方包报错 `Package Control There are no packages available for installation`</title>
-      <link>https://luckly.work/post/2019/2019-04-13-mac-sublime/</link>
+      <link>https://luckly.work/2019/04/%E8%A7%A3%E5%86%B3-mac-10.14.4-%E6%97%A0%E6%B3%95-sublime-text-3207-%E5%AE%89%E8%A3%85-package-control%E4%BB%A5%E5%8F%8A%E5%AE%89%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E6%8A%A5%E9%94%99-package-control-there-are-no-packages-available-for-installation/</link>
       <pubDate>Sat, 13 Apr 2019 14:58:13 +0800</pubDate>
       
-      <guid>https://luckly.work/post/2019/2019-04-13-mac-sublime/</guid>
+      <guid>https://luckly.work/2019/04/%E8%A7%A3%E5%86%B3-mac-10.14.4-%E6%97%A0%E6%B3%95-sublime-text-3207-%E5%AE%89%E8%A3%85-package-control%E4%BB%A5%E5%8F%8A%E5%AE%89%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85%E6%8A%A5%E9%94%99-package-control-there-are-no-packages-available-for-installation/</guid>
       <description>&lt;p&gt;下载最新的 sublime text 3207，无法安装 &lt;strong&gt;Package Control&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;根据&lt;a href=&#34;https://packagecontrol.io/installation&#34;&gt;官方提示&lt;/a&gt;，手动安装 &lt;strong&gt;Package Control&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;手动安装 &lt;strong&gt;Package Control&lt;/strong&gt; 后，无法安装第三方包。&lt;/p&gt;

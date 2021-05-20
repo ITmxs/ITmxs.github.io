@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Npm on 早起的年轻人</title>
-    <link>https://luckly.work/tags/Npm/</link>
-    <description>Recent content in Npm on 早起的年轻人</description>
+    <title>Npm on Lucklyの博客 - 在阅读中遇见自己</title>
+    <link>https://luckly.work/tags/npm/</link>
+    <description>Recent content in Npm on Lucklyの博客 - 在阅读中遇见自己</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Sun, 21 Apr 2019 12:55:27 +0800</lastBuildDate><atom:link href="https://luckly.work/tags/Npm/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sun, 21 Apr 2019 12:55:27 +0800</lastBuildDate><atom:link href="https://luckly.work/tags/npm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>一行命令更新所有 npm 依赖包</title>
-      <link>https://luckly.work/post/2019/2019-04-21-update-all-npm-package/</link>
+      <link>https://luckly.work/2019/04/%E4%B8%80%E8%A1%8C%E5%91%BD%E4%BB%A4%E6%9B%B4%E6%96%B0%E6%89%80%E6%9C%89-npm-%E4%BE%9D%E8%B5%96%E5%8C%85/</link>
       <pubDate>Sun, 21 Apr 2019 12:55:27 +0800</pubDate>
       
-      <guid>https://luckly.work/post/2019/2019-04-21-update-all-npm-package/</guid>
+      <guid>https://luckly.work/2019/04/%E4%B8%80%E8%A1%8C%E5%91%BD%E4%BB%A4%E6%9B%B4%E6%96%B0%E6%89%80%E6%9C%89-npm-%E4%BE%9D%E8%B5%96%E5%8C%85/</guid>
       <description>&lt;p&gt;&lt;strong&gt;npm&lt;/strong&gt; 包的更新速度很快，为了将项目或者全局依赖更新到最新版本。传统的做法是一个一个更新，比如更新 &lt;strong&gt;react&lt;/strong&gt; 到最新版本，命令如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

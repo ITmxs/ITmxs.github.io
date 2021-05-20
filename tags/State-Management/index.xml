@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>State Management on 早起的年轻人</title>
-    <link>https://luckly.work/tags/State-Management/</link>
-    <description>Recent content in State Management on 早起的年轻人</description>
+    <title>State Management on Lucklyの博客 - 在阅读中遇见自己</title>
+    <link>https://luckly.work/tags/state-management/</link>
+    <description>Recent content in State Management on Lucklyの博客 - 在阅读中遇见自己</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Wed, 08 May 2019 20:09:06 +0800</lastBuildDate><atom:link href="https://luckly.work/tags/State-Management/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 08 May 2019 20:09:06 +0800</lastBuildDate><atom:link href="https://luckly.work/tags/state-management/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>React 状态管理终结篇</title>
-      <link>https://luckly.work/post/2019/2019-05-08-react-unstated-next/</link>
+      <link>https://luckly.work/2019/05/react-%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E7%BB%88%E7%BB%93%E7%AF%87/</link>
       <pubDate>Wed, 08 May 2019 20:09:06 +0800</pubDate>
       
-      <guid>https://luckly.work/post/2019/2019-05-08-react-unstated-next/</guid>
+      <guid>https://luckly.work/2019/05/react-%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E7%BB%88%E7%BB%93%E7%AF%87/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/jamiebuilds/unstated-next&#34;&gt;Unstated Next&lt;/a&gt; readme 的中文翻译&lt;/p&gt;
 &lt;/blockquote&gt;

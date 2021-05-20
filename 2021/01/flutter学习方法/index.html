@@ -1,82 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>《Flutter学习方法》 - Lucklyの博客 - 在阅读中遇见自己</title><meta name="Description" content="遇见便是缘分."><meta property="og:title" content="《Flutter学习方法》" />
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>《Flutter学习方法》 - Lucklyの博客 - 在阅读中遇见自己</title>
+    <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Luckly" /><meta name="description" content="学习方法： 基本都是靠谷歌加百度，百度不到换种姿势继续百度，找到为止。但查看文档定也是必不可少的。 我开发常用到文档有： 一位大神总结的电子书，常" /><meta name="keywords" content="flutter" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.79.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://luckly.work/2021/01/flutter%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" />
+<link href="/2021/01/flutter%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" rel="alternate" type="application/rss+xml" title="Lucklyの博客 - 在阅读中遇见自己" />
+<link href="/2021/01/flutter%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" rel="feed" type="application/rss+xml" title="Lucklyの博客 - 在阅读中遇见自己" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.06658218.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+<meta property="og:title" content="《Flutter学习方法》" />
 <meta property="og:description" content="学习方法： 基本都是靠谷歌加百度，百度不到换种姿势继续百度，找到为止。但查看文档定也是必不可少的。 我开发常用到文档有： 一位大神总结的电子书，常" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://luckly.work/2021/01/flutter%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" />
 <meta property="article:published_time" content="2021-01-20T13:19:49+08:00" />
 <meta property="article:modified_time" content="2021-01-20T13:19:49+08:00" />
+<meta itemprop="name" content="《Flutter学习方法》">
+<meta itemprop="description" content="学习方法： 基本都是靠谷歌加百度，百度不到换种姿势继续百度，找到为止。但查看文档定也是必不可少的。 我开发常用到文档有： 一位大神总结的电子书，常">
+<meta itemprop="datePublished" content="2021-01-20T13:19:49+08:00" />
+<meta itemprop="dateModified" content="2021-01-20T13:19:49+08:00" />
+<meta itemprop="wordCount" content="537">
+
+
+
+<meta itemprop="keywords" content="flutter," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="《Flutter学习方法》"/>
 <meta name="twitter:description" content="学习方法： 基本都是靠谷歌加百度，百度不到换种姿势继续百度，找到为止。但查看文档定也是必不可少的。 我开发常用到文档有： 一位大神总结的电子书，常"/>
-<meta name="application-name" content="Lucklyの博客 - 在阅读中遇见自己">
-<meta name="apple-mobile-web-app-title" content="Lucklyの博客 - 在阅读中遇见自己"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://luckly.work/2021/01/flutter%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" /><link rel="prev" href="https://luckly.work/2021/01/%E5%90%BE%E6%97%A5%E4%B8%89%E7%9C%81%E5%90%BE%E8%BA%AB/" /><link rel="next" href="https://luckly.work/2021/02/%E4%B9%A6%E6%91%98-%E6%9E%97%E8%AF%AD%E5%A0%82/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "《Flutter学习方法》",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/luckly.work\/2021\/01\/flutter%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95\/"
-        },"genre": "post","keywords": "flutter","wordcount":  537 ,
-        "url": "https:\/\/luckly.work\/2021\/01\/flutter%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95\/","datePublished": "2021-01-20T13:19:49+08:00","dateModified": "2021-01-20T13:19:49+08:00","publisher": {
-            "@type": "Organization",
-            "name": "Luckly"},"author": {
-                "@type": "Person",
-                "name": "Luckly"
-            },"description": ""
-    }
-    </script></head>
-    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
-        <div id="mask"></div><div class="wrapper"><div class="logo-wrapper">
-  <a href="/%20/" class="logo">遇见</a>
+</head>
+<body>
+<div id="mobile-navbar" class="mobile-navbar">
+    <div class="mobile-header-logo">
+        <a href="/" class="logo">遇见</a>
+    </div>
+    <div class="mobile-navbar-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+    <ul class="mobile-menu-list">
+        <a href="/">
+            <li class="mobile-menu-item" title="首页">首页</li>
+        </a>
+        <a href="/post/">
+            <li class="mobile-menu-item" title="归档">归档</li>
+        </a>
+        <a href="/categories/">
+            <li class="mobile-menu-item" title="分类">分类</li>
+        </a>
+        <a href="/tags/">
+            <li class="mobile-menu-item" title="标签">标签</li>
+        </a>
+        <a href="/about/">
+            <li class="mobile-menu-item" title="关于我">关于我</li>
+        </a>
+        <a href="/friend/">
+            <li class="mobile-menu-item" title="友链">友链</li>
+        </a>
+        <a href="https://github.com/ITmxs/">
+            <li class="mobile-menu-item" title="阅读清单">阅读清单</li>
+        </a>
+        
+    </ul>
+    <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
 
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-      <a class="menu-item-link" href="/">首页</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/post/">归档</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/categories/">分类</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/tags/">标签</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/about/">关于我</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/friend/">友链</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="https://github.com/ITmxs/">阅读清单</a>
+
+</nav>
+
+<div class="container" id="mobile-panel">
+    
+
+
+    <main id="main" class="main">
+        <div class="content-wrapper">
+            <div id="content" class="content">
+                <article class="post">
+  
+  <header class="post-header">
+    <h1 class="post-title">《Flutter学习方法》</h1>
+
+    <div class="post-meta">
+      <span class="post-time"> 2021-01-20 </span>
+      <div class="post-category">
+        <a href="/categories/flutter/"> flutter </a>
+        </div>
+      <span class="more-meta"> 约 537 字 </span>
+      <span class="more-meta"> 预计阅读 2 分钟 </span>
+      <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+    </div>
+  </header>
+
+  <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
     </li>
   </ul>
-</nav><main class="main">
-                <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">《Flutter学习方法》</h1><div class="content" id="content"><h5 id="学习方法">学习方法：</h5>
+</nav>
+  </div>
+</div>
+  <div class="post-content">
+    <h5 id="学习方法">学习方法：</h5>
 <p>基本都是靠谷歌加百度，百度不到换种姿势继续百度，找到为止。但查看文档定也是必不可少的。 我开发常用到文档有：</p>
 <ol>
-<li><a href="https://book.flutterchina.club/chapter1/mobile_development_intro.html" target="_blank" rel="noopener noreffer"> 一位大神总结的电子书，常用的Widget布局使用及方法和属性都有</a></li>
-<li><a href="https://flutterchina.club/widgets/basics/" target="_blank" rel="noopener noreffer">中文文档，也是开发必不可少的</a></li>
-<li><a href="https://flutterchina.club/web-analogs/" target="_blank" rel="noopener noreffer">Flutter for Web开发者, 从事前端开发入坑flutter必不可少的文档</a></li>
-<li><a href="https://codelabs.flutter-io.cn/#codelabs" target="_blank" rel="noopener noreffer">flutter demo学习的差不多就照着上面的例子撸一遍，然后就差不多进入实际开发了</a></li>
+<li><a href="https://book.flutterchina.club/chapter1/mobile_development_intro.html"> 一位大神总结的电子书，常用的Widget布局使用及方法和属性都有</a></li>
+<li><a href="https://flutterchina.club/widgets/basics/">中文文档，也是开发必不可少的</a></li>
+<li><a href="https://flutterchina.club/web-analogs/">Flutter for Web开发者, 从事前端开发入坑flutter必不可少的文档</a></li>
+<li><a href="https://codelabs.flutter-io.cn/#codelabs">flutter demo学习的差不多就照着上面的例子撸一遍，然后就差不多进入实际开发了</a></li>
 <li><a href="https://www.liulongbin.top/">https://www.liulongbin.top/</a></li>
 </ol>
 <h5 id="国内常用的">国内常用的</h5>
 <ol>
-<li><a href="https://flutter.cn/" target="_blank" rel="noopener noreffer">https://flutter.cn/官网</a></li>
-<li><a href="https://flutterchina.club/" target="_blank" rel="noopener noreffer">https://flutterchina.club/中文网</a></li>
-<li><a href="https://www.kancloud.cn/alex_wsc/flutter_demo/1559549" target="_blank" rel="noopener noreffer">Flutter核心技术与实战</a></li>
-<li>Dart 中文社区 <a href="https://www.dart-china.org/" target="_blank" rel="noopener noreffer">https://www.dart-china.org/</a></li>
-<li>Dart 开发者社区 - Fuchsia OS 中文社区<a href="https://fuchsia-china.com/dart-developers-community/" target="_blank" rel="noopener noreffer">https://fuchsia-china.com/dart-developers-community/</a></li>
-<li><a href="https://codelabs.developers.google.com/codelabs/flutter/index.html#0" target="_blank" rel="noopener noreffer">https://codelabs.developers.google.com/codelabs/flutter/index.html#0</a></li>
+<li><a href="https://flutter.cn/">https://flutter.cn/官网</a></li>
+<li><a href="https://flutterchina.club/">https://flutterchina.club/中文网</a></li>
+<li><a href="https://www.kancloud.cn/alex_wsc/flutter_demo/1559549">Flutter核心技术与实战</a></li>
+<li>Dart 中文社区 <a href="https://www.dart-china.org/">https://www.dart-china.org/</a></li>
+<li>Dart 开发者社区 - Fuchsia OS 中文社区<a href="https://fuchsia-china.com/dart-developers-community/">https://fuchsia-china.com/dart-developers-community/</a></li>
+<li><a href="https://codelabs.developers.google.com/codelabs/flutter/index.html#0">https://codelabs.developers.google.com/codelabs/flutter/index.html#0</a></li>
 <li><a href="https://book.flutterchina.club/#">https://book.flutterchina.club/#</a>缘起</li>
 </ol>
 <p>推荐一个大神的博客，总结flutter开发常用好用的轮子插件，很顶</p>
@@ -98,25 +185,69 @@
 <li><a href="https://codelabs.developers.google.com/codelabs/flutter/index.html#0">https://codelabs.developers.google.com/codelabs/flutter/index.html#0</a></li>
 <li><a href="https://book.flutterchina.club/#">https://book.flutterchina.club/#</a>缘起</li>
 </ol>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://luckly007.oss-cn-beijing.aliyuncs.com/image-20210310205804540.png"
-        data-srcset="https://luckly007.oss-cn-beijing.aliyuncs.com/image-20210310205804540.png, https://luckly007.oss-cn-beijing.aliyuncs.com/image-20210310205804540.png 1.5x, https://luckly007.oss-cn-beijing.aliyuncs.com/image-20210310205804540.png 2x"
-        data-sizes="auto"
-        alt="https://luckly007.oss-cn-beijing.aliyuncs.com/image-20210310205804540.png"
-        title="image-20210310205804540" /></p>
-</div></div></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Luckly</a></span></div>
-        </div>
-    </footer></div>
+<p><img src="https://luckly007.oss-cn-beijing.aliyuncs.com/image-20210310205804540.png" alt="image-20210310205804540"></p>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
-                <i class="fas fa-arrow-up fa-fw"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-                <i class="fas fa-comment fa-fw"></i>
-            </a>
-        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+  </div>
+
+  <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Luckly</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-01-20
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+    <div class="post-tags">
+      <a href="/tags/flutter/">flutter</a>
+      </div>
+    <nav class="post-nav">
+      <a class="prev" href="/2021/02/%E4%B9%A6%E6%91%98-%E6%9E%97%E8%AF%AD%E5%A0%82/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">书摘 林语堂</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+      <a class="next" href="/2021/01/%E5%90%BE%E6%97%A5%E4%B8%89%E7%9C%81%E5%90%BE%E8%BA%AB/">
+        <span class="next-text nav-default">吾日三省吾身</span>
+        <span class="next-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav>
+  </footer>
+  
+</article>
+            </div>
+            
+
+        </div>
+    </main>
+
+    
+
+    <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+    </div>
+</div>
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
+<script type="text/javascript" src="/dist/even.47f727f4.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
 </html>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>React on 早起的年轻人</title>
-    <link>https://luckly.work/tags/React/</link>
-    <description>Recent content in React on 早起的年轻人</description>
+    <title>React on Lucklyの博客 - 在阅读中遇见自己</title>
+    <link>https://luckly.work/tags/react/</link>
+    <description>Recent content in React on Lucklyの博客 - 在阅读中遇见自己</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Sun, 07 Jul 2019 22:28:34 +0800</lastBuildDate><atom:link href="https://luckly.work/tags/React/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sun, 07 Jul 2019 22:28:34 +0800</lastBuildDate><atom:link href="https://luckly.work/tags/react/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用 Create-React-App 开发 Chrome 扩展</title>
-      <link>https://luckly.work/post/2019/2019-07-07-create-react-app-chrome-extension/</link>
+      <link>https://luckly.work/2019/07/%E4%BD%BF%E7%94%A8-create-react-app-%E5%BC%80%E5%8F%91-chrome-%E6%89%A9%E5%B1%95/</link>
       <pubDate>Sun, 07 Jul 2019 22:28:34 +0800</pubDate>
       
-      <guid>https://luckly.work/post/2019/2019-07-07-create-react-app-chrome-extension/</guid>
+      <guid>https://luckly.work/2019/07/%E4%BD%BF%E7%94%A8-create-react-app-%E5%BC%80%E5%8F%91-chrome-%E6%89%A9%E5%B1%95/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;整理 Kindle 标注、书签和笔记从未如此简单！&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -21,10 +21,10 @@
     
     <item>
       <title>React 状态管理终结篇</title>
-      <link>https://luckly.work/post/2019/2019-05-08-react-unstated-next/</link>
+      <link>https://luckly.work/2019/05/react-%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E7%BB%88%E7%BB%93%E7%AF%87/</link>
       <pubDate>Wed, 08 May 2019 20:09:06 +0800</pubDate>
       
-      <guid>https://luckly.work/post/2019/2019-05-08-react-unstated-next/</guid>
+      <guid>https://luckly.work/2019/05/react-%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86%E7%BB%88%E7%BB%93%E7%AF%87/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/jamiebuilds/unstated-next&#34;&gt;Unstated Next&lt;/a&gt; readme 的中文翻译&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -35,10 +35,10 @@
     
     <item>
       <title>React 与 React-Native 使用同一个 meteor 后台</title>
-      <link>https://luckly.work/post/2019/2019-04-22-meteor-react-react-native/</link>
+      <link>https://luckly.work/2019/04/react-%E4%B8%8E-react-native-%E4%BD%BF%E7%94%A8%E5%90%8C%E4%B8%80%E4%B8%AA-meteor-%E5%90%8E%E5%8F%B0/</link>
       <pubDate>Mon, 22 Apr 2019 09:07:06 +0800</pubDate>
       
-      <guid>https://luckly.work/post/2019/2019-04-22-meteor-react-react-native/</guid>
+      <guid>https://luckly.work/2019/04/react-%E4%B8%8E-react-native-%E4%BD%BF%E7%94%A8%E5%90%8C%E4%B8%80%E4%B8%AA-meteor-%E5%90%8E%E5%8F%B0/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.meteor.com/&#34;&gt;meteor&lt;/a&gt; 可以快速构建 pc,移动端，桌面端应用。&lt;/p&gt;
 &lt;p&gt;最大的优点是：数据库的数据发生变化时，可以实时推送到前端，非常适用于实时展示的应用开发。&lt;/p&gt;
 &lt;p&gt;在 react,react-native 应用中，可以仅使用同一个 meteor 后台，实时向前端推送数据。&lt;/p&gt;
