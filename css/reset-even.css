@@ -162,17 +162,17 @@ html body {
     background-color: #FFF2AB;
 }
 
-/* 设置菜单项的标签、分类页面的统计数字样式 */
+/* 设置菜单项的标签、分类页面的统计数字样式
 .terms .terms-tags .terms-link .terms-count {
-    top: -2px;
-    right: -1px;
+    top: 5px;
+    right: 6px;
     display: inline-block;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background-color: #B45B3E;
     color: #fff;
-}
+} */
 
 /* ========================= 设置底部heart跳动样式动画 =============================== */
 .footer .copyright .copyright-year .heart {
