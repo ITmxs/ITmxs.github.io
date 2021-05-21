@@ -7,10 +7,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>友链 - LoveIt</title><meta name="Description" content="About LoveIt Theme"><meta property="og:title" content="友链" />
 <meta property="og:description" content="​ luckly：
-《蒹葭》蒹葭苍苍，白露为霜。所谓伊人，在水一方。{go}{底数文档}{友链名}{友链描述}...kkk
+《蒹葭》蒹葭苍苍，白露为霜。所谓伊人，在水一方。{go}{底数文档}{友链名}{友链描述}...kkk
 ​ 岔头风吃饭
 ​
-{友链名}{友链描述}{友链名}{友链描述}..." />
+{友链名}{友链描述}{友链名}{友链描述}..." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://example.com/friend/" />
 <meta property="og:image" content="https://example.com/logo.png"/>
@@ -21,10 +21,10 @@
 
 <meta name="twitter:title" content="友链"/>
 <meta name="twitter:description" content="​ luckly：
-《蒹葭》蒹葭苍苍，白露为霜。所谓伊人，在水一方。{go}{底数文档}{友链名}{友链描述}...kkk
+《蒹葭》蒹葭苍苍，白露为霜。所谓伊人，在水一方。{go}{底数文档}{友链名}{友链描述}...kkk
 ​ 岔头风吃饭
 ​
-{友链名}{友链描述}{友链名}{友链描述}..."/>
+{友链名}{友链描述}{友链名}{友链描述}..."/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -58,68 +58,102 @@
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
-        <div id="mask"></div><div class="wrapper"><div class="logo-wrapper">
-  <a href="/%20/" class="logo">LoveIt</a>
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="LoveIt"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>LoveIt</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/categories/documentation/"> Docs </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><a class="menu-item active" href="/friend/" title="友链"> 友链 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/friend/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="LoveIt"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>LoveIt</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/categories/documentation/" title="">Docs</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/dillonzq/LoveIt" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a class="menu-item" href="/friend/" title="友链">友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/friend/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
 </div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-      <a class="menu-item-link" href="/posts/">Posts</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/tags/">Tags</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/categories/">Categories</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/categories/documentation/">Docs</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/about/">About</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="https://github.com/dillonzq/LoveIt"></a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/friend/">友链</a>
-    </li>
-  </ul>
-</nav><main class="main">
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
                 <div class="container"><div class="page single special"><h1 class="single-title animated pulse faster">友链</h1><div class="content" id="content"><p>​              luckly：</p>
 <center>《蒹葭》</center>
 <center>蒹葭苍苍，白露为霜。所谓伊人，在水一方。</center>
 <div class="flink" id="article-container">
 <div class="friend-list-div" >
-<div class="flink" id="article-container">
-      <div class="friend-list-div" >
-        <div class="friend-div">
-            <a target="_blank" href=%7bhttp://www.topgoer.cn/%7d title={go} >
-                <img class="lazyload"
-                     src="/svg/loading.min.svg"
-                     data-src=%7b%e5%8f%8b%e9%93%be%e5%9b%be%e6%a0%87%e9%93%be%e6%8e%a5%7d
-                     alt={go}
-                     data-sizes="auto"
-                     data-srcset="%7b%e5%8f%8b%e9%93%be%e5%9b%be%e6%a0%87%e9%93%be%e6%8e%a5%7d, %7b%e5%8f%8b%e9%93%be%e5%9b%be%e6%a0%87%e9%93%be%e6%8e%a5%7d 1.5x, %7b%e5%8f%8b%e9%93%be%e5%9b%be%e6%a0%87%e9%93%be%e6%8e%a5%7d 2x" />
-                <span class="friend-name">{go}</span>
-                <span class="friend-info">{底数文档}</span>
-            </a>
-        </div>
-      </div>
+
+<a target="_blank" href=#ZgotmplZ title={go} class="friendurl">
+  <div class="frienddiv">
+    <div class="frienddivleft">
+      <img class="myfriend" src=%7b%e5%8f%8b%e9%93%be%e5%9b%be%e6%a0%87%e9%93%be%e6%8e%a5%7d />
     </div>
+    <div class="frienddivright">
+      <div class="friendname">{go}</div>
+      <div class="friendinfo">{底数文档}</div>
+    </div>
+  </div>
+</a>
 
 
-<div class="flink" id="article-container">
-      <div class="friend-list-div" >
-        <div class="friend-div">
-            <a target="_blank" href=%7bhttp://www.topgoer.cn/%7d title={友链名} >
-                <img class="lazyload"
-                     src="/svg/loading.min.svg"
-                     data-src=%7b%e5%8f%8b%e9%93%be%e5%9b%be%e6%a0%87%e9%93%be%e6%8e%a5%7d
-                     alt={友链名}
-                     data-sizes="auto"
-                     data-srcset="%7b%e5%8f%8b%e9%93%be%e5%9b%be%e6%a0%87%e9%93%be%e6%8e%a5%7d, %7b%e5%8f%8b%e9%93%be%e5%9b%be%e6%a0%87%e9%93%be%e6%8e%a5%7d 1.5x, %7b%e5%8f%8b%e9%93%be%e5%9b%be%e6%a0%87%e9%93%be%e6%8e%a5%7d 2x" />
-                <span class="friend-name">{友链名}</span>
-                <span class="friend-info">{友链描述}</span>
-            </a>
-        </div>
-      </div>
+
+<a target="_blank" href=#ZgotmplZ title={友链名} class="friendurl">
+  <div class="frienddiv">
+    <div class="frienddivleft">
+      <img class="myfriend" src=%7b%e5%8f%8b%e9%93%be%e5%9b%be%e6%a0%87%e9%93%be%e6%8e%a5%7d />
     </div>
+    <div class="frienddivright">
+      <div class="friendname">{友链名}</div>
+      <div class="friendinfo">{友链描述}</div>
+    </div>
+  </div>
+</a>
 
 
 ...
@@ -130,40 +164,32 @@
 <p>​</p>
 <div class="flink" id="article-container">
 <div class="friend-list-div" >
-<div class="flink" id="article-container">
-      <div class="friend-list-div" >
-        <div class="friend-div">
-            <a target="_blank" href=%7b%e5%8f%8b%e9%93%be%e5%9c%b0%e5%9d%80%7d title={友链名} >
-                <img class="lazyload"
-                     src="/svg/loading.min.svg"
-                     data-src=%7b%e5%8f%8b%e9%93%be%e5%9b%be%e6%a0%87%e9%93%be%e6%8e%a5%7d
-                     alt={友链名}
-                     data-sizes="auto"
-                     data-srcset="%7b%e5%8f%8b%e9%93%be%e5%9b%be%e6%a0%87%e9%93%be%e6%8e%a5%7d, %7b%e5%8f%8b%e9%93%be%e5%9b%be%e6%a0%87%e9%93%be%e6%8e%a5%7d 1.5x, %7b%e5%8f%8b%e9%93%be%e5%9b%be%e6%a0%87%e9%93%be%e6%8e%a5%7d 2x" />
-                <span class="friend-name">{友链名}</span>
-                <span class="friend-info">{友链描述}</span>
-            </a>
-        </div>
-      </div>
+
+<a target="_blank" href=%7b%e5%8f%8b%e9%93%be%e5%9c%b0%e5%9d%80%7d title={友链名} class="friendurl">
+  <div class="frienddiv">
+    <div class="frienddivleft">
+      <img class="myfriend" src=%7b%e5%8f%8b%e9%93%be%e5%9b%be%e6%a0%87%e9%93%be%e6%8e%a5%7d />
     </div>
+    <div class="frienddivright">
+      <div class="friendname">{友链名}</div>
+      <div class="friendinfo">{友链描述}</div>
+    </div>
+  </div>
+</a>
 
 
-<div class="flink" id="article-container">
-      <div class="friend-list-div" >
-        <div class="friend-div">
-            <a target="_blank" href=%7bhttp://www.topgoer.cn/%7d title={友链名} >
-                <img class="lazyload"
-                     src="/svg/loading.min.svg"
-                     data-src=%7bhttp://www.topgoer.cn/%7d
-                     alt={友链名}
-                     data-sizes="auto"
-                     data-srcset="%7bhttp://www.topgoer.cn/%7d, %7bhttp://www.topgoer.cn/%7d 1.5x, %7bhttp://www.topgoer.cn/%7d 2x" />
-                <span class="friend-name">{友链名}</span>
-                <span class="friend-info">{友链描述}</span>
-            </a>
-        </div>
-      </div>
+
+<a target="_blank" href=#ZgotmplZ title={友链名} class="friendurl">
+  <div class="frienddiv">
+    <div class="frienddivleft">
+      <img class="myfriend" src=#ZgotmplZ />
     </div>
+    <div class="frienddivright">
+      <div class="friendname">{友链名}</div>
+      <div class="friendinfo">{友链描述}</div>
+    </div>
+  </div>
+</a>
 
 
 ...
