@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>《Flutter与原生通讯》 - Lucklyの博客 - 在阅读中遇见自己</title><meta name="Description" content="早起的年轻人做的网站"><meta property="og:title" content="《Flutter与原生通讯》" />
+<meta property="og:description" content="
+本文主要介绍Flutter Plugin原理以及其开发和发布过程。
+
+前言
+Flutter优势主要体现在UI上&ndash;高性能且跨平台表现一致。但是针对平台(Android、IOS)的实现，如：获取电量、判断WiFi使用、调起WebView加载网页等，得调用特定平台的API包。Flutter Plugin就是为调用平台API而生。
+下文中所提及到的&quot;平台&quot;指的是Android、IOS两端。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luckly.work/flutter%E4%B8%8E%E5%8E%9F%E7%94%9F%E9%80%9A%E8%AE%AF/" />
+<meta property="og:image" content="https://luckly.work/logo.png"/>
+<meta property="article:published_time" content="2021-05-22T00:19:22+08:00" />
+<meta property="article:modified_time" content="2021-05-22T00:19:22+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://luckly.work/logo.png"/>
+
+<meta name="twitter:title" content="《Flutter与原生通讯》"/>
+<meta name="twitter:description" content="
+本文主要介绍Flutter Plugin原理以及其开发和发布过程。
+
+前言
+Flutter优势主要体现在UI上&ndash;高性能且跨平台表现一致。但是针对平台(Android、IOS)的实现，如：获取电量、判断WiFi使用、调起WebView加载网页等，得调用特定平台的API包。Flutter Plugin就是为调用平台API而生。
+下文中所提及到的&quot;平台&quot;指的是Android、IOS两端。"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://luckly.work/flutter%E4%B8%8E%E5%8E%9F%E7%94%9F%E9%80%9A%E8%AE%AF/" /><link rel="prev" href="https://luckly.work/flutter%E5%AD%A6%E4%B9%A0%E7%9B%AE%E5%BD%95/" /><link rel="next" href="https://luckly.work/emoji-support/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "《Flutter与原生通讯》",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/luckly.work\/flutter%E4%B8%8E%E5%8E%9F%E7%94%9F%E9%80%9A%E8%AE%AF\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/luckly.work\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "flutter, 原生通讯","wordcount":  2978 ,
+        "url": "https:\/\/luckly.work\/flutter%E4%B8%8E%E5%8E%9F%E7%94%9F%E9%80%9A%E8%AE%AF\/","datePublished": "2021-05-22T00:19:22+08:00","dateModified": "2021-05-22T00:19:22+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/luckly.work\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "早起的年轻人"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lucklyの博客 - 在阅读中遇见自己"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ITmxs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i> Github </a><a class="menu-item" href="/friend/"><i class='fas fa-user-friends'></i> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lucklyの博客 - 在阅读中遇见自己"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ITmxs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>Github</a><a class="menu-item" href="/friend/" title=""><i class='fas fa-user-friends'></i>友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">《Flutter与原生通讯》</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>早起的年轻人</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/flutter/"><i class="far fa-folder fa-fw"></i>flutter</a>&nbsp;<a href="/categories/%E5%8E%9F%E7%94%9F%E9%80%9A%E8%AE%AF/"><i class="far fa-folder fa-fw"></i>原生通讯</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-22">2021-05-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2978 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/flutter%E4%B8%8E%E5%8E%9F%E7%94%9F%E9%80%9A%E8%AE%AF/" class="leancloud_visitors" data-flag-title="《Flutter与原生通讯》">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png"
+        data-srcset="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png, https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png 1.5x, https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png 2x"
+        data-sizes="auto"
+        alt="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png"
+        title="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#介绍">介绍</a>
+          <ul>
+            <li><a href="#flutter-plugin">Flutter Plugin</a></li>
+            <li><a href="#platform-channels">Platform Channels</a></li>
+          </ul>
+        </li>
+        <li><a href="#创建flutter-plugin">创建Flutter Plugin</a>
+          <ul>
+            <li><a href="#第一步选择创建一个flutter-project">第一步：选择创建一个Flutter project</a></li>
+            <li><a href="#第二步选择flutter-project的类型为flutter-plugin">第二步：选择Flutter Project的类型为Flutter Plugin</a></li>
+            <li><a href="#第三步填写project-name等工程信息完成flutter-plugin创建">第三步：填写Project name等工程信息，完成Flutter Plugin创建。</a></li>
+            <li><a href="#使用android模拟器运行example工程">使用Android模拟器运行example工程</a></li>
+            <li><a href="#示例工程-examplelibmaindart">示例工程 example/lib/main.dart</a></li>
+            <li><a href="#flutter-plugin中dart-api实现-libflutter_plugin_egdart">Flutter Plugin中dart API实现 lib/flutter_plugin_eg.dart</a></li>
+            <li><a href="#flutter-plugin中android实现">Flutter Plugin中Android实现</a></li>
+            <li><a href="#flutter-plugin中ios实现">Flutter Plugin中IOS实现</a></li>
+          </ul>
+        </li>
+        <li><a href="#发布flutter-plugin">发布Flutter Plugin</a>
+          <ul>
+            <li><a href="#补充文档">补充文档</a></li>
+            <li><a href="#发布package">发布package</a></li>
+          </ul>
+        </li>
+        <li><a href="#思考">思考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>本文主要介绍Flutter Plugin原理以及其开发和发布过程。</p>
+</blockquote>
+<h2 id="前言">前言</h2>
+<p>Flutter优势主要体现在UI上&ndash;高性能且跨平台表现一致。但是针对平台(Android、IOS)的实现，如：获取电量、判断WiFi使用、调起WebView加载网页等，得调用特定平台的API包。Flutter Plugin就是为调用平台API而生。</p>
+<p>下文中所提及到的&quot;平台&quot;指的是Android、IOS两端。</p>
+<h2 id="介绍">介绍</h2>
+<h3 id="flutter-plugin">Flutter Plugin</h3>
+<p>包含针对Android（Java或Kotlin代码）或iOS（Objective-C或Swift代码）的原生实现，通过<code>Platform Channels</code>与FLutter(dart)层通讯并暴露API。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic1.zhimg.com/80/v2-235250ea4c16af31ed27757cf1656f18_720w.jpg"
+        data-srcset="https://pic1.zhimg.com/80/v2-235250ea4c16af31ed27757cf1656f18_720w.jpg, https://pic1.zhimg.com/80/v2-235250ea4c16af31ed27757cf1656f18_720w.jpg 1.5x, https://pic1.zhimg.com/80/v2-235250ea4c16af31ed27757cf1656f18_720w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic1.zhimg.com/80/v2-235250ea4c16af31ed27757cf1656f18_720w.jpg"
+        title="img" /></p>
+<h3 id="platform-channels">Platform Channels</h3>
+<ul>
+<li>允许Flutter UI和平台之间传递消息。</li>
+<li>Platform Channel中的消息和响应是异步传递的，以确保用户界面保持响应。</li>
+<li>一个Flutter应用可以存在多个channel，使用<code>name</code>作为区分。</li>
+<li>Platform Channel并非是<code>线程安全</code>，故平台跟Flutter Engine的所有交互必须在平台的<code>主线程</code>中执行的。</li>
+<li>Flutter默认的消息编解码器是<a href="https://link.zhihu.com/?target=https%3A//api.flutter.dev/flutter/services/StandardMessageCodec-class.html" target="_blank" rel="noopener noreffer">StandardMessageCodec class</a>，现支持平台数据类型如下：</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic3.zhimg.com/80/v2-4d9898367e488490d0f4d106c7883b2a_720w.jpg"
+        data-srcset="https://pic3.zhimg.com/80/v2-4d9898367e488490d0f4d106c7883b2a_720w.jpg, https://pic3.zhimg.com/80/v2-4d9898367e488490d0f4d106c7883b2a_720w.jpg 1.5x, https://pic3.zhimg.com/80/v2-4d9898367e488490d0f4d106c7883b2a_720w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic3.zhimg.com/80/v2-4d9898367e488490d0f4d106c7883b2a_720w.jpg"
+        title="img" /></p>
+<h2 id="创建flutter-plugin">创建Flutter Plugin</h2>
+<p>接下来介绍使用Android Studio创建Flutter Plugin。使用Visual Studio Code创建的过程也是大同小异，机智的你一定能举一反三，在这里就不一一细说。</p>
+<h3 id="第一步选择创建一个flutter-project">第一步：选择创建一个Flutter project</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic1.zhimg.com/80/v2-5c88bc27b9031b293ced4b8f558b1520_720w.jpg"
+        data-srcset="https://pic1.zhimg.com/80/v2-5c88bc27b9031b293ced4b8f558b1520_720w.jpg, https://pic1.zhimg.com/80/v2-5c88bc27b9031b293ced4b8f558b1520_720w.jpg 1.5x, https://pic1.zhimg.com/80/v2-5c88bc27b9031b293ced4b8f558b1520_720w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic1.zhimg.com/80/v2-5c88bc27b9031b293ced4b8f558b1520_720w.jpg"
+        title="img" /></p>
+<h3 id="第二步选择flutter-project的类型为flutter-plugin">第二步：选择Flutter Project的类型为Flutter Plugin</h3>
+<ul>
+<li>Flutter Application 是创建一个纯flutter项目工程</li>
+<li>Flutter Plugin 是创建一个可以暴露平台API的插件工程</li>
+<li>Flutter Package 是创建一个纯Dart的组件包。</li>
+<li>Fultter Module 是创建一个Flutter Module，用于被引入现有的原生App。</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic1.zhimg.com/80/v2-b773e4718ba6f7dfcf16ad4e400e0d7c_720w.jpg"
+        data-srcset="https://pic1.zhimg.com/80/v2-b773e4718ba6f7dfcf16ad4e400e0d7c_720w.jpg, https://pic1.zhimg.com/80/v2-b773e4718ba6f7dfcf16ad4e400e0d7c_720w.jpg 1.5x, https://pic1.zhimg.com/80/v2-b773e4718ba6f7dfcf16ad4e400e0d7c_720w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic1.zhimg.com/80/v2-b773e4718ba6f7dfcf16ad4e400e0d7c_720w.jpg"
+        title="img" /></p>
+<h3 id="第三步填写project-name等工程信息完成flutter-plugin创建">第三步：填写Project name等工程信息，完成Flutter Plugin创建。</h3>
+<p>工程创建完成后的目录结构如下： + lib/flutter_plugin_eg.dart 是插件包dart API实现 + android/src/main/ 是插件包API Android的实现 + ios/Classes/ 是插件包API IOS的实现 + example 是基于依赖当前插件的纯flutter示例工程，一般用作展示API调用。</p>
+<p>注：从 Flutter 1.9 开始，iOS 新项目默认使用 Swift 语言，而非 Objective-C；Android 新项目则默认使用 Kotlin，而非 Java。如有需要，是可随时切换回之前的 Objective-C 或 Java。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic2.zhimg.com/80/v2-7aed24a9b311c4bf8d62d14ed771d2ed_720w.jpg"
+        data-srcset="https://pic2.zhimg.com/80/v2-7aed24a9b311c4bf8d62d14ed771d2ed_720w.jpg, https://pic2.zhimg.com/80/v2-7aed24a9b311c4bf8d62d14ed771d2ed_720w.jpg 1.5x, https://pic2.zhimg.com/80/v2-7aed24a9b311c4bf8d62d14ed771d2ed_720w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic2.zhimg.com/80/v2-7aed24a9b311c4bf8d62d14ed771d2ed_720w.jpg"
+        title="img" /></p>
+<h3 id="使用android模拟器运行example工程">使用Android模拟器运行example工程</h3>
+<p>我们先看看示例工程在Android模拟器上的运行效果：</p>
+<p>进入example工程目录，运行lib/main.dart。</p>
+<p>APP在Android模拟器运行后，可以看到屏幕出现了&quot;Running on: Android 9&quot;。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic4.zhimg.com/80/v2-e4396d3d9ef0e9f9c434e0b624320503_720w.jpg"
+        data-srcset="https://pic4.zhimg.com/80/v2-e4396d3d9ef0e9f9c434e0b624320503_720w.jpg, https://pic4.zhimg.com/80/v2-e4396d3d9ef0e9f9c434e0b624320503_720w.jpg 1.5x, https://pic4.zhimg.com/80/v2-e4396d3d9ef0e9f9c434e0b624320503_720w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic4.zhimg.com/80/v2-e4396d3d9ef0e9f9c434e0b624320503_720w.jpg"
+        title="img" /></p>
+<p>接下来我们通过代码看看flutter是怎么显示出当前平台的系统版本。</p>
+<h3 id="示例工程-examplelibmaindart">示例工程 example/lib/main.dart</h3>
+<p>关键代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">...
+import &#39;package:flutter_plugin_eg/flutter_plugin_eg.dart&#39;;
+...
+platformVersion = await FlutterPluginEg.platformVersion;
+...
+setState(() {
+  _platformVersion = platformVersion;
+});
+...
+body: Center(
+  child: Text(&#39;Running on: $_platformVersion\n&#39;),
+)
+</code></pre></td></tr></table>
+</div>
+</div><p>示例工程中的lib/main.dart引入了我们刚刚创建Flutter Plugin中dart API实现<code>flutter_plugin_eg.dart</code>。</p>
+<p>随后使用异步的方式调用<code>flutter_plugin_eg.dart</code> 的<code>FlutterPluginEg.platformVersion</code>并把返回值赋值给<code>platformVersion</code>，随后通过<code>setState</code>方法把<code>platformVersion</code>的值赋值给当前状态组件的<code>_platformVersion</code>，触发UI重渲把<code>_platformVersion</code>的值&quot;Android 9&quot;显示出来。</p>
+<h3 id="flutter-plugin中dart-api实现-libflutter_plugin_egdart">Flutter Plugin中dart API实现 lib/flutter_plugin_eg.dart</h3>
+<p>全量代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">import &#39;dart:async&#39;;
+
+import &#39;package:flutter/services.dart&#39;;
+
+class FlutterPluginEg {
+  static const MethodChannel _channel =
+      const MethodChannel(&#39;flutter_plugin_eg&#39;);
+
+  static Future&lt;String&gt; get platformVersion async {
+    final String version = await _channel.invokeMethod(&#39;getPlatformVersion&#39;);
+    return version;
+  }
+}
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>service.dart</code>暴露与平台通讯的API，如:<code>MethodChannel</code>Platform Channel的一种类型</li>
+<li><code>_channel</code>是FlutterPluginEg类的属性，是一个实例化的<code>MethodChannel</code>,<code>name</code>为&quot;flutter_plugin_eg&quot;</li>
+<li><code>platformVersion</code>是FlutterPluginEg类的静态<code>可计算属性</code>，会异步返还一个String。</li>
+<li><code>platformVersion</code>中，调用<code>_channel</code>的<code>invokeMethod</code>方法，入参&quot;getPlatformVersion&quot;为调用平台约定的方法名。然后把<code>invokeMethod</code>的异步结果赋值给<code>String version</code>作为<code>platformVersion</code>的返回值。</li>
+</ul>
+<h3 id="flutter-plugin中android实现">Flutter Plugin中Android实现</h3>
+<p>android/src/main/kotlin/&hellip;/FlutterPluginEgPlugin.kt 全量代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">package com.yy.flutter_plugin_eg
+
+import io.flutter.plugin.common.MethodCall
+import io.flutter.plugin.common.MethodChannel
+import io.flutter.plugin.common.MethodChannel.MethodCallHandler
+import io.flutter.plugin.common.MethodChannel.Result
+import io.flutter.plugin.common.PluginRegistry.Registrar
+
+class FlutterPluginEgPlugin: MethodCallHandler {
+  companion object {
+    @JvmStatic
+    fun registerWith(registrar: Registrar) {
+      val channel = MethodChannel(registrar.messenger(), &#34;flutter_plugin_eg&#34;)
+      channel.setMethodCallHandler(FlutterPluginEgPlugin())
+    }
+  }
+
+  override fun onMethodCall(call: MethodCall, result: Result) {
+    if (call.method == &#34;getPlatformVersion&#34;) {
+      result.success(&#34;Android ${android.os.Build.VERSION.RELEASE}&#34;)
+    } else {
+      result.notImplemented()
+    }
+  }
+}
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>再次强调：一个Flutter应用是可以有多个<code>channel</code>，并而每个<code>channel</code>都可以有多个<code>method</code>，所以需要重点了解平台的代码是通过怎么样去对接channel name 与method name。从上文.kt源码可以看到:</p>
+</blockquote>
+<ul>
+<li>注册MethodChannel约定通道名&quot;flutter_plugin_eg&quot;，并开始监听通道消息。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">companion object {
+    @JvmStatic
+    fun registerWith(registrar: Registrar) {
+      val channel = MethodChannel(registrar.messenger(), &#34;flutter_plugin_eg&#34;)
+      channel.setMethodCallHandler(FlutterPluginEgPlugin())
+    }
+  }
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>实现onMethodCall方法，判断方法名&quot;getPlatformVersion&quot;，返回<code>Android ${android.os.Build.VERSION.RELEASE}</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">override fun onMethodCall(call: MethodCall, result: Result) {
+    if (call.method == &#34;getPlatformVersion&#34;) {
+      result.success(&#34;Android ${android.os.Build.VERSION.RELEASE}&#34;)
+    } else {
+      result.notImplemented()
+    }
+  }
+</code></pre></td></tr></table>
+</div>
+</div><p>当channel name 和 method name 约定后，Flutter Plugin就可以在dart中方便调用平台的实现，并暴露API供Flutter项目使用。</p>
+<h3 id="flutter-plugin中ios实现">Flutter Plugin中IOS实现</h3>
+<p>ios/Classes/SwiftFlutterPluginEgPlugin.swift</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">import Flutter
+import UIKit
+
+public class SwiftFlutterPluginEgPlugin: NSObject, FlutterPlugin {
+  public static func register(with registrar: FlutterPluginRegistrar) {
+    let channel = FlutterMethodChannel(name: &#34;flutter_plugin_eg&#34;, binaryMessenger: registrar.messenger())
+    let instance = SwiftFlutterPluginEgPlugin()
+    registrar.addMethodCallDelegate(instance, channel: channel)
+  }
+
+  public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+    result(&#34;iOS &#34; + UIDevice.current.systemVersion)
+  }
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>可以看出，IOS与Android实现思路雷同：通过&quot;flutter_plugin_eg&quot;注册<code>FlutterMethodChannel</code>并开始监听。</p>
+<blockquote>
+<p>但惊奇发现Flutter Plugin中swift默认生成的代码居然没FlutterMethodCall方法名判断，在swift断点看是能获取到&quot;getPlatformVersion&quot;这个方法名的。</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic4.zhimg.com/80/v2-52dda6ae7529c22381fac4ba90194cdf_720w.jpg"
+        data-srcset="https://pic4.zhimg.com/80/v2-52dda6ae7529c22381fac4ba90194cdf_720w.jpg, https://pic4.zhimg.com/80/v2-52dda6ae7529c22381fac4ba90194cdf_720w.jpg 1.5x, https://pic4.zhimg.com/80/v2-52dda6ae7529c22381fac4ba90194cdf_720w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic4.zhimg.com/80/v2-52dda6ae7529c22381fac4ba90194cdf_720w.jpg"
+        title="img" /></p>
+<p>IOS模拟器上运行效果：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://pic3.zhimg.com/80/v2-c7ed6b618cc76f44483d2a868d50ef6e_720w.jpg"
+        data-srcset="https://pic3.zhimg.com/80/v2-c7ed6b618cc76f44483d2a868d50ef6e_720w.jpg, https://pic3.zhimg.com/80/v2-c7ed6b618cc76f44483d2a868d50ef6e_720w.jpg 1.5x, https://pic3.zhimg.com/80/v2-c7ed6b618cc76f44483d2a868d50ef6e_720w.jpg 2x"
+        data-sizes="auto"
+        alt="https://pic3.zhimg.com/80/v2-c7ed6b618cc76f44483d2a868d50ef6e_720w.jpg"
+        title="img" /></p>
+<h2 id="发布flutter-plugin">发布Flutter Plugin</h2>
+<p>轮子造好后，可以发布到<a href="https://link.zhihu.com/?target=https%3A//pub.dev/" target="_blank" rel="noopener noreffer">pub.dev</a>，以下内容纯属搬砖。</p>
+<h3 id="补充文档">补充文档</h3>
+<p>在Flutter Plugin根目录添加 + README.md:介绍包的文件 + CHANGELOG.md 记录每个版本中的更改 + LICENSE 包含软件包许可条款的文件 + <a href="https://link.zhihu.com/?target=https%3A//dart.dev/guides/language/effective-dart/documentation" target="_blank" rel="noopener noreffer">编写API文档</a></p>
+<h3 id="发布package">发布package</h3>
+<p>一旦你实现了一个包，你可以在<a href="https://link.zhihu.com/?target=https%3A//pub.dev/" target="_blank" rel="noopener noreffer">Pub</a>上发布它 ，这样其他开发人员就可以轻松使用它</p>
+<p>在发布之前，检查pubspec.yaml、README.md以及CHANGELOG.md文件，以确保其内容的完整性和正确性。</p>
+<p>然后, 运行 dry-run 命令以查看是否都准备OK了:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">flutter packages pub publish --dry-run
+</code></pre></td></tr></table>
+</div>
+</div><p>最后, 运行发布命令:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">flutter packages pub publish
+</code></pre></td></tr></table>
+</div>
+</div><p>有关发布的详细信息，请参阅<a href="https://link.zhihu.com/?target=https%3A//dart.dev/tools/pub/publishing" target="_blank" rel="noopener noreffer">Pub publishing docs</a></p>
+<h2 id="思考">思考</h2>
+<p>开发一个功能完备的APP，说到底还是需要有原生平台开发的能力，就如Flutter Plugin需要开发原生平台部分。相信有很多Web前端童鞋也开始接触Flutter，但是如果不去深入了解原生开发，那么也只能停留在UI层上。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-05-22</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://luckly.work/flutter%E4%B8%8E%E5%8E%9F%E7%94%9F%E9%80%9A%E8%AE%AF/" data-title="《Flutter与原生通讯》" data-hashtags="flutter,原生通讯"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://luckly.work/flutter%E4%B8%8E%E5%8E%9F%E7%94%9F%E9%80%9A%E8%AE%AF/" data-hashtag="flutter"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://luckly.work/flutter%E4%B8%8E%E5%8E%9F%E7%94%9F%E9%80%9A%E8%AE%AF/" data-title="《Flutter与原生通讯》"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://luckly.work/flutter%E4%B8%8E%E5%8E%9F%E7%94%9F%E9%80%9A%E8%AE%AF/" data-title="《Flutter与原生通讯》"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://luckly.work/flutter%E4%B8%8E%E5%8E%9F%E7%94%9F%E9%80%9A%E8%AE%AF/" data-title="《Flutter与原生通讯》" data-image="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/flutter/">flutter</a>,&nbsp;<a href="/tags/%E5%8E%9F%E7%94%9F%E9%80%9A%E8%AE%AF/">原生通讯</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/flutter%E5%AD%A6%E4%B9%A0%E7%9B%AE%E5%BD%95/" class="prev" rel="prev" title="《Flutter学习目录》"><i class="fas fa-angle-left fa-fw"></i>《Flutter学习目录》</a>
+            <a href="/emoji-support/" class="next" rel="next" title="Emoji 支持">Emoji 支持<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">早起的年轻人</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"cIRpq8figzQxyGz5LyAdUahJ-gzGzoHsz","appKey":"T9YWfgGhznKaXXx7TCLxzS3C","avatar":"robohash","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":true,"meta":true,"pageSize":true,"placeholder":"说点什么吧...","recordIP":null,"visitor":true}},"data":{"id-1":"早起的年轻人","id-2":"早起的年轻人"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
