@@ -33,7 +33,7 @@
                             "url": "https:\/\/luckly.work\/posts\/basic-markdown-syntax\/featured-image.png",
                             "width":  1420 ,
                             "height":  708 
-                        }],"genre": "posts","keywords": "Markdown, HTML","wordcount":  4475 ,
+                        }],"genre": "posts","keywords": "Markdown, HTML","wordcount":  4344 ,
         "url": "https:\/\/luckly.work\/posts\/basic-markdown-syntax\/","datePublished": "2019-12-01T21:57:40+08:00","dateModified": "2020-01-01T16:45:40+08:00","publisher": {
             "@type": "Organization",
             "name": "Dillon"},"author": {
@@ -44,35 +44,46 @@
     </script></head>
     <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
-        <div id="mask"></div><div class="wrapper"><div class="logo-wrapper">
-  <a href="/%20/" class="logo">早起的年轻人</a>
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lucklyの博客 - 在阅读中遇见自己">Lucklyの博客 - 在阅读中遇见自己</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/post/"> 归档 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/about/"> 关于我 </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><a class="menu-item" href="https://github.com/ITmxs/" rel="noopener noreffer" target="_blank"> 阅读清单 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lucklyの博客 - 在阅读中遇见自己">Lucklyの博客 - 在阅读中遇见自己</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/post/" title="">归档</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/about/" title="">关于我</a><a class="menu-item" href="/friend/" title="友链">友链</a><a class="menu-item" href="https://github.com/ITmxs/" title="" rel="noopener noreffer" target="_blank">阅读清单</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
 </div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-      <a class="menu-item-link" href="/">首页</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/post/">归档</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/categories/">分类</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/tags/">标签</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/about/">关于我</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/friend/">友链</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="https://github.com/ITmxs/">阅读清单</a>
-    </li>
-  </ul>
-</nav><main class="main">
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Markdown 基本语法</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://dillonzq.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dillon</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/markdown/"><i class="far fa-folder fa-fw"></i>Markdown</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-01">2019-12-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4475 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-01">2019-12-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4344 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -134,13 +145,16 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>这篇文章提供了可以在 Hugo 的文章中使用的基本 Markdown 语法示例.</p>
-<div class="admonition ">
-  
-这篇文章借鉴了一篇很棒的[来自 Grav 的文章](http://learn.getgrav.org/content/markdown).
-
-如果你想了解 **Loveit** 主题的扩展 Markdown 语法, 请阅读[扩展 Markdown 语法页面](../theme-documentation-content#extended-markdown-syntax).
-
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>这篇文章借鉴了一篇很棒的<a href="http://learn.getgrav.org/content/markdown" target="_blank" rel="noopener noreffer">来自 Grav 的文章</a>.</p>
+<p>如果你想了解 <strong>Loveit</strong> 主题的扩展 Markdown 语法, 请阅读<a href="../theme-documentation-content#extended-markdown-syntax" rel="">扩展 Markdown 语法页面</a>.</p>
 </div>
+        </div>
+    </div>
 <p>事实上, 编写 Web 内容很麻烦. [WYSIWYG]^(所见即所得) 编辑器帮助减轻了这一任务. 但通常会导致代码太糟, 或更糟糕的是, 网页也会很丑.</p>
 <p>没有通常伴随的所有复杂和丑陋的问题, <strong>Markdown</strong> 是一种更好的生成 <strong>HTML</strong> 内容的方式.</p>
 <p>一些主要好处是:</p>
@@ -162,11 +176,14 @@
 <div id="id-1">&ndash; <em>John Gruber</em></div>
 </blockquote>
 <p>话不多说, 我们来回顾一下 Markdown 的主要语法以及生成的 HTML 样式!</p>
-<div class="admonition tip">
-  
-:(far fa-bookmark fa-fw): 将此页保存为书签，以备将来参考!
-
-</div>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">:(far fa-bookmark fa-fw): 将此页保存为书签，以备将来参考!</div>
+        </div>
+    </div>
 <h2 id="1-标题">1 标题</h2>
 <p>从 <code>h2</code> 到 <code>h6</code> 的标题在每个级别上都加上一个 <code>＃</code>:</p>
 <div class="highlight"><div class="chroma">
@@ -202,21 +219,32 @@
 <span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>h6 标题<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><div class="admonition note"><p class="admonition-title">标题 ID</p>
-  
-要添加自定义标题 ID, 请在与标题相同的行中将自定义 ID 放在花括号中:
-
-```markdown
-### 一个很棒的标题 {#custom-id}
-```
-
-输出的 HTML 看起来像这样:
-
-```html
-<h3 id="custom-id">一个很棒的标题</h3>
-```
-
+</div><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>标题 ID<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>要添加自定义标题 ID, 请在与标题相同的行中将自定义 ID 放在花括号中:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown"><span class="gu">### 一个很棒的标题 {#custom-id}
+</span></code></pre></td></tr></table>
 </div>
+</div><p>输出的 HTML 看起来像这样:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">h3</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;custom-id&#34;</span><span class="p">&gt;</span>一个很棒的标题<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+    </div>
 <h2 id="2-注释">2 注释</h2>
 <p>注释是和 HTML 兼容的：</p>
 <div class="highlight"><div class="chroma">
@@ -620,33 +648,48 @@ odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac 
 <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><div class="admonition tip">
-  
-如果你对每一项使用 `1.`, Markdown 将自动为每一项编号. 例如:
-
-```markdown
-1. Lorem ipsum dolor sit amet
-1. Consectetur adipiscing elit
-1. Integer molestie lorem at massa
-1. Facilisis in pretium nisl aliquet
-1. Nulla volutpat aliquam velit
-1. Faucibus porta lacus fringilla vel
-1. Aenean sit amet erat nunc
-1. Eget porttitor lorem
-```
-
-呈现的输出效果如下:
-
-1. Lorem ipsum dolor sit amet
-1. Consectetur adipiscing elit
-1. Integer molestie lorem at massa
-1. Facilisis in pretium nisl aliquet
-1. Nulla volutpat aliquam velit
-1. Faucibus porta lacus fringilla vel
-1. Aenean sit amet erat nunc
-1. Eget porttitor lorem
-
+</div><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>如果你对每一项使用 <code>1.</code>, Markdown 将自动为每一项编号. 例如:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown"><span class="k">1.</span> Lorem ipsum dolor sit amet
+<span class="k">1.</span> Consectetur adipiscing elit
+<span class="k">1.</span> Integer molestie lorem at massa
+<span class="k">1.</span> Facilisis in pretium nisl aliquet
+<span class="k">1.</span> Nulla volutpat aliquam velit
+<span class="k">1.</span> Faucibus porta lacus fringilla vel
+<span class="k">1.</span> Aenean sit amet erat nunc
+<span class="k">1.</span> Eget porttitor lorem
+</code></pre></td></tr></table>
 </div>
+</div><p>呈现的输出效果如下:</p>
+<ol>
+<li>Lorem ipsum dolor sit amet</li>
+<li>Consectetur adipiscing elit</li>
+<li>Integer molestie lorem at massa</li>
+<li>Facilisis in pretium nisl aliquet</li>
+<li>Nulla volutpat aliquam velit</li>
+<li>Faucibus porta lacus fringilla vel</li>
+<li>Aenean sit amet erat nunc</li>
+<li>Eget porttitor lorem</li>
+</ol>
+</div>
+        </div>
+    </div>
 <h3 id="任务列表">任务列表</h3>
 <p>任务列表使你可以创建带有复选框的列表.
 要创建任务列表, 请在任务列表项之前添加破折号 (<code>-</code>) 和带有空格的方括号 (<code>[ ]</code>). 要选择一个复选框，请在方括号之间添加 x (<code>[x]</code>).</p>
@@ -860,12 +903,15 @@ line 3 of code
 <span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
-</div><div class="admonition ">
-  
-**Hugo** 文档中的 [语法高亮页面](https://gohugo.io/content-management/syntax-highlighting/) 介绍了有关语法高亮的更多信息,
-包括语法高亮的 shortcode.
-
-</div>
+</div><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><strong>Hugo</strong> 文档中的 <a href="https://gohugo.io/content-management/syntax-highlighting/" target="_blank" rel="noopener noreffer">语法高亮页面</a> 介绍了有关语法高亮的更多信息,
+包括语法高亮的 shortcode.</div>
+        </div>
+    </div>
 <h2 id="10-表格">10 表格</h2>
 <p>通过在每个单元格之间添加竖线作为分隔线, 并在标题下添加一行破折号 (也由竖线分隔) 来创建表格. 注意, 竖线不需要垂直对齐.</p>
 <div class="highlight"><div class="chroma">
@@ -958,29 +1004,55 @@ line 3 of code
 <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><div class="admonition note"><p class="admonition-title">文本右对齐或居中对齐</p>
-  
-在任何标题下方的破折号右侧添加冒号将使该列的文本右对齐.
-
-在任何标题下方的破折号两边添加冒号将使该列的对齐文本居中.
-
-```markdown
-| Option | Description |
+</div><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>文本右对齐或居中对齐<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>在任何标题下方的破折号右侧添加冒号将使该列的文本右对齐.</p>
+<p>在任何标题下方的破折号两边添加冒号将使该列的对齐文本居中.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">| Option | Description |
 |:------:| -----------:|
 | data   | path to data files to supply the data that will be passed into templates. |
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
-```
-
-呈现的输出效果如下:
-
-| Option | Description |
-|:------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
-
+</code></pre></td></tr></table>
 </div>
+</div><p>呈现的输出效果如下:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:right">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">data</td>
+<td style="text-align:right">path to data files to supply the data that will be passed into templates.</td>
+</tr>
+<tr>
+<td style="text-align:center">engine</td>
+<td style="text-align:right">engine to be used for processing templates. Handlebars is the default.</td>
+</tr>
+<tr>
+<td style="text-align:center">ext</td>
+<td style="text-align:right">extension to be used for dest files.</td>
+</tr>
+</tbody>
+</table>
+</div>
+        </div>
+    </div>
 <h2 id="links">11 链接</h2>
 <h3 id="基本链接">基本链接</h3>
 <div class="highlight"><div class="chroma">
@@ -1071,11 +1143,14 @@ line 3 of code
 </span><span class="gu"></span>Content for chapter one.
 </code></pre></td></tr></table>
 </div>
-</div><div class="admonition ">
-  
-定位标记的位置几乎是任意的. 因为它们并不引人注目, 所以它们通常被放在同一行了.
-
-</div>
+</div><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">定位标记的位置几乎是任意的. 因为它们并不引人注目, 所以它们通常被放在同一行了.</div>
+        </div>
+    </div>
 <h2 id="12-脚注">12 脚注</h2>
 <p>脚注使你可以添加注释和参考, 而不会使文档正文混乱.
 当你创建脚注时, 会在添加脚注引用的位置出现带有链接的上标编号.
@@ -1168,11 +1243,14 @@ line 3 of code
 <pre class="chroma"><code class="language-markdown" data-lang="markdown">[id]: https://octodex.github.com/images/dojocat.jpg  &#34;The Dojocat&#34;
 </code></pre></td></tr></table>
 </div>
-</div><div class="admonition tip">
-  
-**LoveIt** 主题提供了一个包含更多功能的 [图片的 shortcode](../theme-documentation-extended-shortcodes#image).
-
-</div>
+</div><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><strong>LoveIt</strong> 主题提供了一个包含更多功能的 <a href="../theme-documentation-extended-shortcodes#image" rel="">图片的 shortcode</a>.</div>
+        </div>
+    </div>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

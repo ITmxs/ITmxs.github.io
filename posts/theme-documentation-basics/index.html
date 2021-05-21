@@ -33,7 +33,7 @@
                             "url": "https:\/\/luckly.work\/posts\/theme-documentation-basics\/featured-image.jpg",
                             "width":  1600 ,
                             "height":  840 
-                        }],"genre": "posts","keywords": "installation, configuration","wordcount":  6694 ,
+                        }],"genre": "posts","keywords": "installation, configuration","wordcount":  6434 ,
         "url": "https:\/\/luckly.work\/posts\/theme-documentation-basics\/","datePublished": "2020-03-06T21:40:32+08:00","dateModified": "2020-03-06T21:40:32+08:00","publisher": {
             "@type": "Organization",
             "name": "Dillon"},"author": {
@@ -44,36 +44,47 @@
     </script></head>
     <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
-        <div id="mask"></div><div class="wrapper"><div class="logo-wrapper">
-  <a href="/%20/" class="logo">早起的年轻人</a>
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lucklyの博客 - 在阅读中遇见自己">Lucklyの博客 - 在阅读中遇见自己</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"> 首页 </a><a class="menu-item" href="/post/"> 归档 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/about/"> 关于我 </a><a class="menu-item" href="/friend/" title="友链"> 友链 </a><a class="menu-item" href="https://github.com/ITmxs/" rel="noopener noreffer" target="_blank"> 阅读清单 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lucklyの博客 - 在阅读中遇见自己">Lucklyの博客 - 在阅读中遇见自己</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/" title="">首页</a><a class="menu-item" href="/post/" title="">归档</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/about/" title="">关于我</a><a class="menu-item" href="/friend/" title="友链">友链</a><a class="menu-item" href="https://github.com/ITmxs/" title="" rel="noopener noreffer" target="_blank">阅读清单</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
 </div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-      <a class="menu-item-link" href="/">首页</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/post/">归档</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/categories/">分类</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/tags/">标签</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/about/">关于我</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="/friend/">友链</a>
-    </li><li class="menu-item">
-      <a class="menu-item-link" href="https://github.com/ITmxs/">阅读清单</a>
-    </li>
-  </ul>
-</nav><main class="main">
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">主题文档 - 基本概念</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://dillonzq.com" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dillon</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/documentation/"><i class="far fa-folder fa-fw"></i>文档</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-06">2020-03-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6694 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 14 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-06">2020-03-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6434 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 13 分钟&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -129,16 +140,22 @@
 <h2 id="1-准备">1 准备</h2>
 <p>由于 Hugo 提供的便利性, <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer">Hugo</a> 本身是这个主题唯一的依赖.</p>
 <p>直接安装满足你操作系统 (<strong>Windows</strong>, <strong>Linux</strong>, <strong>macOS</strong>) 的最新版本 <a href="https://gohugo.io/getting-started/installing/" target="_blank" rel="noopener noreffer">:(far fa-file-archive fa-fw): Hugo (&gt; 0.62.0)</a>.</p>
-<div class="admonition note"><p class="admonition-title">为什么不支持早期版本的 Hugo?</p>
-  
-由于 [Markdown 渲染钩子函数](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks) 在 [Hugo 圣诞节版本](https://gohugo.io/news/0.62.0-relnotes/) 中被引入, 本主题只支持高于 **0.62.0** 的 Hugo 版本.
-
-</div>
-<div class="admonition tip"><p class="admonition-title">推荐使用 Hugo extended 版本</p>
-  
-由于这个主题的一些特性需要将 :(fab fa-sass fa-fw): SCSS 转换为 :(fab fa-css3 fa-fw): CSS, 推荐使用 Hugo **extended** 版本来获得更好的使用体验.
-
-</div>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>为什么不支持早期版本的 Hugo?<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">由于 <a href="https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks" target="_blank" rel="noopener noreffer">Markdown 渲染钩子函数</a> 在 <a href="https://gohugo.io/news/0.62.0-relnotes/" target="_blank" rel="noopener noreffer">Hugo 圣诞节版本</a> 中被引入, 本主题只支持高于 <strong>0.62.0</strong> 的 Hugo 版本.</div>
+        </div>
+    </div>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>推荐使用 Hugo extended 版本<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">由于这个主题的一些特性需要将 :(fab fa-sass fa-fw): SCSS 转换为 :(fab fa-css3 fa-fw): CSS, 推荐使用 Hugo <strong>extended</strong> 版本来获得更好的使用体验.</div>
+        </div>
+    </div>
 <h2 id="2-安装">2 安装</h2>
 <p>以下步骤可帮助你初始化新网站. 如果你根本不了解 Hugo, 我们强烈建议你按照此 <a href="https://gohugo.io/getting-started/quick-start/" target="_blank" rel="noopener noreffer">快速入门文档</a> 进一步了解它.</p>
 <h3 id="21-创建你的项目">2.1 创建你的项目</h3>
@@ -288,11 +305,14 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
     <span class="nx">noClasses</span> <span class="p">=</span> <span class="kc">false</span>
 </code></pre></td></tr></table>
 </div>
-</div><div class="admonition ">
-  
-在构建网站时, 你可以使用 `--theme` 选项设置主题. 但是, 我建议你修改配置文件 (**config.toml**) 将本主题设置为默认主题.
-
-</div>
+</div><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">在构建网站时, 你可以使用 <code>--theme</code> 选项设置主题. 但是, 我建议你修改配置文件 (<strong>config.toml</strong>) 将本主题设置为默认主题.</div>
+        </div>
+    </div>
 <h3 id="24-创建你的第一篇文章">2.4 创建你的第一篇文章</h3>
 <p>以下是创建第一篇文章的方法:</p>
 <div class="highlight"><div class="chroma">
@@ -304,11 +324,14 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
 </code></pre></td></tr></table>
 </div>
 </div><p>通过添加一些示例内容并替换文件开头的标题, 你可以随意编辑文章.</p>
-<div class="admonition ">
-  
-默认情况下, 所有文章和页面均作为草稿创建. 如果想要渲染这些页面, 请从元数据中删除属性 `draft: true`, 设置属性 `draft: false` 或者为 `hugo` 命令添加 `-D`/`--buildDrafts` 参数.
-
-</div>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">默认情况下, 所有文章和页面均作为草稿创建. 如果想要渲染这些页面, 请从元数据中删除属性 <code>draft: true</code>, 设置属性 <code>draft: false</code> 或者为 <code>hugo</code> 命令添加 <code>-D</code>/<code>--buildDrafts</code> 参数.</div>
+        </div>
+    </div>
 <h3 id="25-在本地启动网站">2.5 在本地启动网站</h3>
 <p>使用以下命令启动网站:</p>
 <div class="highlight"><div class="chroma">
@@ -330,21 +353,32 @@ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
             alt="/posts/theme-documentation-basics/basic-configuration-preview.zh-cn.png" />
     </a><figcaption class="image-caption">基本配置下的预览</figcaption>
     </figure></p>
-<div class="admonition tip">
-  
-当你运行 `hugo serve` 时, 当文件内容更改时, 页面会随着更改自动刷新.
-
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">当你运行 <code>hugo serve</code> 时, 当文件内容更改时, 页面会随着更改自动刷新.</div>
+        </div>
+    </div>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>由于本主题使用了 Hugo 中的 <code>.Scratch</code> 来实现一些特性,
+非常建议你为 <code>hugo server</code> 命令添加 <code>--disableFastRender</code> 参数来实时预览你正在编辑的文章页面.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">hugo serve --disableFastRender
+</code></pre></td></tr></table>
 </div>
-<div class="admonition ">
-  
-由于本主题使用了 Hugo 中的 `.Scratch` 来实现一些特性,
-非常建议你为 `hugo server` 命令添加 `--disableFastRender` 参数来实时预览你正在编辑的文章页面.
-
-```bash
-hugo serve --disableFastRender
-```
-
-</div>
+</div></div>
+        </div>
+    </div>
 <h3 id="26-构建网站">2.6 构建网站</h3>
 <p>当你准备好部署你的网站时, 运行以下命令:</p>
 <div class="highlight"><div class="chroma">
@@ -356,12 +390,15 @@ hugo serve --disableFastRender
 </code></pre></td></tr></table>
 </div>
 </div><p>会生成一个 <code>public</code> 目录, 其中包含你网站的所有静态内容和资源. 现在可以将其部署在任何 Web 服务器上.</p>
-<div class="admonition tip">
-  
-网站内容可以通过 [Netlify](https://www.netlify.com/) 自动发布和托管 (了解有关[通过 Netlify 进行 HUGO 自动化部署](https://www.netlify.com/blog/2015/07/30/hosting-hugo-on-netlifyinsanely-fast-deploys/) 的更多信息).
-或者, 您可以使用 [AWS Amplify](https://gohugo.io/hosting-and-deployment/hosting-on-aws-amplify/), [Github pages](https://gohugo.io/hosting-and-deployment/hosting-on-github/), [Render](https://gohugo.io/hosting-and-deployment/hosting-on-render/) 以及更多...
-
-</div>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">网站内容可以通过 <a href="https://www.netlify.com/" target="_blank" rel="noopener noreffer">Netlify</a> 自动发布和托管 (了解有关<a href="https://www.netlify.com/blog/2015/07/30/hosting-hugo-on-netlifyinsanely-fast-deploys/" target="_blank" rel="noopener noreffer">通过 Netlify 进行 HUGO 自动化部署</a> 的更多信息).
+或者, 您可以使用 <a href="https://gohugo.io/hosting-and-deployment/hosting-on-aws-amplify/" target="_blank" rel="noopener noreffer">AWS Amplify</a>, <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/" target="_blank" rel="noopener noreffer">Github pages</a>, <a href="https://gohugo.io/hosting-and-deployment/hosting-on-render/" target="_blank" rel="noopener noreffer">Render</a> 以及更多&hellip;</div>
+        </div>
+    </div>
 <h2 id="3-配置">3 配置</h2>
 <h3 id="site-configuration">3.1 网站配置</h3>
 <p>除了 <a href="https://gohugo.io/overview/configuration/" target="_blank" rel="noopener noreffer">Hugo 全局配置</a> 和 <a href="#basic-configuration" rel="">菜单配置</a> 之外, <strong>LoveIt</strong> 主题还允许您在网站配置中定义以下参数 (这是一个示例 <code>config.toml</code>, 其内容为默认值).</p>
@@ -1801,83 +1838,116 @@ hugo serve --disableFastRender
   <span class="nx">taxonomyTerm</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;HTML&#34;</span><span class="p">]</span>
 </code></pre></td></tr></table>
 </div>
-</div><div class="admonition ">
-  
-请注意, 本文档其他部分将详细解释其中一些参数.
-
+</div><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">请注意, 本文档其他部分将详细解释其中一些参数.</div>
+        </div>
+    </div>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>Hugo 的运行环境<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><code>hugo serve</code> 的默认运行环境是 <code>development</code>,
+而 <code>hugo</code> 的默认运行环境是 <code>production</code>.</p>
+<p>由于本地 <code>development</code> 环境的限制,
+<strong>评论系统</strong>, <strong>CDN</strong> 和 <strong>fingerprint</strong> 不会在 <code>development</code> 环境下启用.</p>
+<p>你可以使用 <code>hugo serve -e production</code> 命令来开启这些特性.</p>
 </div>
-<div class="admonition note"><p class="admonition-title">Hugo 的运行环境</p>
-  
-`hugo serve` 的默认运行环境是 `development`,
-而 `hugo` 的默认运行环境是 `production`.
-
-由于本地 `development` 环境的限制,
-**评论系统**, **CDN** 和 **fingerprint** 不会在 `development` 环境下启用.
-
-你可以使用 `hugo serve -e production` 命令来开启这些特性.
-
+        </div>
+    </div>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>关于 CDN 配置的技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><a href="https://github.com/dillonzq/LoveIt/releases/tag/v0.2.7" rel="noopener noreffer" target="_blank"><img
+class="lazyload version"
+src="/svg/loading.min.svg"
+data-src="/svg/version/0.2.7-changed.min.svg"
+data-srcset="/svg/version/0.2.7-changed.min.svg, /svg/version/0.2.7-changed.min.svg 1.5x, /svg/version/0.2.7-changed.min.svg 2x"
+data-sizes="auto"
+alt="LoveIt 更改 | 0.2.7"
+title="LoveIt 更改 | 0.2.7" /></a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">cdn</span><span class="p">]</span>
+  <span class="c"># CDN 数据文件名称, 默认不启用</span>
+  <span class="c"># (&#34;jsdelivr.yml&#34;)</span>
+  <span class="nx">data</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</code></pre></td></tr></table>
 </div>
-<div class="admonition tip"><p class="admonition-title">关于 CDN 配置的技巧</p>
-  
-<a href="https://github.com/dillonzq/LoveIt/releases/tag/v0.2.7" rel="noopener noreffer" target="_blank"><img
-        class="lazyload version"
-        src="/svg/loading.min.svg"
-        data-src="/svg/version/0.2.7-changed.min.svg"
-        data-srcset="/svg/version/0.2.7-changed.min.svg, /svg/version/0.2.7-changed.min.svg 1.5x, /svg/version/0.2.7-changed.min.svg 2x"
-        data-sizes="auto"
-        alt="LoveIt 更改 | 0.2.7"
-        title="LoveIt 更改 | 0.2.7" /></a>
-
-```toml
-[params.cdn]
-  # CDN 数据文件名称, 默认不启用
-  # ("jsdelivr.yml")
-  data = ""
-````
-
-默认的 CDN 数据文件位于 `themes/LoveIt/assets/data/cdn/` 目录.
-可以在你的项目下相同路径存放你自己的数据文件: `assets/data/cdn/`.
-
+</div><p>默认的 CDN 数据文件位于 <code>themes/LoveIt/assets/data/cdn/</code> 目录.
+可以在你的项目下相同路径存放你自己的数据文件: <code>assets/data/cdn/</code>.</p>
 </div>
-<div class="admonition tip"><p class="admonition-title">关于社交链接配置的技巧</p>
-  
-<a href="https://github.com/dillonzq/LoveIt/releases/tag/v0.2.0" rel="noopener noreffer" target="_blank"><img
-        class="lazyload version"
-        src="/svg/loading.min.svg"
-        data-src="/svg/version/0.2.0-new.min.svg"
-        data-srcset="/svg/version/0.2.0-new.min.svg, /svg/version/0.2.0-new.min.svg 1.5x, /svg/version/0.2.0-new.min.svg 2x"
-        data-sizes="auto"
-        alt="LoveIt 新增 | 0.2.0"
-        title="LoveIt 新增 | 0.2.0" /></a>
-
-你可以直接配置你的社交 ID 来生成一个默认社交链接和图标:
-
-```toml
-[params.social]
-  Mastodon = "@xxxx"
-```
-
-生成的社交链接是 `https://mastodon.technology/@xxxx`.
-
-或者你可以通过一个字典来设置更多的选项:
-
-```toml
-[params.social]
-  [params.social.Mastodon]
-    # 排列图标时的权重 (权重越大, 图标的位置越靠后)
-    weight = 0
-    # 你的社交 ID
-    id = "@xxxx"
-    # 你的社交链接的前缀
-    prefix = "https://mastodon.social/"
-    # 当鼠标停留在图标上时的提示内容
-    title = "Mastodon"
-```
-
-所有支持的社交链接的默认数据位于 `themes/LoveIt/assets/data/social.yaml`.
-你可以参考它来配置你的社交链接.
-
+        </div>
+    </div>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>关于社交链接配置的技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><a href="https://github.com/dillonzq/LoveIt/releases/tag/v0.2.0" rel="noopener noreffer" target="_blank"><img
+class="lazyload version"
+src="/svg/loading.min.svg"
+data-src="/svg/version/0.2.0-new.min.svg"
+data-srcset="/svg/version/0.2.0-new.min.svg, /svg/version/0.2.0-new.min.svg 1.5x, /svg/version/0.2.0-new.min.svg 2x"
+data-sizes="auto"
+alt="LoveIt 新增 | 0.2.0"
+title="LoveIt 新增 | 0.2.0" /></a></p>
+<p>你可以直接配置你的社交 ID 来生成一个默认社交链接和图标:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">social</span><span class="p">]</span>
+  <span class="nx">Mastodon</span> <span class="p">=</span> <span class="s2">&#34;@xxxx&#34;</span>
+</code></pre></td></tr></table>
 </div>
+</div><p>生成的社交链接是 <code>https://mastodon.technology/@xxxx</code>.</p>
+<p>或者你可以通过一个字典来设置更多的选项:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">social</span><span class="p">]</span>
+  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">social</span><span class="p">.</span><span class="nx">Mastodon</span><span class="p">]</span>
+    <span class="c"># 排列图标时的权重 (权重越大, 图标的位置越靠后)</span>
+    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">0</span>
+    <span class="c"># 你的社交 ID</span>
+    <span class="nx">id</span> <span class="p">=</span> <span class="s2">&#34;@xxxx&#34;</span>
+    <span class="c"># 你的社交链接的前缀</span>
+    <span class="nx">prefix</span> <span class="p">=</span> <span class="s2">&#34;https://mastodon.social/&#34;</span>
+    <span class="c"># 当鼠标停留在图标上时的提示内容</span>
+    <span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;Mastodon&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>所有支持的社交链接的默认数据位于 <code>themes/LoveIt/assets/data/social.yaml</code>.
+你可以参考它来配置你的社交链接.</p>
+</div>
+        </div>
+    </div>
 <p><figure><a class="lightgallery" href="/posts/theme-documentation-basics/complete-configuration-preview.zh-cn.png" title="完整配置下的预览" data-thumbnail="/posts/theme-documentation-basics/complete-configuration-preview.zh-cn.png" data-sub-html="<h2>完整配置下的预览</h2><p>完整配置下的预览</p>">
         <img
             class="lazyload"
@@ -1909,11 +1979,14 @@ hugo serve --disableFastRender
         data-sizes="auto"
         alt="LoveIt 更改 | 0.2.8"
         title="LoveIt 更改 | 0.2.8" /></a>
-<div class="admonition ">
-  
-Hugo **extended** 版本对于自定义样式是必需的.
-
-</div>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Hugo <strong>extended</strong> 版本对于自定义样式是必需的.</div>
+        </div>
+    </div>
 <p>通过定义自定义 <code>.scss</code> 样式文件, <strong>LoveIt</strong> 主题支持可配置的样式.</p>
 <p>包含自定义 <code>.scss</code> 样式文件的目录相对于 <strong>你的项目根目录</strong> 的路径为 <code>assets/css</code>.</p>
 <p>在 <code>assets/css/_override.scss</code> 中, 你可以覆盖 <code>themes/LoveIt/assets/css/_variables.scss</code> 中的变量以自定义样式.</p>
@@ -2255,16 +2328,22 @@ Hugo **extended** 版本对于自定义样式是必需的.
 <li>中文: <code>my-page.zh-cn.md</code></li>
 <li>法语: <code>my-page.fr.md</code></li>
 </ul>
-<div class="admonition ">
-  
-请注意, 菜单中仅显示翻译的页面. 它不会替换为默认语言内容.
-
-</div>
-<div class="admonition tip">
-  
-也可以使用 [文章前置参数](https://gohugo.io/content-management/multilingual#translate-your-content) 来翻译网址.
-
-</div>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">请注意, 菜单中仅显示翻译的页面. 它不会替换为默认语言内容.</div>
+        </div>
+    </div>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">也可以使用 <a href="https://gohugo.io/content-management/multilingual#translate-your-content" target="_blank" rel="noopener noreffer">文章前置参数</a> 来翻译网址.</div>
+        </div>
+    </div>
 <h3 id="43-修改默认的翻译字符串">4.3 修改默认的翻译字符串</h3>
 <p>翻译字符串用于在主题中使用的常见默认值.
 目前提供<a href="#language-compatibility" rel="">一些语言</a>的翻译, 但你可能自定义其他语言或覆盖默认值.</p>
@@ -2369,31 +2448,38 @@ Hugo **extended** 版本对于自定义样式是必需的.
     <span class="nx">searchKey</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
 </code></pre></td></tr></table>
 </div>
-</div><div class="admonition note"><p class="admonition-title">怎样选择搜索引擎?</p>
-  
-以下是两种搜索引擎的对比:
-
-* `lunr`: 简单, 无需同步 `index.json`, 没有 `contentLength` 的限制, 但占用带宽大且性能低 (特别是中文需要一个较大的分词依赖库)
-* `algolia`: 高性能并且占用带宽低, 但需要同步 `index.json` 且有 `contentLength` 的限制
-
-<a href="https://github.com/dillonzq/LoveIt/releases/tag/v0.2.3" rel="noopener noreffer" target="_blank"><img
-        class="lazyload version"
-        src="/svg/loading.min.svg"
-        data-src="/svg/version/0.2.3-new.min.svg"
-        data-srcset="/svg/version/0.2.3-new.min.svg, /svg/version/0.2.3-new.min.svg 1.5x, /svg/version/0.2.3-new.min.svg 2x"
-        data-sizes="auto"
-        alt="LoveIt 新增 | 0.2.3"
-        title="LoveIt 新增 | 0.2.3" /></a> 文章内容被 `h2` 和 `h3` HTML 标签切分来提高查询效果并且基本实现全文搜索.
-`contentLength` 用来限制 `h2` 和 `h3` HTML 标签开头的内容部分的最大长度.
-
+</div><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>怎样选择搜索引擎?<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>以下是两种搜索引擎的对比:</p>
+<ul>
+<li><code>lunr</code>: 简单, 无需同步 <code>index.json</code>, 没有 <code>contentLength</code> 的限制, 但占用带宽大且性能低 (特别是中文需要一个较大的分词依赖库)</li>
+<li><code>algolia</code>: 高性能并且占用带宽低, 但需要同步 <code>index.json</code> 且有 <code>contentLength</code> 的限制</li>
+</ul>
+<p><a href="https://github.com/dillonzq/LoveIt/releases/tag/v0.2.3" rel="noopener noreffer" target="_blank"><img
+class="lazyload version"
+src="/svg/loading.min.svg"
+data-src="/svg/version/0.2.3-new.min.svg"
+data-srcset="/svg/version/0.2.3-new.min.svg, /svg/version/0.2.3-new.min.svg 1.5x, /svg/version/0.2.3-new.min.svg 2x"
+data-sizes="auto"
+alt="LoveIt 新增 | 0.2.3"
+title="LoveIt 新增 | 0.2.3" /></a> 文章内容被 <code>h2</code> 和 <code>h3</code> HTML 标签切分来提高查询效果并且基本实现全文搜索.
+<code>contentLength</code> 用来限制 <code>h2</code> 和 <code>h3</code> HTML 标签开头的内容部分的最大长度.</p>
 </div>
-<div class="admonition tip"><p class="admonition-title">关于 algolia 的使用技巧</p>
-  
-你需要上传 `index.json` 到 algolia 来激活搜索功能. 你可以使用浏览器来上传 `index.json` 文件但是一个自动化的脚本可能效果更好.
-[Algolia Atomic](https://github.com/chrisdmacrae/atomic-algolia) 是一个不错的选择.
-为了兼容 Hugo 的多语言模式, 你需要上传不同语言的 `index.json` 文件到对应的 algolia index, 例如 `zh-cn/index.json` 或 `fr/index.json`...
-
-</div></div><div class="post-footer" id="post-footer">
+        </div>
+    </div>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>关于 algolia 的使用技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">你需要上传 <code>index.json</code> 到 algolia 来激活搜索功能. 你可以使用浏览器来上传 <code>index.json</code> 文件但是一个自动化的脚本可能效果更好.
+<a href="https://github.com/chrisdmacrae/atomic-algolia" target="_blank" rel="noopener noreffer">Algolia Atomic</a> 是一个不错的选择.
+为了兼容 Hugo 的多语言模式, 你需要上传不同语言的 <code>index.json</code> 文件到对应的 algolia index, 例如 <code>zh-cn/index.json</code> 或 <code>fr/index.json</code>&hellip;</div>
+        </div>
+    </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
