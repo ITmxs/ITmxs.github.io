@@ -4,7 +4,7 @@
         <link>https://luckly.work/</link>
         <description>早起的年轻人做的网站</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>852851198@qq.com (早起的年轻人)</managingEditor>
-            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 23 May 2021 14:14:45 &#43;0800</lastBuildDate>
+            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 23 May 2021 10:45:15 &#43;0800</lastBuildDate>
             <atom:link href="https://luckly.work/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>主题文档 - 基本概念</title>
@@ -28,17 +28,6 @@
     <guid>https://luckly.work/emoji-support/</guid>
     <description><![CDATA[<p>Emoji 可以通过多种方式在 Hugo 项目中启用.</p>]]></description>
 </item><item>
-    <title>《Git简易命令02》</title>
-    <link>https://luckly.work/git%E7%AE%80%E6%98%93%E5%91%BD%E4%BB%A402/</link>
-    <pubDate>Sun, 23 May 2021 14:14:45 &#43;0800</pubDate>
-    <author>文章作者</author>
-    <guid>https://luckly.work/git%E7%AE%80%E6%98%93%E5%91%BD%E4%BB%A402/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/git.jpg" referrerpolicy="no-referrer">
-            </div><blockquote>
-<p>本文主要介绍简易的Git命令行入门教程</p>
-</blockquote>]]></description>
-</item><item>
     <title>《Flutter获取通讯录好友02》</title>
     <link>https://luckly.work/flutter%E8%8E%B7%E5%8F%96%E9%80%9A%E8%AE%AF%E5%BD%95%E5%A5%BD%E5%8F%8B/</link>
     <pubDate>Sun, 23 May 2021 10:45:15 &#43;0800</pubDate>
@@ -48,17 +37,6 @@
                 <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png" referrerpolicy="no-referrer">
             </div><blockquote>
 <p>本文主要介绍Flutter如何获取通讯录好友</p>
-</blockquote>]]></description>
-</item><item>
-    <title>《Git上传文件报错》</title>
-    <link>https://luckly.work/git%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99/</link>
-    <pubDate>Sat, 22 May 2021 23:17:35 &#43;0800</pubDate>
-    <author>文章作者</author>
-    <guid>https://luckly.work/git%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E6%8A%A5%E9%94%99/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/git.jpg" referrerpolicy="no-referrer">
-            </div><blockquote>
-<p>如何解决git上传文件出错[rejected] master -&gt; master (fetch first) error: failed to push some refs to '</p>
 </blockquote>]]></description>
 </item><item>
     <title>《Flutter路由传参向上一级返回数据03》</title>
@@ -99,5 +77,19 @@
     <author>文章作者</author>
     <guid>https://luckly.work/loveit%E4%B8%BB%E9%A2%98%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/</guid>
     <description><![CDATA[loveit主题的一些用法指南]]></description>
+</item><item>
+    <title>《Go第一课》</title>
+    <link>https://luckly.work/go%E7%AC%AC%E4%B8%80%E8%AF%BE/</link>
+    <pubDate>Fri, 21 May 2021 12:57:22 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/go%E7%AC%AC%E4%B8%80%E8%AF%BE/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>《Go学习资料导航》</title>
+    <link>https://luckly.work/go%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%AF%BC%E8%88%AA/</link>
+    <pubDate>Mon, 17 May 2021 10:08:48 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/go%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%AF%BC%E8%88%AA/</guid>
+    <description><![CDATA[]]></description>
 </item></channel>
 </rss>

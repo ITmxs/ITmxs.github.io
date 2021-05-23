@@ -4,14 +4,7 @@
         <link>https://luckly.work/categories/</link>
         <description>Categories - 分类 - Lucklyの博客 - 在阅读中遇见自己</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>852851198@qq.com (早起的年轻人)</managingEditor>
-            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 23 May 2021 14:14:45 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/categories/" rel="self" type="application/rss+xml" /><item>
-    <title>git</title>
-    <link>https://luckly.work/categories/git/</link>
-    <pubDate>Sun, 23 May 2021 14:14:45 &#43;0800</pubDate>
-    <author>文章作者</author>
-    <guid>https://luckly.work/categories/git/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
+            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 23 May 2021 10:45:15 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/categories/" rel="self" type="application/rss+xml" /><item>
     <title>Flutter</title>
     <link>https://luckly.work/categories/flutter/</link>
     <pubDate>Sun, 23 May 2021 10:45:15 &#43;0800</pubDate>
@@ -45,6 +38,13 @@
     <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
     <author>文章作者</author>
     <guid>https://luckly.work/categories/markdown/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>git</title>
+    <link>https://luckly.work/categories/git/</link>
+    <pubDate>Thu, 23 May 2019 14:14:45 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/categories/git/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>文档</title>
