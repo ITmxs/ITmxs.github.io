@@ -33,6 +33,27 @@
     <guid>https://luckly.work/categories/%E5%8E%9F%E7%94%9F%E9%80%9A%E8%AE%AF/</guid>
     <description><![CDATA[]]></description>
 </item><item>
+    <title>linux</title>
+    <link>https://luckly.work/categories/linux/</link>
+    <pubDate>Fri, 23 Apr 2021 07:18:48 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/categories/linux/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Mysql</title>
+    <link>https://luckly.work/categories/mysql/</link>
+    <pubDate>Fri, 23 Apr 2021 07:18:48 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/categories/mysql/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>安装教程</title>
+    <link>https://luckly.work/categories/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</link>
+    <pubDate>Fri, 23 Apr 2021 07:18:48 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/categories/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>项目</title>
     <link>https://luckly.work/categories/%E9%A1%B9%E7%9B%AE/</link>
     <pubDate>Sat, 13 Mar 2021 17:48:45 &#43;0800</pubDate>
@@ -52,20 +73,6 @@
     <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
     <author>文章作者</author>
     <guid>https://luckly.work/categories/markdown/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>git</title>
-    <link>https://luckly.work/categories/git/</link>
-    <pubDate>Thu, 23 May 2019 14:14:45 &#43;0800</pubDate>
-    <author>文章作者</author>
-    <guid>https://luckly.work/categories/git/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>文档</title>
-    <link>https://luckly.work/categories/documentation/</link>
-    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-    <author>文章作者</author>
-    <guid>https://luckly.work/categories/documentation/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

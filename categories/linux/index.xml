@@ -1,0 +1,20 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>linux - 分类 - Lucklyの博客 - 在阅读中遇见自己</title>
+        <link>https://luckly.work/categories/linux/</link>
+        <description>linux - 分类 - Lucklyの博客 - 在阅读中遇见自己</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>852851198@qq.com (早起的年轻人)</managingEditor>
+            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 23 Apr 2021 07:18:48 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/categories/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>《Linxu下安装Mysql教程》</title>
+    <link>https://luckly.work/linxu%E4%B8%8B%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B/</link>
+    <pubDate>Fri, 23 Apr 2021 07:18:48 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/linxu%E4%B8%8B%E5%AE%89%E8%A3%85mysql%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/linux.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>本教程手把手教你如何在 Linux 安装 MySQL 数据库，以 CentOS 8为例。</p>
+</blockquote>
+<p>4.23日，我买了阿里云的服务器centos7，安装mysql，特此记录一下，方便自己以后查找使用</p>]]></description>
+</item></channel>
+</rss>
