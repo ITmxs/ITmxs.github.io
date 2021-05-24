@@ -1,0 +1,30 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>插件 - 分类 - Lucklyの博客 - 在阅读中遇见自己</title>
+        <link>https://luckly.work/categories/%E6%8F%92%E4%BB%B6/</link>
+        <description>插件 - 分类 - Lucklyの博客 - 在阅读中遇见自己</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>852851198@qq.com (早起的年轻人)</managingEditor>
+            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 24 May 2021 22:10:25 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/categories/%E6%8F%92%E4%BB%B6/" rel="self" type="application/rss+xml" /><item>
+    <title>《Flutter插件awesome_dialog》</title>
+    <link>https://luckly.work/flutter%E6%8F%92%E4%BB%B6awesome_dialog/</link>
+    <pubDate>Mon, 24 May 2021 22:10:25 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/flutter%E6%8F%92%E4%BB%B6awesome_dialog/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>本文主要介绍一个新的Flutter软件包项目，用于简单而出色的对话框，我们在应用程序中使用它来向用户显示某些警告或确认，在这种情况下，我们可以通过使用一些属性在其中使用其他类型的动画。并可以设置颜色，文字等</p>
+</blockquote>]]></description>
+</item><item>
+    <title>《Flutter插件学习目录》</title>
+    <link>https://luckly.work/flutter%E6%8F%92%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%9B%AE%E5%BD%95/</link>
+    <pubDate>Mon, 24 May 2021 10:24:19 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/flutter%E6%8F%92%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%9B%AE%E5%BD%95/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>本文主要介绍flutter流行插件的使用</p>
+</blockquote>]]></description>
+</item></channel>
+</rss>

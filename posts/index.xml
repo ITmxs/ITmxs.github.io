@@ -4,7 +4,7 @@
         <link>https://luckly.work/posts/</link>
         <description>所有文章 | Lucklyの博客 - 在阅读中遇见自己</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>852851198@qq.com (早起的年轻人)</managingEditor>
-            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 24 May 2021 10:24:19 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 24 May 2021 22:10:25 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/posts/" rel="self" type="application/rss+xml" /><item>
     <title>主题文档 - 基本概念</title>
     <link>https://luckly.work/theme-documentation-basics/</link>
     <pubDate>Fri, 06 Mar 2020 21:40:32 &#43;0800</pubDate>
@@ -25,6 +25,17 @@
     <author>文章作者</author>
     <guid>https://luckly.work/emoji-support/</guid>
     <description><![CDATA[<p>Emoji 可以通过多种方式在 Hugo 项目中启用.</p>]]></description>
+</item><item>
+    <title>《Flutter插件awesome_dialog》</title>
+    <link>https://luckly.work/flutter%E6%8F%92%E4%BB%B6awesome_dialog/</link>
+    <pubDate>Mon, 24 May 2021 22:10:25 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/flutter%E6%8F%92%E4%BB%B6awesome_dialog/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>本文主要介绍一个新的Flutter软件包项目，用于简单而出色的对话框，我们在应用程序中使用它来向用户显示某些警告或确认，在这种情况下，我们可以通过使用一些属性在其中使用其他类型的动画。并可以设置颜色，文字等</p>
+</blockquote>]]></description>
 </item><item>
     <title>《Flutter插件学习目录》</title>
     <link>https://luckly.work/flutter%E6%8F%92%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%9B%AE%E5%BD%95/</link>
@@ -84,14 +95,5 @@
 <h2 id="前言">前言</h2>
 <p>Flutter优势主要体现在UI上&ndash;高性能且跨平台表现一致。但是针对平台(Android、IOS)的实现，如：获取电量、判断WiFi使用、调起WebView加载网页等，得调用特定平台的API包。Flutter Plugin就是为调用平台API而生。</p>
 <p>下文中所提及到的&quot;平台&quot;指的是Android、IOS两端。</p>]]></description>
-</item><item>
-    <title>《Flutter学习目录00》</title>
-    <link>https://luckly.work/flutter%E5%AD%A6%E4%B9%A0%E7%9B%AE%E5%BD%95/</link>
-    <pubDate>Tue, 18 May 2021 22:46:11 &#43;0800</pubDate>
-    <author>文章作者</author>
-    <guid>https://luckly.work/flutter%E5%AD%A6%E4%B9%A0%E7%9B%AE%E5%BD%95/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/U0a0aa2cc07574b5e8d6a15b6ea19bdfei.jpg" referrerpolicy="no-referrer">
-            </div><p>学习flutter常用的资料</p>]]></description>
 </item></channel>
 </rss>
