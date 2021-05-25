@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>《Dart之List相关》 - Lucklyの博客 - 在阅读中遇见自己</title><meta name="Description" content="早起的年轻人做的网站"><meta property="og:title" content="《Dart之List相关》" />
+<meta property="og:description" content="
+要说，List在我的开发使用中，确实是最为频繁的了，那么如何使用list，也就成了一个问题，list提供的方法又有哪些
+这些都是需要掌握理解的。
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luckly.work/dart%E4%B9%8Blist%E7%9B%B8%E5%85%B3/" />
+<meta property="og:image" content="https://luckly.work/logo.png"/>
+<meta property="article:published_time" content="2021-05-25T11:33:24+08:00" />
+<meta property="article:modified_time" content="2021-05-25T11:33:24+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://luckly.work/logo.png"/>
+
+<meta name="twitter:title" content="《Dart之List相关》"/>
+<meta name="twitter:description" content="
+要说，List在我的开发使用中，确实是最为频繁的了，那么如何使用list，也就成了一个问题，list提供的方法又有哪些
+这些都是需要掌握理解的。
+"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://luckly.work/dart%E4%B9%8Blist%E7%9B%B8%E5%85%B3/" /><link rel="prev" href="https://luckly.work/flutter%E6%8F%92%E4%BB%B6awesome_dialog/" /><link rel="next" href="https://luckly.work/emoji-support/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "《Dart之List相关》",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/luckly.work\/dart%E4%B9%8Blist%E7%9B%B8%E5%85%B3\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/luckly.work\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "flutter, dart","wordcount":  3078 ,
+        "url": "https:\/\/luckly.work\/dart%E4%B9%8Blist%E7%9B%B8%E5%85%B3\/","datePublished": "2021-05-25T11:33:24+08:00","dateModified": "2021-05-25T11:33:24+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/luckly.work\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "早起的年轻人"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lucklyの博客 - 在阅读中遇见自己"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/documentation/"> 文档 </a><a class="menu-item" href="/categories/flutter/"> Flutter </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ITmxs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i> Github </a><a class="menu-item" href="/friend/"><i class='fas fa-user-friends'></i> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lucklyの博客 - 在阅读中遇见自己"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/documentation/" title="">文档</a><a class="menu-item" href="/categories/flutter/" title="">Flutter</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ITmxs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>Github</a><a class="menu-item" href="/friend/" title=""><i class='fas fa-user-friends'></i>友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">《Dart之List相关》</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>早起的年轻人</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/flutter/"><i class="far fa-folder fa-fw"></i>Flutter</a>&nbsp;<a href="/categories/dart/"><i class="far fa-folder fa-fw"></i>dart</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-25">2021-05-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3078 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/dart.jpg"
+        data-srcset="https://luckly007.oss-cn-beijing.aliyuncs.com/img/dart.jpg, https://luckly007.oss-cn-beijing.aliyuncs.com/img/dart.jpg 1.5x, https://luckly007.oss-cn-beijing.aliyuncs.com/img/dart.jpg 2x"
+        data-sizes="auto"
+        alt="https://luckly007.oss-cn-beijing.aliyuncs.com/img/dart.jpg"
+        title="https://luckly007.oss-cn-beijing.aliyuncs.com/img/dart.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#对于固定长度的list如何删除添加元素呢">对于固定长度的list，如何删除添加元素呢</a></li>
+        <li><a href="#动态长度的-list">动态长度的 List</a>
+          <ul>
+            <li>
+              <ul>
+                <li>
+                  <ul>
+                    <li><a href="#循环遍历-list-中的数据">循环遍历 List 中的数据</a></li>
+                    <li><a href="#list-数据转-map-数据">List 数据转 Map 数据</a></li>
+                    <li><a href="#连接-list-中的数据">连接 List 中的数据</a></li>
+                    <li><a href="#合并-list-中的数据">合并 List 中的数据</a></li>
+                    <li><a href="#随机排列-list中的数据顺序">随机排列 List中的数据顺序</a></li>
+                    <li><a href="#升序排列-list-中的数据">升序排列 List 中的数据</a></li>
+                    <li><a href="#去重复">去重复</a></li>
+                    <li><a href="#查找-list-中的元素">查找 List 中的元素</a></li>
+                    <li><a href="#获取-list-中指定位置的值">获取 List 中指定位置的值</a></li>
+                    <li><a href="#list-中数据修改">List 中数据修改</a></li>
+                    <li><a href="#list-中数据删除">List 中数据删除</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#set">Set</a></li>
+        <li><a href="#map">Map</a></li>
+        <li><a href="#callable">Callable</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>要说，List在我的开发使用中，确实是最为频繁的了，那么如何使用list，也就成了一个问题，list提供的方法又有哪些</p>
+<p>这些都是需要掌握理解的。</p>
+</blockquote>
+<p>首先第一个，</p>
+<h2 id="对于固定长度的list如何删除添加元素呢">对于固定长度的list，如何删除添加元素呢</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// 声明一个固定长度的集合
+</span><span class="c1"></span>  <span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numList</span> <span class="o">=</span> <span class="n">List</span><span class="p">(</span><span class="m">5</span><span class="p">);</span>
+
+  <span class="n">numList</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="o">=</span> <span class="m">1</span><span class="p">;</span>
+  <span class="n">numList</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="o">=</span> <span class="m">2</span><span class="p">;</span>
+  <span class="n">numList</span><span class="p">[</span><span class="m">2</span><span class="p">]</span> <span class="o">=</span> <span class="m">3</span><span class="p">;</span>
+  <span class="n">numList</span><span class="p">[</span><span class="m">3</span><span class="p">]</span> <span class="o">=</span> <span class="m">4</span><span class="p">;</span>
+  <span class="n">numList</span><span class="p">[</span><span class="m">4</span><span class="p">]</span> <span class="o">=</span> <span class="m">5</span><span class="p">;</span>
+
+  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;遍历元素：&#39;</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">value</span> <span class="k">in</span> <span class="n">numList</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;----更新第一个元素为 10------&#39;</span><span class="p">);</span>
+
+  <span class="n">numList</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="o">=</span> <span class="m">10</span><span class="p">;</span>
+
+  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;遍历元素：&#39;</span><span class="p">);</span>
+  <span class="n">numList</span><span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">print</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
+
+  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;----将第一个元素置为NULL---&#39;</span><span class="p">);</span>
+
+  <span class="n">numList</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;遍历元素：&#39;</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numList</span><span class="p">.</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">${</span><span class="n">numList</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="动态长度的-list">动态长度的 List</h2>
+<p>我们直接看示例：对于动态长度的list，</p>
+<p>声明一：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// 动态长度的 集合
+</span><span class="c1"></span>  <span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">List</span><span class="p">();</span>
+
+  <span class="n">list</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+  <span class="n">list</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
+
+  <span class="n">list</span><span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">$</span><span class="n">value</span><span class="s1">&#39;</span><span class="p">));</span>
+  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+  
+  <span class="n">list</span><span class="p">.</span><span class="n">removeAt</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+  <span class="n">list</span><span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">$</span><span class="n">value</span><span class="s1">&#39;</span><span class="p">));</span>
+  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+  
+  <span class="n">list</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="m">3</span><span class="p">);</span>
+  <span class="n">list</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="n">list</span><span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">$</span><span class="n">value</span><span class="s1">&#39;</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>声明二：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="c1">// 这样也是一个动态的集合
+</span><span class="c1"></span>  <span class="n">List</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="n">letterList</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;A&#34;</span><span class="p">,</span> <span class="s2">&#34;B&#34;</span><span class="p">,</span> <span class="s2">&#34;C&#34;</span><span class="p">];</span>
+
+  <span class="n">letterList</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&#34;D&#34;</span><span class="p">);</span>
+  <span class="n">letterList</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&#34;E&#34;</span><span class="p">);</span>
+
+  <span class="n">letterList</span><span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">letter</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">$</span><span class="n">letter</span><span class="s1">&#39;</span><span class="p">));</span>
+
+
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="循环遍历-list-中的数据">循环遍历 List 中的数据</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">///代码清单 1-1
+List&lt;String&gt; testList = [&#34;test1&#34;, &#34;xioming&#34;, &#34;张三&#34;, &#34;xioming&#34;, &#34;张三&#34;, &#34;李四&#34;];
+
+///方式一 遍历获取List中的所有数据
+testList.forEach((value) {
+  //value 就是List中对应的值
+});
+
+///方式二 遍历获取List中的所有的数据
+for(int i=0;i&lt;testList.length;i++){
+  ///根据索引获取List中的数据
+  var value = testList[i];
+}
+
+//方式三
+//while+iterator迭代器遍历，类似Java中的iteator       
+while(testList.iterator.moveNext()) {
+  //获取对应的值
+  var value = testList.iterator.current;
+  
+}
+
+//方式四 增强for循环
+//for-in遍历       
+for (var value in testList) {
+  //value 就是List中对应的值
+}
+
+
+
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="list-数据转-map-数据">List 数据转 Map 数据</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">  <span class="c1">///代码清单 1-2
+</span><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">testList</span> <span class="o">=</span> <span class="o">[</span><span class="s">&#34;test1&#34;</span><span class="o">,</span> <span class="s">&#34;xioming&#34;</span><span class="o">,</span> <span class="s">&#34;张三&#34;</span><span class="o">,</span> <span class="s">&#34;xioming&#34;</span><span class="o">,</span> <span class="s">&#34;张三&#34;</span><span class="o">,</span> <span class="s">&#34;李四&#34;</span><span class="o">];</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">testList</span><span class="o">);</span> <span class="c1">//[test1, xioming, 张三, xioming, 张三, 李四]
+</span><span class="c1"></span>    <span class="c1">//将list转为set,将后面重复的都去掉
+</span><span class="c1"></span>    <span class="n">Map</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">,</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="n">testList</span><span class="o">.</span><span class="na">asMap</span><span class="o">();</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">map</span><span class="o">);</span> <span class="c1">//{0: test1, 1: xioming, 2: 张三, 3: xioming, 4: 张三, 5: 李四}
+</span></code></pre></td></tr></table>
+</div>
+</div><h5 id="连接-list-中的数据">连接 List 中的数据</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="c1">///代码清单 1-3
+</span><span class="c1"></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">testList</span> <span class="o">=</span> <span class="o">[</span><span class="s">&#34;A&#34;</span><span class="o">,</span> <span class="s">&#34;D&#34;</span><span class="o">,</span>  <span class="s">&#34;F&#34;</span><span class="o">,</span> <span class="s">&#34;F&#34;</span><span class="o">,</span><span class="s">&#34;B&#34;</span><span class="o">,</span> <span class="s">&#34;C&#34;</span><span class="o">,];</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">testList</span><span class="o">);</span> <span class="c1">//[A, D, F, F, B, C]
+</span><span class="c1"></span>
+    <span class="c1">///用指定的字符将List中每个元素都连接起来，返回一个字符串
+</span><span class="c1"></span>    <span class="c1">/// 如这里将 List 中的数据 使用 , 号来连接
+</span><span class="c1"></span>    <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">testList</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="s">&#34;,&#34;</span><span class="o">);</span>
+
+    <span class="n">print</span><span class="o">(</span><span class="n">value</span><span class="o">);</span><span class="c1">///A,D,F,F,B,C
+</span><span class="c1"></span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="合并-list-中的数据">合并 List 中的数据</h5>
+<p>通过 List 的 followedBy 方法，可以合并 多个 List中的数据至一个 Iterable中，如下代码所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="c1">///代码清单 1-4
+</span><span class="c1"></span>	<span class="c1">///创建一个 List 并添加初始化数据
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="o">[</span><span class="n">1</span><span class="o">,</span><span class="n">2</span><span class="o">,</span><span class="n">3</span><span class="o">,</span><span class="n">4</span><span class="o">];</span>
+
+    <span class="c1">///创建一个  List并添加初始化数据
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">list2</span> <span class="o">=</span> <span class="o">[</span><span class="n">2</span><span class="o">,</span><span class="n">3</span><span class="o">,</span><span class="n">4</span><span class="o">,</span><span class="n">5</span><span class="o">];</span>
+
+    <span class="c1">///将两个 List 中的数据合并成一个 Iterable
+</span><span class="c1"></span>    <span class="n">Iterable</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">lsit3</span><span class="o">=</span><span class="n">list2</span><span class="o">.</span><span class="na">followedBy</span><span class="o">(</span><span class="n">list</span><span class="o">);</span>
+    <span class="n">print</span><span class="o">(</span><span class="s">&#34;list: &#34;</span><span class="o">+</span><span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span><span class="c1">//list: [1, 2, 3, 4]
+</span><span class="c1"></span>    <span class="n">print</span><span class="o">(</span><span class="s">&#34;list2: &#34;</span><span class="o">+</span><span class="n">list2</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span><span class="c1">//list2: [2, 3, 4, 5]
+</span><span class="c1"></span>    <span class="n">print</span><span class="o">(</span><span class="s">&#34;list3: &#34;</span><span class="o">+</span><span class="n">lsit3</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span><span class="c1">//list3: (2, 3, 4, 5, 1, 2, 3, 4)
+</span></code></pre></td></tr></table>
+</div>
+</div><h5 id="随机排列-list中的数据顺序">随机排列 List中的数据顺序</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">        <span class="c1">///代码清单 1-5
+</span><span class="c1"></span>	<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">testList</span> <span class="o">=</span> <span class="o">[</span><span class="s">&#34;test1&#34;</span><span class="o">,</span> <span class="s">&#34;xioming&#34;</span><span class="o">,</span> <span class="s">&#34;张三&#34;</span><span class="o">,</span> <span class="s">&#34;xioming&#34;</span><span class="o">,</span> <span class="s">&#34;张三&#34;</span><span class="o">,</span> <span class="s">&#34;李四&#34;</span><span class="o">];</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">testList</span><span class="o">);</span> <span class="c1">//[test1, xioming, 张三, xioming, 张三, 李四]
+</span><span class="c1"></span>    
+    <span class="c1">//将list中数据 重新随机排列
+</span><span class="c1"></span>    <span class="n">testList</span><span class="o">.</span><span class="na">shuffle</span><span class="o">();</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">testList</span><span class="o">);</span> <span class="c1">//[test1, xioming, xioming, 李四, 张三, 张三]
+</span><span class="c1"></span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="升序排列-list-中的数据">升序排列 List 中的数据</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">     <span class="c1">///代码清单 1-6
+</span><span class="c1"></span>	<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">testList</span> <span class="o">=</span> <span class="o">[</span><span class="s">&#34;A&#34;</span><span class="o">,</span> <span class="s">&#34;D&#34;</span><span class="o">,</span>  <span class="s">&#34;F&#34;</span><span class="o">,</span> <span class="s">&#34;F&#34;</span><span class="o">,</span><span class="s">&#34;B&#34;</span><span class="o">,</span> <span class="s">&#34;C&#34;</span><span class="o">,];</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">testList</span><span class="o">);</span> <span class="c1">//[A, D, F, F, B, C]
+</span><span class="c1"></span>
+    <span class="c1">///升序排列
+</span><span class="c1"></span>    <span class="n">testList</span><span class="o">.</span><span class="na">sort</span><span class="o">();</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">testList</span><span class="o">);</span><span class="c1">//[A, B, C, D, F, F]
+</span></code></pre></td></tr></table>
+</div>
+</div><h5 id="去重复">去重复</h5>
+<p>在 List 中保存的数据是允许重复的，通过 toSet 方法 将List转为Set ，可去除后面重复的元素，如下所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">     <span class="c1">///代码清单 1-7
+</span><span class="c1"></span>	<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">testList</span> <span class="o">=</span> <span class="o">[</span><span class="s">&#34;test1&#34;</span><span class="o">,</span> <span class="s">&#34;xioming&#34;</span><span class="o">,</span> <span class="s">&#34;张三&#34;</span><span class="o">,</span> <span class="s">&#34;xioming&#34;</span><span class="o">,</span> <span class="s">&#34;张三&#34;</span><span class="o">,</span> <span class="s">&#34;李四&#34;</span><span class="o">];</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">testList</span><span class="o">);</span> <span class="c1">//[test1, xioming, 张三, xioming, 张三, 李四]
+</span><span class="c1"></span>    <span class="c1">//将list转为set,将后面重复的都去掉
+</span><span class="c1"></span>    <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="n">testList</span><span class="o">.</span><span class="na">toSet</span><span class="o">();</span>
+    <span class="n">print</span><span class="o">(</span><span class="n">set</span><span class="o">);</span> <span class="c1">//{test1, xioming, 张三, 李四}
+</span></code></pre></td></tr></table>
+</div>
+</div><h5 id="查找-list-中的元素">查找 List 中的元素</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="o">[</span><span class="s">&#34;test1&#34;</span><span class="o">,</span> <span class="s">&#34;xioming&#34;</span><span class="o">,</span> <span class="s">&#34;张三&#34;</span><span class="o">,</span><span class="s">&#34;xioming&#34;</span><span class="o">,</span> <span class="s">&#34;张三&#34;</span><span class="o">,</span><span class="s">&#34;李四&#34;</span><span class="o">];</span>
+
+    <span class="c1">///从索引0处开始查找指定元素，返回指定元素的索引
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="s">&#34;张三&#34;</span><span class="o">);</span> <span class="c1">///index 2
+</span><span class="c1"></span>    <span class="c1">///
+</span><span class="c1"></span>    <span class="c1">///从索引0处开始查找指定元素，如果存在返回元素索引，否则返回-1
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">index2</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="s">&#34;张三&#34;</span><span class="o">,</span><span class="n">3</span><span class="o">);</span> <span class="c1">///  4
+</span><span class="c1"></span>    <span class="c1">///  
+</span><span class="c1"></span>    <span class="c1">///从后往前查找，返回查找到的第一个元素的索引
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">index4</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">lastIndexOf</span><span class="o">(</span><span class="s">&#34;张三&#34;</span><span class="o">);</span><span class="c1">/// 4
+</span></code></pre></td></tr></table>
+</div>
+</div><h5 id="获取-list-中指定位置的值">获取 List 中指定位置的值</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="c1">///直接根据索引获取 0 号位置上的数据
+</span><span class="c1"></span>    <span class="n">String</span>  <span class="n">value</span> <span class="o">=</span> <span class="n">list</span><span class="o">[</span><span class="n">0</span><span class="o">];</span>
+    <span class="c1">/// 等效于 elementAt 方法获取
+</span><span class="c1"></span>    <span class="n">String</span> <span class="n">value1</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">elementAt</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="list-中数据修改">List 中数据修改</h5>
+<p>List中的数据修改操作方法就比较简单，如下代码清单 4-1所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="c1">///代码清单 1-10
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="o">[</span><span class="s">&#34;test1&#34;</span><span class="o">,</span> <span class="s">&#34;xioming&#34;</span><span class="o">,</span> <span class="s">&#34;张三&#34;</span><span class="o">,</span> <span class="s">&#34;李四&#34;</span><span class="o">];</span>
+
+    <span class="n">print</span><span class="o">(</span><span class="s">&#34;list: &#34;</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span> <span class="c1">//list: [test1, xioming, 张三, 李四]
+</span><span class="c1"></span>
+    <span class="c1">///修改数据
+</span><span class="c1"></span>    <span class="n">list</span><span class="o">[</span><span class="n">0</span><span class="o">]</span> <span class="o">=</span> <span class="s">&#34;测试数据&#34;</span><span class="o">;</span>
+    
+    <span class="n">print</span><span class="o">(</span><span class="s">&#34;list: &#34;</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span> <span class="c1">//list: [测试数据, xioming, 张三, 李四]
+</span><span class="c1"></span>
+</code></pre></td></tr></table>
+</div>
+</div><p>通过 setRange 方法批量修改一定范围的数据，如下代码清单 4-2 所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"> <span class="c1">///代码清单 1-11
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="o">[</span><span class="s">&#34;test1&#34;</span><span class="o">,</span> <span class="s">&#34;xioming&#34;</span><span class="o">,</span> <span class="s">&#34;张三&#34;</span><span class="o">,</span> <span class="s">&#34;李四&#34;</span><span class="o">];</span>
+
+    <span class="n">print</span><span class="o">(</span><span class="s">&#34;list: &#34;</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span> <span class="c1">//list: [test1, xioming, 张三, 李四]
+</span><span class="c1"></span>    <span class="c1">///修改 索引范围为 [0,2) 也就是修改了 0号位与1号位上的元素
+</span><span class="c1"></span>    <span class="n">list</span><span class="o">.</span><span class="na">setRange</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">list2</span><span class="o">);</span>
+
+    <span class="n">print</span><span class="o">(</span><span class="s">&#34;list: &#34;</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span> <span class="c1">//list: [223, 35, 张三, 李四]
+</span></code></pre></td></tr></table>
+</div>
+</div><h5 id="list-中数据删除">List 中数据删除</h5>
+<p>删除 List中1个元素，如下代码清单3-1 所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="c1">///代码清单 1-12
+</span><span class="c1"></span>    <span class="c1">///创建一个 List 并添加初始化数据
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="o">[</span><span class="s">&#34;test1&#34;</span><span class="o">,</span> <span class="s">&#34;xioming&#34;</span><span class="o">,</span> <span class="s">&#34;张三&#34;</span><span class="o">,</span> <span class="s">&#34;李四&#34;</span><span class="o">];</span>
+
+    <span class="c1">///移除最后一个元素
+</span><span class="c1"></span>    <span class="n">list</span><span class="o">.</span><span class="na">removeLast</span><span class="o">();</span>
+
+    <span class="c1">///移除指定索引位置的元素 如这里指定的 2号位置
+</span><span class="c1"></span>    <span class="n">list</span><span class="o">.</span><span class="na">removeAt</span><span class="o">(</span><span class="n">2</span><span class="o">);</span>
+
+    <span class="c1">///移除List 中指定的元素
+</span><span class="c1"></span>    <span class="n">list</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="s">&#34;张三&#34;</span><span class="o">);</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>通过 removeRange 方法可删除 List 中指定范围的多个元素，这个范围是连续的，如下代码清单3-2所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="c1">///代码清单 1-13 
+</span><span class="c1"></span>    <span class="c1">///创建一个 List 并添加初始化数据
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="o">[</span><span class="s">&#34;test1&#34;</span><span class="o">,</span> <span class="s">&#34;xioming&#34;</span><span class="o">,</span> <span class="s">&#34;张三&#34;</span><span class="o">,</span> <span class="s">&#34;李四&#34;</span><span class="o">];</span>
+
+    <span class="n">print</span><span class="o">(</span><span class="s">&#34;list: &#34;</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span> <span class="c1">//list: [test1, xioming, 张三, 李四]
+</span><span class="c1"></span>
+    <span class="c1">///移除指定 索引区域的元素
+</span><span class="c1"></span>    <span class="c1">///如这里移除索引范围为 [0,2) 也就是移除了 0号位与1号位上的元素
+</span><span class="c1"></span>    <span class="n">list</span><span class="o">.</span><span class="na">removeRange</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">2</span><span class="o">);</span>
+
+
+</code></pre></td></tr></table>
+</div>
+</div><p>通过 removeWhere 方法可删除满足一定条件的元素数据，如下代码清单3-3所示:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="c1">///代码清单 1-14
+</span><span class="c1"></span>    <span class="c1">///创建一个 List 并添加初始化数据
+</span><span class="c1"></span>    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="o">[</span><span class="s">&#34;test1&#34;</span><span class="o">,</span> <span class="s">&#34;xioming&#34;</span><span class="o">,</span> <span class="s">&#34;张三&#34;</span><span class="o">,</span> <span class="s">&#34;李四&#34;</span><span class="o">];</span>
+
+    <span class="n">print</span><span class="o">(</span><span class="s">&#34;list: &#34;</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span> <span class="c1">//list: [test1, xioming, 张三, 李四]
+</span><span class="c1"></span>
+    <span class="c1">// 从List中中删除满足条件的所有对象。
+</span><span class="c1"></span>    <span class="n">list</span><span class="o">.</span><span class="na">removeWhere</span><span class="o">((</span><span class="n">item</span><span class="o">){</span>
+      <span class="c1">///在这里 张三, 李四 的 length 分别为2 ，满足条件 所以会被删除
+</span><span class="c1"></span>      <span class="k">return</span> <span class="n">item</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="n">2</span><span class="o">;</span>
+    <span class="o">});</span>
+    <span class="n">print</span><span class="o">(</span><span class="s">&#34;list: &#34;</span> <span class="o">+</span> <span class="n">list</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span> <span class="c1">//list: [test1, xioming]
+</span><span class="c1"></span>
+</code></pre></td></tr></table>
+</div>
+</div><p>通过 clear 方法可清空 List，也就是删除List中的所有的数据。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"> <span class="n">list</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="set">Set</h2>
+<p><strong>Set 是无序的；Set 是不允许添加重复元素；Set 不能使用下标来获取里面里面的元素，因为它是无序 的。</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// 方式一：
+</span><span class="c1"></span>  <span class="n">Set</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span> <span class="n">letterSet</span> <span class="o">=</span> <span class="n">Set</span><span class="p">.</span><span class="n">from</span><span class="p">([</span><span class="s2">&#34;A&#34;</span><span class="p">,</span> <span class="s2">&#34;B&#34;</span><span class="p">,</span> <span class="s2">&#34;C&#34;</span><span class="p">]);</span>
+  <span class="n">letterSet</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&#34;D&#34;</span><span class="p">);</span>
+  <span class="n">letterSet</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&#34;E&#34;</span><span class="p">);</span>
+  <span class="c1">// 重复的元素将被忽视
+</span><span class="c1"></span>  <span class="n">letterSet</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&#34;A&#34;</span><span class="p">);</span>
+
+  <span class="c1">// 使用 for..in.. 遍历 Set
+</span><span class="c1"></span>  <span class="k">for</span> <span class="p">(</span><span class="kt">String</span> <span class="n">letter</span> <span class="k">in</span> <span class="n">letterSet</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">$</span><span class="n">letter</span><span class="s1">&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+  
+  <span class="c1">// 方式二：
+</span><span class="c1"></span>  <span class="n">Set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numSet</span> <span class="o">=</span> <span class="n">Set</span><span class="p">();</span>
+  <span class="n">numSet</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="m">0</span><span class="p">);</span>
+  <span class="n">numSet</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+  <span class="n">numSet</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
+
+  <span class="c1">// 使用 Lambda 遍历 Set
+</span><span class="c1"></span>  <span class="n">numSet</span><span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">$</span><span class="n">value</span><span class="s1">&#39;</span><span class="p">));</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="map">Map</h2>
+<p>Dart 中 Map 的特性和 Java 中的类似，都是以键值对的形式存放，Map 中的键是唯一的，但是值可以重复，Map 也是无序的。</p>
+<p>下面看看 Dart 中 Map 的基本操作：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Map</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="o">&gt;</span> <span class="n">letterMap</span> <span class="o">=</span> <span class="n">Map</span><span class="p">();</span>
+  <span class="n">letterMap</span><span class="p">[</span><span class="s2">&#34;a&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;A&#34;</span><span class="p">;</span>
+  <span class="n">letterMap</span><span class="p">[</span><span class="s2">&#34;b&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;B&#34;</span><span class="p">;</span>
+  <span class="n">letterMap</span><span class="p">[</span><span class="s2">&#34;c&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;C&#34;</span><span class="p">;</span>
+
+  <span class="c1">// 检查是否存在某个 key
+</span><span class="c1"></span>  <span class="n">letterMap</span><span class="p">.</span><span class="n">containsKey</span><span class="p">(</span><span class="s2">&#34;a&#34;</span><span class="p">);</span>
+  <span class="c1">// 更新某个 key 对应的 value，注意 value 为一个 Lambda 表达式
+</span><span class="c1"></span>  <span class="n">letterMap</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">&#34;</span><span class="si">${</span><span class="n">value</span><span class="si">}</span><span class="s2">AA&#34;</span><span class="p">);</span>
+
+  <span class="c1">// 获取 Map 的长度
+</span><span class="c1"></span>  <span class="n">letterMap</span><span class="p">.</span><span class="n">length</span><span class="p">;</span>
+  <span class="c1">// 删除 Map 中的某个元素
+</span><span class="c1"></span>  <span class="n">letterMap</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&#34;c&#34;</span><span class="p">);</span>
+  <span class="c1">// 清空 Map
+</span><span class="c1"></span>  <span class="n">letterMap</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+
+  <span class="c1">// 遍历所有的 key
+</span><span class="c1"></span>  <span class="k">for</span> <span class="p">(</span><span class="kt">String</span> <span class="n">key</span> <span class="k">in</span> <span class="n">letterMap</span><span class="p">.</span><span class="n">keys</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">$</span><span class="n">key</span><span class="s1">&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+
+  <span class="c1">// 遍历所有的 value
+</span><span class="c1"></span>  <span class="k">for</span> <span class="p">(</span><span class="kt">String</span> <span class="n">value</span> <span class="k">in</span> <span class="n">letterMap</span><span class="p">.</span><span class="n">values</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">$</span><span class="n">value</span><span class="s1">&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+
+  <span class="c1">// 遍历所有的 key-value
+</span><span class="c1"></span>  <span class="n">letterMap</span><span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">$</span><span class="n">key</span><span class="s1"> == </span><span class="si">$</span><span class="n">value</span><span class="s1">&#39;</span><span class="p">));</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>上述代码中使用的是构造方法的方式来创建 Map，我们还可以使用一下方式来创建：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart">  <span class="n">Map</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">studentScoreMap</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&#34;Jack&#34;</span><span class="o">:</span> <span class="m">90</span><span class="p">,</span>
+    <span class="s2">&#34;Rost&#34;</span><span class="o">:</span> <span class="m">100</span><span class="p">,</span>
+    <span class="s2">&#34;Mary&#34;</span><span class="o">:</span> <span class="m">30</span><span class="p">,</span>
+    <span class="s2">&#34;LiLei&#34;</span><span class="o">:</span> <span class="m">56</span>
+  <span class="p">};</span>
+
+  <span class="n">studentScoreMap</span><span class="p">.</span><span class="n">forEach</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="k">source</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">$</span><span class="n">name</span><span class="s1"> == </span><span class="si">$</span><span class="n">source</span><span class="s1">&#39;</span><span class="p">));</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="callable">Callable</h2>
+<p>Callable 能让我们像调用方法一样调用某个类，不过我们在类中需要实现 <code>call</code> 方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dart" data-lang="dart"><span class="kt">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="n">personOne</span> <span class="o">=</span> <span class="n">Person</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="n">info</span> <span class="o">=</span> <span class="n">personOne</span><span class="p">(</span><span class="s2">&#34;Jack&#34;</span><span class="p">,</span> <span class="m">18</span><span class="p">);</span>
+  <span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">$</span><span class="n">info</span><span class="s1">&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Person</span> <span class="p">{</span>
+  <span class="c1">// 实现 call 方法
+</span><span class="c1"></span>  <span class="kt">String</span> <span class="n">call</span><span class="p">(</span><span class="kt">String</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">&#34;</span><span class="si">$</span><span class="n">name</span><span class="s2"> is </span><span class="si">$</span><span class="n">age</span><span class="s2"> years old&#34;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-05-25</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://luckly.work/dart%E4%B9%8Blist%E7%9B%B8%E5%85%B3/" data-title="《Dart之List相关》" data-hashtags="flutter,dart"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://luckly.work/dart%E4%B9%8Blist%E7%9B%B8%E5%85%B3/" data-hashtag="flutter"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://luckly.work/dart%E4%B9%8Blist%E7%9B%B8%E5%85%B3/" data-title="《Dart之List相关》"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://luckly.work/dart%E4%B9%8Blist%E7%9B%B8%E5%85%B3/" data-title="《Dart之List相关》"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://luckly.work/dart%E4%B9%8Blist%E7%9B%B8%E5%85%B3/" data-title="《Dart之List相关》" data-image="https://luckly007.oss-cn-beijing.aliyuncs.com/img/dart.jpg"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/flutter/">flutter</a>,&nbsp;<a href="/tags/dart/">dart</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/flutter%E6%8F%92%E4%BB%B6awesome_dialog/" class="prev" rel="prev" title="《Flutter插件awesome_dialog》"><i class="fas fa-angle-left fa-fw"></i>《Flutter插件awesome_dialog》</a>
+            <a href="/emoji-support/" class="next" rel="next" title="Emoji 支持">Emoji 支持<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">早起的年轻人</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"data":{"id-1":"早起的年轻人","id-2":"早起的年轻人"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

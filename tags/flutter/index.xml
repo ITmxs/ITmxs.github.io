@@ -4,7 +4,19 @@
         <link>https://luckly.work/tags/flutter/</link>
         <description>flutter - 标签 - Lucklyの博客 - 在阅读中遇见自己</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>852851198@qq.com (早起的年轻人)</managingEditor>
-            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 24 May 2021 22:10:25 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/tags/flutter/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 25 May 2021 11:33:24 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/tags/flutter/" rel="self" type="application/rss+xml" /><item>
+    <title>《Dart之List相关》</title>
+    <link>https://luckly.work/dart%E4%B9%8Blist%E7%9B%B8%E5%85%B3/</link>
+    <pubDate>Tue, 25 May 2021 11:33:24 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/dart%E4%B9%8Blist%E7%9B%B8%E5%85%B3/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/dart.jpg" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>要说，List在我的开发使用中，确实是最为频繁的了，那么如何使用list，也就成了一个问题，list提供的方法又有哪些</p>
+<p>这些都是需要掌握理解的。</p>
+</blockquote>]]></description>
+</item><item>
     <title>《Flutter插件awesome_dialog》</title>
     <link>https://luckly.work/flutter%E6%8F%92%E4%BB%B6awesome_dialog/</link>
     <pubDate>Mon, 24 May 2021 22:10:25 &#43;0800</pubDate>
@@ -101,17 +113,6 @@
                 <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png" referrerpolicy="no-referrer">
             </div><blockquote>
 <p>本文主要介绍接下来一段时间的学习和记录方向</p>
-</blockquote>]]></description>
-</item><item>
-    <title>《Flutter电子书04》</title>
-    <link>https://luckly.work/flutter%E7%94%B5%E5%AD%90%E4%B9%A604/</link>
-    <pubDate>Mon, 16 Nov 2020 22:56:53 &#43;0800</pubDate>
-    <author>文章作者</author>
-    <guid>https://luckly.work/flutter%E7%94%B5%E5%AD%90%E4%B9%A604/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png" referrerpolicy="no-referrer">
-            </div><blockquote>
-<p>本文主要介绍学习flutter的一些电子书</p>
 </blockquote>]]></description>
 </item></channel>
 </rss>
