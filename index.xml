@@ -4,7 +4,7 @@
         <link>https://luckly.work/</link>
         <description>早起的年轻人做的网站</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>852851198@qq.com (早起的年轻人)</managingEditor>
-            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 25 May 2021 11:33:24 &#43;0800</lastBuildDate>
+            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 25 May 2021 18:33:55 &#43;0800</lastBuildDate>
             <atom:link href="https://luckly.work/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>主题文档 - 基本概念</title>
@@ -27,6 +27,17 @@
     <author>文章作者</author>
     <guid>https://luckly.work/emoji-support/</guid>
     <description><![CDATA[<p>Emoji 可以通过多种方式在 Hugo 项目中启用.</p>]]></description>
+</item><item>
+    <title>《Redis在windows下设置开机自启动》</title>
+    <link>https://luckly.work/redis%E5%9C%A8windows%E4%B8%8B%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/</link>
+    <pubDate>Tue, 25 May 2021 18:33:55 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/redis%E5%9C%A8windows%E4%B8%8B%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>本文主要介绍</p>
+</blockquote>]]></description>
 </item><item>
     <title>《Dart之List相关》</title>
     <link>https://luckly.work/dart%E4%B9%8Blist%E7%9B%B8%E5%85%B3/</link>
@@ -84,16 +95,5 @@
     <author>文章作者</author>
     <guid>https://luckly.work/go%E7%AC%AC%E4%B8%80%E8%AF%BE/</guid>
     <description><![CDATA[]]></description>
-</item><item>
-    <title>《Flutter获取通讯录好友02》</title>
-    <link>https://luckly.work/flutter%E8%8E%B7%E5%8F%96%E9%80%9A%E8%AE%AF%E5%BD%95%E5%A5%BD%E5%8F%8B/</link>
-    <pubDate>Thu, 20 May 2021 10:45:15 &#43;0800</pubDate>
-    <author>文章作者</author>
-    <guid>https://luckly.work/flutter%E8%8E%B7%E5%8F%96%E9%80%9A%E8%AE%AF%E5%BD%95%E5%A5%BD%E5%8F%8B/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png" referrerpolicy="no-referrer">
-            </div><blockquote>
-<p>本文主要介绍Flutter如何获取通讯录好友</p>
-</blockquote>]]></description>
 </item></channel>
 </rss>

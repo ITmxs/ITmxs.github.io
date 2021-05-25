@@ -4,7 +4,14 @@
         <link>https://luckly.work/categories/</link>
         <description>Categories - 分类 - Lucklyの博客 - 在阅读中遇见自己</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>852851198@qq.com (早起的年轻人)</managingEditor>
-            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 25 May 2021 11:33:24 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 25 May 2021 18:33:55 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>redis</title>
+    <link>https://luckly.work/categories/redis/</link>
+    <pubDate>Tue, 25 May 2021 18:33:55 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/categories/redis/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>dart</title>
     <link>https://luckly.work/categories/dart/</link>
     <pubDate>Tue, 25 May 2021 11:33:24 &#43;0800</pubDate>
@@ -66,13 +73,6 @@
     <pubDate>Fri, 23 Apr 2021 07:18:48 &#43;0800</pubDate>
     <author>文章作者</author>
     <guid>https://luckly.work/categories/%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Nginx</title>
-    <link>https://luckly.work/categories/nginx/</link>
-    <pubDate>Wed, 17 Mar 2021 07:18:09 &#43;0800</pubDate>
-    <author>文章作者</author>
-    <guid>https://luckly.work/categories/nginx/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>
