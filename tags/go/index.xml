@@ -18,5 +18,16 @@
     <author>文章作者</author>
     <guid>https://luckly.work/go%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E5%AF%BC%E8%88%AA/</guid>
     <description><![CDATA[]]></description>
+</item><item>
+    <title>《Go安全指南》</title>
+    <link>https://luckly.work/go%E5%AE%89%E5%85%A8%E6%8C%87%E5%8D%97/</link>
+    <pubDate>Mon, 25 Jan 2021 22:44:54 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/go%E5%AE%89%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>本文主要介绍面向开发人员梳理的代码安全指南，旨在梳理API层面的风险点并提供详实可行的安全编码方案。</p>
+</blockquote>]]></description>
 </item></channel>
 </rss>
