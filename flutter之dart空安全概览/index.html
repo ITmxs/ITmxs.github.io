@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>《Flutter之Dart空安全概览》 - Lucklyの博客 - 在阅读中遇见自己</title><meta name="Description" content="早起的年轻人做的网站"><meta property="og:title" content="《Flutter之Dart空安全概览》" />
+<meta property="og:description" content="
+本文概述空安全是如何影响 Dart 语言的。如果希望深入了解空安全性的工作原理
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luckly.work/flutter%E4%B9%8Bdart%E7%A9%BA%E5%AE%89%E5%85%A8%E6%A6%82%E8%A7%88/" />
+<meta property="og:image" content="https://luckly.work/logo.png"/>
+<meta property="article:published_time" content="2021-05-26T12:50:36+08:00" />
+<meta property="article:modified_time" content="2021-05-26T12:50:36+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://luckly.work/logo.png"/>
+
+<meta name="twitter:title" content="《Flutter之Dart空安全概览》"/>
+<meta name="twitter:description" content="
+本文概述空安全是如何影响 Dart 语言的。如果希望深入了解空安全性的工作原理
+"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://luckly.work/flutter%E4%B9%8Bdart%E7%A9%BA%E5%AE%89%E5%85%A8%E6%A6%82%E8%A7%88/" /><link rel="prev" href="https://luckly.work/flutter%E4%B9%8B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3dart%E7%A9%BA%E5%AE%89%E5%85%A8/" /><link rel="next" href="https://luckly.work/tomact%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "《Flutter之Dart空安全概览》",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/luckly.work\/flutter%E4%B9%8Bdart%E7%A9%BA%E5%AE%89%E5%85%A8%E6%A6%82%E8%A7%88\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/luckly.work\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordcount":  2668 ,
+        "url": "https:\/\/luckly.work\/flutter%E4%B9%8Bdart%E7%A9%BA%E5%AE%89%E5%85%A8%E6%A6%82%E8%A7%88\/","datePublished": "2021-05-26T12:50:36+08:00","dateModified": "2021-05-26T12:50:36+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/luckly.work\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "早起的年轻人"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lucklyの博客 - 在阅读中遇见自己"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/categories/flutter/"> Flutter </a><a class="menu-item" href="/categories/read/"> 读书笔记 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ITmxs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i> Github </a><a class="menu-item" href="/friend/"><i class='fas fa-user-friends'></i> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lucklyの博客 - 在阅读中遇见自己"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/categories/flutter/" title="">Flutter</a><a class="menu-item" href="/categories/read/" title="">读书笔记</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ITmxs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>Github</a><a class="menu-item" href="/friend/" title=""><i class='fas fa-user-friends'></i>友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">《Flutter之Dart空安全概览》</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>早起的年轻人</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-26">2021-05-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2668 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png"
+        data-srcset="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png, https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png 1.5x, https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png 2x"
+        data-sizes="auto"
+        alt="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png"
+        title="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#创建变量">创建变量</a></li>
+        <li><a href="#在变量和表达式中使用">在变量和表达式中使用</a></li>
+        <li><a href="#理解列表集合及映射类型中的使用">理解列表、集合及映射类型中的使用</a>
+          <ul>
+            <li><a href="#列表和集合类型">列表和集合类型</a></li>
+            <li><a href="#映射类型">映射类型</a></li>
+          </ul>
+        </li>
+        <li><a href="#启用空安全">启用空安全</a>
+          <ul>
+            <li><a href="#设置-sdk-版本">设置 SDK 版本</a></li>
+            <li><a href="#加入实验性的命令行参数">加入实验性的命令行参数</a></li>
+            <li><a href="#示例">示例</a></li>
+          </ul>
+        </li>
+        <li><a href="#学习更多">学习更多</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>本文概述空安全是如何影响 Dart 语言的。如果希望深入了解空安全性的工作原理</p>
+</blockquote>
+<p>Dart 语言即将 <strong>全面引入</strong> 健全的空安全机制了，当您选择使用空安全时，代码中的类型将默认是非空的， 意味着 <strong>除非您声明它们可空</strong>，它们的值都不能为空。有了空安全，原本处于您的 <strong>运行时</strong> 的空值引用错误 将变为 <strong>编译时</strong> 的分析错误。</p>
+<p>今天的推送文章将概述空安全是如何影响 Dart 语言的。如果希望深入了解空安全性的工作原理，点击此处<a href="" rel="">《深入理解 Dart 空安全》</a>。</p>
+<p>有了空安全，Dart 分析器可以进行更好的检查。例如：它将在您读取一个可空的变量前提示您进行空检查。由于 Dart 的空安全是十分有效的， Dart 编译器和运行环境也同时可以通过优化减少内部的空安全检查， 这样应用就可以更快且更小。</p>
+<blockquote>
+<p>由于目前空安全仍然处于技术预览阶段， 所以 **请勿在生产环境使用空安全。**请注意，Flutter 目前尚未支持空安全。请通过 Dart SDK 测试这项特性， 并且给予我们反馈。</p>
+</blockquote>
+<p>与空安全相关的新操作符和关键字有 <code>?</code>、<code>!</code> 和 <code>late</code>。如果您曾经使用过 Kotlin、TypeScript 或 C# 进行开发， 那么这些空安全的语法看起来会有些熟悉。这是设计使然：<strong>Dart 语言的目标是不让您感到惊讶</strong>。</p>
+<p>您可以在您的项目设置里启用技术预览版 SDK（见本文下面章节），从而在您的项目里实践空安全。或者通过 <strong>支持空安全的 DartPad</strong> (nullsafety.dartpad.cn) 进行练习。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8CVExFMoXqK6OzFUiazApKkialib9aG2f1GGjHWtVBzzWf1YghE1nNgDcQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"
+        data-srcset="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8CVExFMoXqK6OzFUiazApKkialib9aG2f1GGjHWtVBzzWf1YghE1nNgDcQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1, https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8CVExFMoXqK6OzFUiazApKkialib9aG2f1GGjHWtVBzzWf1YghE1nNgDcQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1 1.5x, https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8CVExFMoXqK6OzFUiazApKkialib9aG2f1GGjHWtVBzzWf1YghE1nNgDcQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1 2x"
+        data-sizes="auto"
+        alt="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8CVExFMoXqK6OzFUiazApKkialib9aG2f1GGjHWtVBzzWf1YghE1nNgDcQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"
+        title="图片" />支持空安全的 DartPad 界面截图</p>
+<h2 id="创建变量">创建变量</h2>
+<p>当您创建变量时， 您可以使用 <code>?</code> 和 <code>late</code>告诉 Dart 这些变量是否可空。</p>
+<p>以下是一些声明 <strong>非空变量</strong> 的例子（假设您已经使用了空安全）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// In null-safe Dart, none of these can ever be null.
+var i = 42; // Inferred to be an int.
+String name = getFileName();
+final b = Foo();
+</code></pre></td></tr></table>
+</div>
+</div><p>如果这些变量 <strong>可以</strong> 为空值 ( <code>null</code> )， 在类型声明处 <strong>加上 <code>?</code></strong>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">int? aNullableInt = null;
+</code></pre></td></tr></table>
+</div>
+</div><p>在您已经明确一个非空变量一定会在使用前初始化， 而 Dart 分析器仍然无法明确的情况下， 您可以在变量的类型前 <strong>加上 <code>late</code></strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">class IntProvider {
+  late int aRealInt;
+  
+  IntProvider() {
+    aRealInt = calculate();
+  }
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>关键词 <code>late</code> 有两个作用：</p>
+<ul>
+<li>分析器并不要求您立刻对使用 <code>late</code> 声明的变量初始化为非空值；</li>
+<li>运行环境将懒加载 <code>late</code> 变量。例如：如果一个非空的实例变量必须被计算， 那么 <code>late</code> 将会让它的计算延迟到首次使用再进行。</li>
+</ul>
+<h2 id="在变量和表达式中使用">在变量和表达式中使用</h2>
+<p>有了空安全，Dart 分析器会在要求非空而得到一个空值时抛出错误。这并不像听起来那么糟糕。当函数内的一个变量或一句表达式为可空的类型， 但不能包含空值时，分析器通常也可以识别。</p>
+<blockquote>
+<p>分析器不能对整个应用流程进行模拟， 所以它并不能对全局变量或者类的字段进行推断。</p>
+</blockquote>
+<p>当您正在调用一个可空的变量或者表达式时， 请确保您自己处理了空值。例如：您可以使用 <code>if</code> 条件句、<code>??</code> 操作符 或是 <code>?.</code> 操作符来处理可能为空的值。</p>
+<p>下面是一个使用 <strong><code>??</code> 操作符</strong>来避免将非空变量赋予空值的例子。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">int value = aNullableInt ?? 0; // 0 if it&#39;s null; otherwise, the integer
+</code></pre></td></tr></table>
+</div>
+</div><p>下面是一段类似的代码，但使用了 <code>if</code> 条件句来检查是否为空：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">int definitelyInt(int? aNullableInt) {
+  if (aNullableInt == null) {
+    return 0;
+  }
+  return aNullableInt; // Can&#39;t be null!
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>如果您能确定一条可空的表达式不为空， 您可以在其后添加 <code>!</code> 让 Dart 处理为非空。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">int? aNullableInt = 2;
+int value = aNullableInt!; // `aNullableInt!` is an int.
+// This throws if aNullableInt is null.
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>如果您并不完全确定值为非空，<strong>请不要使用 <code>!</code> 操作符</strong>。</p>
+</blockquote>
+<p>如果您想改变一个可空变量的类型，您可以使用 <strong>类型转换操作符 (<code>as</code>)</strong>， 这是 <code>!</code> 操作符做不到的。下面的例子使用了 <code>as</code> 将 <code>num?</code> 转换为 <code>int</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">return maybeNum() as int;
+</code></pre></td></tr></table>
+</div>
+</div><p>一旦您开始使用空安全，当操作对象可能为空时， 您将不再能使用 <strong>成员访问符 (<code>.</code>)</strong>。取而代之的是可空版本的 <code>?.</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">double? d;  
+print(d?.floor()); // Uses `?.` instead of `.` to invoke `floor()`.
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="理解列表集合及映射类型中的使用">理解列表、集合及映射类型中的使用</h2>
+<p>列表、集合和映射是 Dart 程序中常用的集合类型， 所以您会需要了解它们如何与空安全进行交互。下面是一些 Dart 代码如何使用这些集合类型的例子：</p>
+<ul>
+<li>
+<p>Flutter 布局 widgets 中的 <code>Column</code> 拥有 <code>children</code> 属性，它是元素为 <code>Widget</code> 的 <code>List</code>；</p>
+</li>
+<li>
+<p>Veggie Seasons 示例应用中使用了元素为 <code>VeggieCategory</code> 的 <code>Set</code> 用于保存用户的食物偏好；</p>
+</li>
+<li>
+<p>GitHub Dataviz 示例应用中的 <code>fromJson()</code> 方法会 从类型为 <code>Map&lt;String, dynamic&gt;</code> 的 JSON 数据中 创建一个实例。</p>
+</li>
+<li>
+<p>示例应用: Veggie Seasons
+github.com/flutter/samples/tree/master/veggieseasons</p>
+</li>
+<li>
+<p>示例应用: GitHub Dataviz
+github.com/flutter/samples/tree/master/web/github_dataviz</p>
+</li>
+</ul>
+<h3 id="列表和集合类型">列表和集合类型</h3>
+<p>当您在声明列表或集合类型时， 仔细思考什么可以为空。下面的表格展示了使用了空安全的列表的可空可能性。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">列表能为空吗？</th>
+<th style="text-align:center">元素 (string) 能为空吗？</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>List&lt;String&gt;</code></td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">一个包含非空字符串的 非空列表</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>List&lt;String&gt;?</code></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">一个包含非空字符串的 <strong>可空</strong>列表</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>List&lt;String?&gt;</code></td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">一个包含<strong>可空</strong>字符串的 非空列表</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>List&lt;String?&gt;?</code></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">一个包含<strong>可空</strong>字符串的 <strong>可空</strong>列表</td>
+</tr>
+</tbody>
+</table>
+<p>在通过字面量创建一个列表或集合时，通常您会看到字面量类型注解，而不是表格上面的类型声明。例如下面的代码可以用于创建一个名为 <code>nameList</code> 的 <code>List&lt;String?&gt;</code>和一个名为 <code>nameSet</code> 的 <code>Set&lt;String?&gt;</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">var nameList = &lt;String?&gt;[&#39;Andrew&#39;, &#39;Anjan&#39;, &#39;Anya&#39;];
+var nameSet = &lt;String?&gt;{&#39;Andrew&#39;, &#39;Anjan&#39;, &#39;Anya&#39;};
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="映射类型">映射类型</h3>
+<p>映射类型大部分会与您预期的表现一致，除了一处不同：<strong>查询的返回值可能为空</strong>。当一个映射中并未出现包含某个 key 时，将会是空值。</p>
+<p>看看下面的示例代码。您认为 <code>uhOh</code> 的类型和值会是什么呢？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">var myMap = &lt;String, int&gt;{&#39;one&#39;: 1};
+var uhOh = myMap[&#39;two&#39;];
+</code></pre></td></tr></table>
+</div>
+</div><p>答案是 <code>uhOh</code> 是空值，类型为 <code>int?</code>。</p>
+<p>就像列表和集合一样，映射也会有一些不同的类型：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">映射能 为空吗？</th>
+<th style="text-align:center">元素 (int) 能为空吗？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>Map&lt;String, int&gt;</code></td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No*</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>Map&lt;String, int&gt;?</code></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">No*</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>Map&lt;String, int?&gt;</code></td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>Map&lt;String, int?&gt;?</code></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+<p>*** 尽管映射中的所有 int 值都是非空值， 但当您在查询时使用了无效的 key，返回的仍是空值。**</p>
+<p>由于映射查询可能返回空值， 您不能将其传递给非空变量：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// Assigning a lookup result to a non-nullable
+// variable causes an error.
+int value = &lt;String, int&gt;{&#39;one&#39;: 1}[&#39;one&#39;]; // ERROR
+</code></pre></td></tr></table>
+</div>
+</div><p>一个变通的方法是将变量的类型改为可空：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">int? value = &lt;String, int&gt;{&#39;one&#39;: 1}[&#39;one&#39;]; // OK
+</code></pre></td></tr></table>
+</div>
+</div><p>如果您确定查询必定成功， 那么另一种避免问题的方法是加上 <code>!</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">int value = &lt;String, int&gt;{&#39;one&#39;: 1}[&#39;one&#39;]!; // OK
+</code></pre></td></tr></table>
+</div>
+</div><p>更安全的实现是仅在查询结果不为空时使用结果。您可以使用 <code>if</code> 条件句或者 <code>??</code> 操作符进行判断。下面是当查询结果为空时使用 <code>0</code> 为值的一个例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">var aMap = &lt;String, int&gt;{&#39;one&#39;: 1};
+...
+int value = aMap[&#39;one&#39;] ?? 0;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="启用空安全">启用空安全</h2>
+<p>Dart 工具目前对空安全代码的分析、编译和运行的支持仍然在实验阶段。如果想使用空安全，请按照如下步骤通过命令行命令或者 IDE 设置启用技术预览版本的空安全。</p>
+<ul>
+<li>为 Dart 项目配置支持空安全的技术预览版 SDK；</li>
+<li>为所有的 Dart 工具加入实验性的命令行参数。</li>
+</ul>
+<h3 id="设置-sdk-版本">设置 SDK 版本</h3>
+<p>到 Dart.cn 查看文档 SDK 版本约束来设定一个支持空安全的 SDK 版本。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">environment: sdk: &#39;&gt;=2.10.0-56.0.dev &lt;3.0.0&#39;
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>我们建议这里使用 Dart 或者 Flutter SDK 的 <strong>最新 dev 发布渠道</strong>。了解如何获得最新的发布渠道信息，请查看 Dart SDK 页面的 Dev 发布渠道部分。或者 <strong>Flutter SDK</strong> 的 Dev 发布渠道部分。</p>
+</blockquote>
+<h3 id="加入实验性的命令行参数">加入实验性的命令行参数</h3>
+<p>如果需要使用空安全，需要把 <code>non-nullable</code> 这个实验性的命令行参数 加入到所有的 Dart 工具。比如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ ~/dev/dart-sdk/bin/dart --enable-experiment=non-nullable bin/main.dart
+</code></pre></td></tr></table>
+</div>
+</div><p>关于如何在 IDE 和命令行工具里加入实验性的命令行参数，请查看文档：<strong>实验性的参数标记</strong>。</p>
+<ul>
+<li>加入实验性参数标记
+dart.cn/tools/experiment-flags</li>
+</ul>
+<blockquote>
+<p>等到空安全在 beta 或者 stable 渠道发布时，就无需再加入空安全的实验性参数了。</p>
+</blockquote>
+<h3 id="示例">示例</h3>
+<p>有关启用和使用空安全的 Dart 命令行程序的完整示例，请参见 <strong>空安全示例</strong> 应用。</p>
+<ul>
+<li>空安全示例应用
+github.com/dart-lang/samples/tree/master/null_safety/calculate_lix</li>
+</ul>
+<h2 id="学习更多">学习更多</h2>
+<p>更多关于空安全的信息，请前往以下内容继续阅读：</p>
+<ul>
+<li>
+<p>Dart 重要通知邮件群组
+groups.google.com/a/dartlang.org/d/forum/announce</p>
+</li>
+<li>
+<p>Dart 官方博客
+medium.com/dartlang</p>
+</li>
+<li>
+<p>支持空声明的 DartPad
+nullsafety.dartpad.cn</p>
+</li>
+<li>
+<p>空安全的问题跟踪
+github.com/dart-lang/language/issues/110</p>
+</li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-05-26</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://luckly.work/flutter%E4%B9%8Bdart%E7%A9%BA%E5%AE%89%E5%85%A8%E6%A6%82%E8%A7%88/" data-title="《Flutter之Dart空安全概览》"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://luckly.work/flutter%E4%B9%8Bdart%E7%A9%BA%E5%AE%89%E5%85%A8%E6%A6%82%E8%A7%88/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://luckly.work/flutter%E4%B9%8Bdart%E7%A9%BA%E5%AE%89%E5%85%A8%E6%A6%82%E8%A7%88/" data-title="《Flutter之Dart空安全概览》"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://luckly.work/flutter%E4%B9%8Bdart%E7%A9%BA%E5%AE%89%E5%85%A8%E6%A6%82%E8%A7%88/" data-title="《Flutter之Dart空安全概览》"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://luckly.work/flutter%E4%B9%8Bdart%E7%A9%BA%E5%AE%89%E5%85%A8%E6%A6%82%E8%A7%88/" data-title="《Flutter之Dart空安全概览》" data-image="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/flutter%E4%B9%8B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3dart%E7%A9%BA%E5%AE%89%E5%85%A8/" class="prev" rel="prev" title="《Flutter之深入理解Dart空安全》"><i class="fas fa-angle-left fa-fw"></i>《Flutter之深入理解Dart空安全》</a>
+            <a href="/tomact%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" class="next" rel="next" title="《Tomact的安装与基础使用》">《Tomact的安装与基础使用》<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">早起的年轻人</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"早起的年轻人","id-2":"早起的年轻人"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
