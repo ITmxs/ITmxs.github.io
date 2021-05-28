@@ -4,7 +4,7 @@
         <link>https://luckly.work/</link>
         <description>早起的年轻人做的网站</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>852851198@qq.com (早起的年轻人)</managingEditor>
-            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 26 May 2021 18:04:49 &#43;0800</lastBuildDate>
+            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 27 May 2021 07:09:54 &#43;0800</lastBuildDate>
             <atom:link href="https://luckly.work/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>主题文档 - 基本概念</title>
@@ -28,7 +28,18 @@
     <guid>https://luckly.work/emoji-support/</guid>
     <description><![CDATA[<p>Emoji 可以通过多种方式在 Hugo 项目中启用.</p>]]></description>
 </item><item>
-    <title>《Win10安装IIS并配置ASP.NET4</title>
+    <title>《SqlServer服务远程调用失败》</title>
+    <link>https://luckly.work/sqlserver%E6%9C%8D%E5%8A%A1%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E5%A4%B1%E8%B4%A5/</link>
+    <pubDate>Thu, 27 May 2021 07:09:54 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/sqlserver%E6%9C%8D%E5%8A%A1%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E5%A4%B1%E8%B4%A5/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>本文主要介绍</p>
+</blockquote>]]></description>
+</item><item>
+    <title>《Win10安装IIS并配置ASP.NET4 》</title>
     <link>https://luckly.work/win10%E5%AE%89%E8%A3%85iis%E5%B9%B6%E9%85%8D%E7%BD%AEasp.net4.0/</link>
     <pubDate>Wed, 26 May 2021 18:04:49 &#43;0800</pubDate>
     <author>文章作者</author>
@@ -86,18 +97,6 @@
                 <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/redis.png" referrerpolicy="no-referrer">
             </div><blockquote>
 <p>本文主要介绍</p>
-</blockquote>]]></description>
-</item><item>
-    <title>《Dart之List相关》</title>
-    <link>https://luckly.work/dart%E4%B9%8Blist%E7%9B%B8%E5%85%B3/</link>
-    <pubDate>Tue, 25 May 2021 11:33:24 &#43;0800</pubDate>
-    <author>文章作者</author>
-    <guid>https://luckly.work/dart%E4%B9%8Blist%E7%9B%B8%E5%85%B3/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/dart.jpg" referrerpolicy="no-referrer">
-            </div><blockquote>
-<p>要说，List在我的开发使用中，确实是最为频繁的了，那么如何使用list，也就成了一个问题，list提供的方法又有哪些</p>
-<p>这些都是需要掌握理解的。</p>
 </blockquote>]]></description>
 </item></channel>
 </rss>
