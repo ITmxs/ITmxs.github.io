@@ -4,7 +4,7 @@
         <link>https://luckly.work/posts/</link>
         <description>所有文章 | Lucklyの博客 - 在阅读中遇见自己</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>852851198@qq.com (早起的年轻人)</managingEditor>
-            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 28 May 2021 12:50:36 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 28 May 2021 18:49:12 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/posts/" rel="self" type="application/rss+xml" /><item>
     <title>主题文档 - 基本概念</title>
     <link>https://luckly.work/theme-documentation-basics/</link>
     <pubDate>Fri, 06 Mar 2020 21:40:32 &#43;0800</pubDate>
@@ -25,6 +25,37 @@
     <author>文章作者</author>
     <guid>https://luckly.work/emoji-support/</guid>
     <description><![CDATA[<p>Emoji 可以通过多种方式在 Hugo 项目中启用.</p>]]></description>
+</item><item>
+    <title>《穷查理宝典》</title>
+    <link>https://luckly.work/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/</link>
+    <pubDate>Fri, 28 May 2021 18:49:12 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/</guid>
+    <description><![CDATA[<blockquote>
+<p>本文主要介绍穷查理宝典的笔记</p>
+</blockquote>]]></description>
+</item><item>
+    <title>《Go多版本管理方法与工具》</title>
+    <link>https://luckly.work/go%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%8E%E5%B7%A5%E5%85%B7/</link>
+    <pubDate>Fri, 28 May 2021 16:47:50 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/go%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%8E%E5%B7%A5%E5%85%B7/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>本文主要介绍go多版本的使用方式</p>
+</blockquote>]]></description>
+</item><item>
+    <title>《Flutter安装教程》</title>
+    <link>https://luckly.work/flutter%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</link>
+    <pubDate>Fri, 28 May 2021 16:34:49 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/flutter%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>本文主要介绍</p>
+</blockquote>]]></description>
 </item><item>
     <title>《Flutter之Dart空安全概览》</title>
     <link>https://luckly.work/flutter%E4%B9%8Bdart%E7%A9%BA%E5%AE%89%E5%85%A8%E6%A6%82%E8%A7%88/</link>
@@ -63,35 +94,6 @@
     <author>文章作者</author>
     <guid>https://luckly.work/win10%E5%AE%89%E8%A3%85iis%E5%B9%B6%E9%85%8D%E7%BD%AEasp.net4.0/</guid>
     <description><![CDATA[<blockquote>
-<p>本文主要介绍</p>
-</blockquote>]]></description>
-</item><item>
-    <title>《Sql2008R2安装教程》</title>
-    <link>https://luckly.work/sql2008r2%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</link>
-    <pubDate>Wed, 26 May 2021 14:10:22 &#43;0800</pubDate>
-    <author>文章作者</author>
-    <guid>https://luckly.work/sql2008r2%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</guid>
-    <description><![CDATA[<blockquote>
-<p>本文主要介绍sql2008R2安装教程</p>
-</blockquote>]]></description>
-</item><item>
-    <title>《Tomact的安装与基础使用》</title>
-    <link>https://luckly.work/tomact%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/</link>
-    <pubDate>Wed, 26 May 2021 13:40:44 &#43;0800</pubDate>
-    <author>文章作者</author>
-    <guid>https://luckly.work/tomact%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/</guid>
-    <description><![CDATA[<blockquote>
-<p>本文主要介绍tomact的安装与基础使用</p>
-</blockquote>]]></description>
-</item><item>
-    <title>《Redis在windows下设置开机自启动》</title>
-    <link>https://luckly.work/redis%E5%9C%A8windows%E4%B8%8B%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/</link>
-    <pubDate>Tue, 25 May 2021 18:33:55 &#43;0800</pubDate>
-    <author>文章作者</author>
-    <guid>https://luckly.work/redis%E5%9C%A8windows%E4%B8%8B%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/redis.png" referrerpolicy="no-referrer">
-            </div><blockquote>
 <p>本文主要介绍</p>
 </blockquote>]]></description>
 </item></channel>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>《Go多版本管理方法与工具》 - Lucklyの博客 - 在阅读中遇见自己</title><meta name="Description" content="早起的年轻人做的网站"><meta property="og:title" content="《Go多版本管理方法与工具》" />
+<meta property="og:description" content="
+本文主要介绍go多版本的使用方式
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luckly.work/go%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%8E%E5%B7%A5%E5%85%B7/" />
+<meta property="og:image" content="https://luckly.work/logo.png"/>
+<meta property="article:published_time" content="2021-05-28T16:47:50+08:00" />
+<meta property="article:modified_time" content="2021-05-28T16:47:50+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://luckly.work/logo.png"/>
+
+<meta name="twitter:title" content="《Go多版本管理方法与工具》"/>
+<meta name="twitter:description" content="
+本文主要介绍go多版本的使用方式
+"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://luckly.work/go%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%8E%E5%B7%A5%E5%85%B7/" /><link rel="prev" href="https://luckly.work/flutter%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" /><link rel="next" href="https://luckly.work/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "《Go多版本管理方法与工具》",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/luckly.work\/go%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%8E%E5%B7%A5%E5%85%B7\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/luckly.work\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordcount":  1108 ,
+        "url": "https:\/\/luckly.work\/go%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%8E%E5%B7%A5%E5%85%B7\/","datePublished": "2021-05-28T16:47:50+08:00","dateModified": "2021-05-28T16:47:50+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/luckly.work\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "早起的年轻人"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lucklyの博客 - 在阅读中遇见自己"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/categories/flutter/"> Flutter </a><a class="menu-item" href="/categories/read/"> 读书笔记 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ITmxs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i> Github </a><a class="menu-item" href="/friend/"><i class='fas fa-user-friends'></i> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lucklyの博客 - 在阅读中遇见自己"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/categories/flutter/" title="">Flutter</a><a class="menu-item" href="/categories/read/" title="">读书笔记</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ITmxs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>Github</a><a class="menu-item" href="/friend/" title=""><i class='fas fa-user-friends'></i>友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">《Go多版本管理方法与工具》</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>早起的年轻人</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-28">2021-05-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1108 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png"
+        data-srcset="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png, https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png 1.5x, https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png 2x"
+        data-sizes="auto"
+        alt="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png"
+        title="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#官方多版本的使用方式">官方多版本的使用方式</a></li>
+            <li><a href="#其他多版本管理方式">其他多版本管理方式</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>本文主要介绍go多版本的使用方式</p>
+</blockquote>
+<p>有些人可能注意到，每次 Go 发布新版本，官方都会提供类似这样的升级截图：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210528170702228.png"
+        data-srcset="https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210528170702228.png, https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210528170702228.png 1.5x, https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210528170702228.png 2x"
+        data-sizes="auto"
+        alt="https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210528170702228.png"
+        title="image-20210528170702228" /></p>
+<h3 id="官方多版本的使用方式">官方多版本的使用方式</h3>
+<p>根据上面的图，安装某个版本的 Go，跟一般 Go 包安装一样，执行 go get 命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ go get golang.org/dl/go&lt;version&gt;  // 其中 &lt;version&gt; 替换为你希望安装的 Go 版本
+</code></pre></td></tr></table>
+</div>
+</div><p>这一步，只是安装了一个特定 Go 版本的包装器，真正安装特定的 Go 版本，还需要执行如下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ go&lt;version&gt; download   // 和上面一样，&lt;version&gt; 是具体的版本
+</code></pre></td></tr></table>
+</div>
+</div><p>因此，如果需要安装 Go1.16.4，执行如下两个命令即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ go get golang.org/dl/go1.16.4
+$ go1.16.4 download
+</code></pre></td></tr></table>
+</div>
+</div><p>几个注意的点：</p>
+<ul>
+<li>有一个特殊的版本标记：gotip，用来安装最新的开发版本；</li>
+<li>因为 golang.org 访问不了，你应该配置 GOPROXY（所以，启用 Module 是必须的）；</li>
+<li>跟安装其他包一样，go get 之后，go1.16.4 这个命令会被安装到 <code>$GOBIN</code> 目录下，默认是<code>~/go/bin</code> 目录，所以该目录应该放入 PATH 环境变量；</li>
+<li>没有执行 download 之前，运行 go1.16.4，会提示 <code>go1.16.4: not downloaded. Run 'go1.16.4 download' to install to ~/sdk/go1.16.4</code>；</li>
+</ul>
+<p>可见，最后下载下来的 Go 放在了 ~/sdk/go1.16.4 目录下。</p>
+<h3 id="其他多版本管理方式">其他多版本管理方式</h3>
+<p><a href="https://github.com/hit9/oo">https://github.com/hit9/oo</a> 像pyenv一样管理go版本</p>
+<p>一直再用goenv 系列的还有nodenv，pyenv，rbenv，jenv</p>
+<p>用scoop 或者 brewhome</p>
+<p>WSL2文件系统没有打通，而且速度也不太好，我推荐WSL1。除非是有一些特别的东西一定要用2</p>
+<p>gvm也很好</p>
+<p>下载地址</p>
+<p><a href="https://github.com/voidint/g/releases">https://github.com/voidint/g/releases</a>
+1
+2、设置环境变量</p>
+<p>G_MIRROR
+值为
+<a href="https://golang.google.cn/dl/">https://golang.google.cn/dl/</a></p>
+<p>由于国内无法自由访问Golang官网，导致查询及下载go版本都变得困难，因此可以通过该环境变量指定一个镜像站点。</p>
+<p>G_HOME
+值为
+E:\gvm</p>
+<p>设置g的工作目录</p>
+<p>GOROOT
+值为
+%G_HOME%\go</p>
+<p>配置GOROOT，这个指向g工作目录下的go，g安装go版本后，会在这个路径下建立一个软链到versions目录下的指定版本，靠这个方法来控制当前的go版本，如果安装g之前已经安装过go了，需要修改GOROOT这个环境变量。</p>
+<p>3、配置
+为了方便使用，我们在E盘目录下建一个目录，然后通过环境变量指向到它，这样就可以使用命令行随时访问了。</p>
+<p>将其添加到系统的path中</p>
+<p>测试使用</p>
+<p>4、使用</p>
+<p>这里比较重要的一步，【以管理员身份运行命令行工具】，不管是CMD、还是powershell，都要以管理员身份运行！！！</p>
+<p>不然，会出现【Symlink…A required privilege is not held by the client.】，就是无权创建软链，导致GOROOT指向的go目录不存在。</p>
+<p>注：目前最新的1.2.0版本还无法实现自定义安装的目录，根据作者说的master分支已实现自定义目录的功能，试了确实可以。</p>
+<p>其它命令</p>
+<p>g ls 查询已安装的go版本
+g ls-remote  查询可供安装的所有go版本
+g ls-remote stable 查询当前可供安装的stable状态的go版本
+g install 1.14.6 安装目标go版本1.14.6
+g use 1.14.6 切换至1.14.6版本
+g uninstall 1.14.6 卸载一个已安装的go版本</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-05-28</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://luckly.work/go%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%8E%E5%B7%A5%E5%85%B7/" data-title="《Go多版本管理方法与工具》"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://luckly.work/go%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%8E%E5%B7%A5%E5%85%B7/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://luckly.work/go%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%8E%E5%B7%A5%E5%85%B7/" data-title="《Go多版本管理方法与工具》"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://luckly.work/go%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%8E%E5%B7%A5%E5%85%B7/" data-title="《Go多版本管理方法与工具》"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://luckly.work/go%E5%A4%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E4%B8%8E%E5%B7%A5%E5%85%B7/" data-title="《Go多版本管理方法与工具》" data-image="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/flutter%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="prev" rel="prev" title="《Flutter安装教程》"><i class="fas fa-angle-left fa-fw"></i>《Flutter安装教程》</a>
+            <a href="/%E7%A9%B7%E6%9F%A5%E7%90%86%E5%AE%9D%E5%85%B8/" class="next" rel="next" title="《穷查理宝典》">《穷查理宝典》<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">早起的年轻人</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"早起的年轻人","id-2":"早起的年轻人"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
