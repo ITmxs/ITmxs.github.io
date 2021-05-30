@@ -231,25 +231,11 @@ main() {
 <h2 id="类型系统中的可空性">类型系统中的可空性</h2>
 <p>因为一切均建立于静态类型系统上，所以空安全也始于此处。您的 Dart 程序中包含了整个类型世界：基本类型（如 <code>int</code> 和 <code>String</code>）、 集合类型（如 <code>List</code>）以及您和您所使用的依赖所定义的类和类型。在空安全推出之前，静态类型系统允许所有类型的表达式中的每一处都可以有 <code>null</code>。</p>
 <p>从类型理论的角度来说，<code>Null</code> 类型被看作是所有类型的子类；</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r84SwukyB7NXKDYuhHjBVAxhWjgMm25Tic0JHCPpkZztP4fMibd9rBOITg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"
-        data-srcset="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r84SwukyB7NXKDYuhHjBVAxhWjgMm25Tic0JHCPpkZztP4fMibd9rBOITg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1, https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r84SwukyB7NXKDYuhHjBVAxhWjgMm25Tic0JHCPpkZztP4fMibd9rBOITg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1 1.5x, https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r84SwukyB7NXKDYuhHjBVAxhWjgMm25Tic0JHCPpkZztP4fMibd9rBOITg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1 2x"
-        data-sizes="auto"
-        alt="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r84SwukyB7NXKDYuhHjBVAxhWjgMm25Tic0JHCPpkZztP4fMibd9rBOITg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"
-        title="图片" /></p>
+<p><img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210530215828308.png" alt="image-20210530215828308" style="zoom:80%;" /></p>
 <p>类型会定义一些操作对象，包括 getters、setters、方法和操作符，在表达式中使用。如果是 <code>List</code> 类型，您可以对其调用 <code>.add()</code> 或 <code>[]</code>。如果是 <code>int</code> 类型，您可以对其调用 <code>+</code>。但是 <code>null</code> 值并没有它们定义的任何一个方法。所以当 <code>null</code> 传递至其他类型的表达式时，任何操作都有可能失败。这就是空引用的症结所在—所有错误都来源于尝试在 <code>null</code> 上查找一个不存在的方法或属性。</p>
 <h3 id="非空和可空类型">非空和可空类型</h3>
 <p>空安全通过修改了类型的层级结构，从根源上解决了这个问题。<code>Null</code> 类型仍然存在，但它不再是所有类型的子类。现在的类型层级看起来是这样的：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8chEGL10q0PsgNker0aOcjm3dCRu6iaeK9alLPCymcsLZ0pcjedtzCJQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"
-        data-srcset="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8chEGL10q0PsgNker0aOcjm3dCRu6iaeK9alLPCymcsLZ0pcjedtzCJQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1, https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8chEGL10q0PsgNker0aOcjm3dCRu6iaeK9alLPCymcsLZ0pcjedtzCJQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1 1.5x, https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8chEGL10q0PsgNker0aOcjm3dCRu6iaeK9alLPCymcsLZ0pcjedtzCJQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1 2x"
-        data-sizes="auto"
-        alt="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8chEGL10q0PsgNker0aOcjm3dCRu6iaeK9alLPCymcsLZ0pcjedtzCJQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"
-        title="图片" /></p>
+<p><img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210530215849830.png" alt="image-20210530215849830" style="zoom:80%;" /></p>
 <p>既然 <code>Null</code> 已不再被看作所有类型的子类，那么除了特殊的 <code>Null</code> 类型允许传递 <code>null</code> 值，其他类型均不允许。我们已经将所有的类型设置为<strong>默认不可空</strong>的类型。如果您的变量是 <code>String</code> 类型，它必须包含<strong>一个字符串</strong>。这样一来，我们就修复了所有的空引用错误。</p>
 <p>如果 <code>null</code> 对我们来说没有什么意义的话，那大可不必再研究下去了。但实际上 <code>null</code> 十分有用，所以我们仍然需要合理地处理它。可选参数就是非常好的例子。让我们来看下这段空安全的代码：</p>
 <div class="highlight"><div class="chroma">
@@ -301,14 +287,7 @@ main() {
 </div>
 </div><p>如果我们允许这样的代码运行，那么它将毫无疑问地崩溃。我们只允许您访问同时在原有类型及 <code>Null</code> 类下同时定义的方法和属性。所以只有 <code>toString()</code>、<code>==</code> 和 <code>hashCode</code> 可以访问。因此，您可以将可空类型用于 Map 的键值、存储于集合中或者与其他值进行比较，仅此而已。</p>
 <p>那么原有类型是如何与可空类型交互的呢？我们知道，将一个<strong>非</strong>空类型的值传递给可空类型是一定安全的。如果一个函数接受 <code>String?</code>，那么向其传递 <code>String</code> 是允许的，不会有任何问题。在此次改动中，我们将所有的可空类型作为基础类型的子类。您也可以将 <code>null</code> 传递给一个可空的类型，即 <code>Null</code> 也是任何可空类型的子类：</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8uxxiaBw32NvJ3EdmSYGLKH4lpWyHa4xMwia1iao6aD09153YoLMXyCsiaA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"
-        data-srcset="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8uxxiaBw32NvJ3EdmSYGLKH4lpWyHa4xMwia1iao6aD09153YoLMXyCsiaA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1, https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8uxxiaBw32NvJ3EdmSYGLKH4lpWyHa4xMwia1iao6aD09153YoLMXyCsiaA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1 1.5x, https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8uxxiaBw32NvJ3EdmSYGLKH4lpWyHa4xMwia1iao6aD09153YoLMXyCsiaA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1 2x"
-        data-sizes="auto"
-        alt="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8uxxiaBw32NvJ3EdmSYGLKH4lpWyHa4xMwia1iao6aD09153YoLMXyCsiaA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"
-        title="图片" /></p>
+<p><img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210530215959084.png" alt="image-20210530215959084" style="zoom:80%;" /></p>
 <p>但将一个可空类型传递给非空的基础类型，是不安全的。声明为 <code>String</code> 的变量可能会在您传递的值上调用 <code>String</code> 的方法。如果您传递了 <code>String?</code>，传入的 <code>null</code> 将可能产生错误：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -405,11 +384,11 @@ List&lt;int&gt; filterEvens(List&lt;int&gt; ints) {
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8hU7WgY2W7qqMNCFWPVH2wPoj4TmKepL9UnoHwde4fDHFPKqGzkwzEg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"
-        data-srcset="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8hU7WgY2W7qqMNCFWPVH2wPoj4TmKepL9UnoHwde4fDHFPKqGzkwzEg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1, https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8hU7WgY2W7qqMNCFWPVH2wPoj4TmKepL9UnoHwde4fDHFPKqGzkwzEg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1 1.5x, https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8hU7WgY2W7qqMNCFWPVH2wPoj4TmKepL9UnoHwde4fDHFPKqGzkwzEg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1 2x"
+        data-src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210530220058154.png"
+        data-srcset="https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210530220058154.png, https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210530220058154.png 1.5x, https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210530220058154.png 2x"
         data-sizes="auto"
-        alt="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8hU7WgY2W7qqMNCFWPVH2wPoj4TmKepL9UnoHwde4fDHFPKqGzkwzEg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"
-        title="图片" /></p>
+        alt="https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210530220058154.png"
+        title="image-20210530220058154" /></p>
 <p>此处有一个非空类型的区域划分。该区域中的类型能访问到您想要的所有方法，但不能包含 <code>null</code>。接着有一个对应并行的可空类型家族。它们允许出现 <code>null</code>，但您并没有太多操作空间。让值从非空的一侧走向可空的一侧是安全的，但反之则不是。</p>
 <p>这么看来，可空类型基本宣告毫无作用了。它们不包含任何方法，但是您又无法摆脱它们。别担心，接下来我们有一整套的方法来帮助您把值从可空的一半转移到另一半。</p>
 <h3 id="顶层及底层">顶层及底层</h3>
@@ -426,11 +405,11 @@ go2.gdsub.com/lattice</li>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8tqHXiaMe6ah4oKUahQ8yniaqZE9nqxsEFjRpQicibzo6nGxaQnNVac51ew/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"
-        data-srcset="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8tqHXiaMe6ah4oKUahQ8yniaqZE9nqxsEFjRpQicibzo6nGxaQnNVac51ew/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1, https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8tqHXiaMe6ah4oKUahQ8yniaqZE9nqxsEFjRpQicibzo6nGxaQnNVac51ew/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1 1.5x, https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8tqHXiaMe6ah4oKUahQ8yniaqZE9nqxsEFjRpQicibzo6nGxaQnNVac51ew/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1 2x"
+        data-src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210530220119242.png"
+        data-srcset="https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210530220119242.png, https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210530220119242.png 1.5x, https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210530220119242.png 2x"
         data-sizes="auto"
-        alt="https://mmbiz.qpic.cn/mmbiz_png/BibKmqEKUBPxbIPv0hoVXBEFO9DhFia2r8tqHXiaMe6ah4oKUahQ8yniaqZE9nqxsEFjRpQicibzo6nGxaQnNVac51ew/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"
-        title="图片" /></p>
+        alt="https://luckly007.oss-cn-beijing.aliyuncs.com/img/image-20210530220119242.png"
+        title="image-20210530220119242" /></p>
 <p>依据实际开发中的经验，这意味着：</p>
 <ul>
 <li>如果您想表明让一个值可以接受任意类型，请用 <code>Object?</code> 而不是 <code>Object</code>。使用 <code>Object</code> 后会使得代码的行为变得非常诡异，因为它意味着能够是“除了 <code>null</code> 以外的任何实例”。</li>
