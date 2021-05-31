@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>《Go语言最佳实践建议》 - Lucklyの博客 - 在阅读中遇见自己</title><meta name="Description" content="早起的年轻人做的网站"><meta property="og:title" content="《Go语言最佳实践建议》" />
+<meta property="og:description" content="
+本文主要介绍实际项目开发中的实用规则
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luckly.work/go%E8%AF%AD%E8%A8%80%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E5%BB%BA%E8%AE%AE/" />
+<meta property="og:image" content="https://luckly.work/logo.png"/>
+<meta property="article:published_time" content="2021-05-31T10:40:20+08:00" />
+<meta property="article:modified_time" content="2021-05-31T10:40:20+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://luckly.work/logo.png"/>
+
+<meta name="twitter:title" content="《Go语言最佳实践建议》"/>
+<meta name="twitter:description" content="
+本文主要介绍实际项目开发中的实用规则
+"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://luckly.work/go%E8%AF%AD%E8%A8%80%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E5%BB%BA%E8%AE%AE/" /><link rel="prev" href="https://luckly.work/go%E8%AF%AD%E8%A8%80%E5%AE%9E%E8%B7%B5%E7%BC%96%E5%86%99%E5%8F%AF%E7%BB%B4%E6%8A%A4%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%BB%BA%E8%AE%AE/" /><link rel="next" href="https://luckly.work/emoji-support/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "《Go语言最佳实践建议》",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/luckly.work\/go%E8%AF%AD%E8%A8%80%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E5%BB%BA%E8%AE%AE\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/luckly.work\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "go","wordcount":  4808 ,
+        "url": "https:\/\/luckly.work\/go%E8%AF%AD%E8%A8%80%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E5%BB%BA%E8%AE%AE\/","datePublished": "2021-05-31T10:40:20+08:00","dateModified": "2021-05-31T10:40:20+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/luckly.work\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "早起的年轻人"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lucklyの博客 - 在阅读中遇见自己"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/categories/flutter/"> Flutter </a><a class="menu-item" href="/categories/read/"> 读书笔记 </a><a class="menu-item" href="/categories/go/"> Go </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ITmxs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i> Github </a><a class="menu-item" href="/friend/"><i class='fas fa-user-friends'></i> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lucklyの博客 - 在阅读中遇见自己"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/categories/flutter/" title="">Flutter</a><a class="menu-item" href="/categories/read/" title="">读书笔记</a><a class="menu-item" href="/categories/go/" title="">Go</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ITmxs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>Github</a><a class="menu-item" href="/friend/" title=""><i class='fas fa-user-friends'></i>友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">《Go语言最佳实践建议》</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>早起的年轻人</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/go/"><i class="far fa-folder fa-fw"></i>Go</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-31">2021-05-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4808 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png"
+        data-srcset="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png, https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png 1.5x, https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png 2x"
+        data-sizes="auto"
+        alt="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png"
+        title="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#一-介绍">一. 介绍</a></li>
+    <li><a href="#二-指导原则">二. 指导原则</a></li>
+    <li><a href="#三-标识符">三. 标识符</a></li>
+    <li><a href="#四-注释">四. 注释</a></li>
+    <li><a href="#五-包的设计">五. 包的设计</a></li>
+    <li><a href="#六-项目结构">六. 项目结构</a></li>
+    <li><a href="#七-函数设计">七. 函数设计</a></li>
+    <li><a href="#八-错误处理">八. 错误处理</a></li>
+    <li><a href="#九-并发">九. 并发</a></li>
+    <li><a href="#十-工具">十. 工具</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>本文主要介绍实际项目开发中的实用规则</p>
+</blockquote>
+<p>在开发中遵守规范也是保持良好团队合作的必要操作，一起来学习吧！</p>
+<h1 id="一-介绍">一. 介绍</h1>
+<p>每种语言都会有基本的语言规范，本文将会介绍Go语言实战建议 Practical Go: Real world advice for writing maintainable Go programs (<a href="https://dave.cheney.net/practical-go/presentations/qcon-china.html#_introduction">https://dave.cheney.net/practical-go/presentations/qcon-china.html#_introduction</a>)</p>
+<h1 id="二-指导原则">二. 指导原则</h1>
+<p>Go语言有以下3点基本指导原则</p>
+<ol>
+<li><strong>简单性</strong>: 简单性是Go语言的最高目标，无论我们编写什么程序，我们都应该同意这一点<code>它们很简单</code>。很多情况下我们都害怕遇到一个问题就是 <code>我不懂这段代码，不知如何修复，这会导致软件复杂不可靠。</code></li>
+<li><strong>可读性</strong>: 可读性很重要，因为所有软件不仅仅是Go语言程序都是由人类编写的，供他人阅读。执行软件的计算机则是次要的。代码的读取次数比写入次数多。一段代码在其生命周期内会被读取数百次，甚至数千次。<code>可读性是能够理解程序正在做什么的关键，编写可维护代码的第一步是确保代码可读。</code></li>
+<li><strong>生产力</strong>: Go程序员应该觉得他们可以通过Go语言完成很多工作。<code>快速编译</code>是Go语言的一个关键特性，也是吸引新开发人员的关键工具，Go语言编译只需要几秒钟。Go程序员相对于C++来说不会花费整天的时间来调试不可思议的编译错误。</li>
+</ol>
+<h1 id="三-标识符">三. 标识符</h1>
+<p>标识符是用来表示名称的单词，例如变量名称、函数名称、方法名称、类型名称、包名称等等。
+可读性是良好代码的定义质量，因此选择好名称对于Go代码的可读性至关重要。</p>
+<ol>
+<li>
+<p><strong>标识符命名应该清晰而不是简洁</strong></p>
+</li>
+<li>
+<ul>
+<li>好的命名应该简洁: 好的名字不一定是最短的名字，但好的名字不会浪费在无关的东西上。</li>
+<li>好的命名应该具备描述性: 好的命名会描述变量或常量的应用，而不是它们的内容。好的命名应该描述函数的结果或方法的行为，而不是它们的操作。好的命名应该描述包的目的而非它的内容。</li>
+<li>好的命名应该是高可读性: 好的命名应该是具有高可读性，能够从名字中推断出使用方式。</li>
+</ul>
+</li>
+<li>
+<p><strong>标识符长度有以下要求</strong></p>
+</li>
+</ol>
+<ul>
+<li>短变量名称在声明和上次使用之间的距离很短时效果很好。短变量p，我们只需要看2行代码就可以知道它的用途。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">  var p = 0
+  p += count
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>长变量名称需要证明自己的合理性，名称越长需要提供的价值越高。<code>userCount</code>长变量一眼就可以知道是用于表示有多人用户</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">  var userCount int
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>请勿在变量名称中包含类型名称。例如不应该这样定义<code>var usersMap map[string]int</code>，这个时候后缀的Map可以省略直接定义成这样<code>var users map[string]int</code>。</li>
+<li>常量应该描述它们持有的值，而不是该如何使用。</li>
+<li>对于循环和分支使用单字母变量，参数和返回值使用单个词，函数声明使用多个单词，包的声明使用单个词。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go">  <span class="err">#</span> <span class="nx">循环</span>
+  <span class="k">for</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">items</span> <span class="p">{}</span>
+  <span class="err">#</span> <span class="nx">函数</span><span class="err">、</span><span class="nx">参数和返回值</span>
+  <span class="kd">func</span> <span class="nf">getUserCount</span><span class="p">(</span><span class="nx">endTime</span> <span class="kt">int64</span><span class="p">)</span> <span class="p">(</span><span class="kt">int64</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="err">#</span> <span class="nx">包</span>
+  <span class="kn">package</span> <span class="nx">http</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>包的名称是调用者用来引用名称的一部分，因此要好好利用这一点。</li>
+</ul>
+<ol>
+<li>
+<p><strong>不要用变量类型命名你的变量</strong></p>
+</li>
+<li>
+<ul>
+<li>变量的名称应描述其内容，而不是内容的类型。例如<code>var usersMap map[string]*User</code> 应该命名成<code>var users map[string]*User</code>。</li>
+<li>对于函数来说也是适用的<code>func WriteConfig(w io.Writer, config *Config)</code>，命名参数<code>*Config</code>为<code>config</code>是多余的，因为我们知道它的<code>Config</code>类型所以使用<code>conf</code>或<code>c</code>都可以，如果有多个<code>*Config</code>参数可以考虑使用<code>origin</code>和<code>update</code>。</li>
+</ul>
+</li>
+<li>
+<p><strong>使用一致的命名方式</strong></p>
+</li>
+<li>
+<ul>
+<li>例如代码在处理数据库请确保每次出现参数时，它都具有相同的名称，例如统一使用<code>db *sql.DB</code>, 如果你看到<code>db</code>你知道它就是<code>*sql.DB</code>。</li>
+<li>对于方法接收器, 在该类型的每个方法上使用相同的接收者名称，例如结构体<code>type User struct</code>所有的方法接收器统一命名为<code>u *User</code>会更好理解。</li>
+<li>有些变量是所有语言都默认会使用的，例如<code>i</code>,<code>j</code>通常用于for循环的变量，<code>n</code>通常用于计数器或累加器，<code>v</code>通常用于值的简写，<code>k</code>通常也用于map的键，<code>s</code>通常用于字符串的简写。</li>
+</ul>
+</li>
+<li>
+<p><strong>使用一致的声明样式</strong></p>
+</li>
+<li>
+<ul>
+<li>声明变量但没有初始化时，请使用<code>var</code>，<code>var</code>表示此变量已被声明为指定类型的零值。</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    var players int        默认为0
+    var things []*Thing    默认为nil
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>在同时声明和初始化变量的时候，使用<code>:=</code>。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    players := 5
+    things := make([]*Thing, 0)
+</code></pre></td></tr></table>
+</div>
+</div><ol>
+<li><strong>成为团队合作者，所有代码都需要使用gofmt格式化</strong></li>
+</ol>
+<h1 id="四-注释">四. 注释</h1>
+<p>注释对<code>Go</code>语言程序的可读性非常重要，注释目的是如下3个。</p>
+<ol>
+<li>注释应该解释其作用。</li>
+<li>注释应该解释其如何做的。</li>
+<li>注释应该解释其原因。</li>
+</ol>
+<p>注释的方式有以下几种</p>
+<ol>
+<li>文件注释应该使用<code>// Package xxxx</code> 开头并且注释是谁在什么时间点创建或更新</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// Package main ...
+// Created by chenguolin 2018-12-26
+</code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>公共变量、常量、可见函数注释应该使用<code>//</code></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    // AppName application name
+    const AppName = &#34;HTTP_SERVER&#34;
+
+    // Users user count
+    var Users map[string]int
+
+    // GetUserName get user name by id
+    func GetUserName(id int64) string {}
+</code></pre></td></tr></table>
+</div>
+</div><p>注释应该满足以下几点要求</p>
+<ol>
+<li>
+<p><strong>关于变量和常量的注释应描述其内容而非其目的</strong></p>
+</li>
+<li>
+<ul>
+<li>向变量或常量添加注释时，该注释应描述变量内容，而不是变量目的。</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    // randomNumber determined from an unbiased die
+    const randomNumber = 6
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>对于没有初始值的变量，注释应描述谁负责初始化此变量。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    // sizeCalculationDisabled indicates whether it is safe
+    // to calculate Types&#39; widths and alignments. See dowidth. 
+    var sizeCalculationDisabled bool
+</code></pre></td></tr></table>
+</div>
+</div><ol>
+<li><strong>公共符号始终要注释</strong></li>
+</ol>
+<ul>
+<li>应该始终为包中声明的每个公共符号变量、常量、函数以及方法添加注释。</li>
+<li>任何既不明显也不简短的公共功能必须予以注释。</li>
+<li>无论长度或复杂程度如何，对库中的任何函数都必须进行注释。</li>
+<li>在编写函数之前，请编写描述函数的注释。如果你发现很难写出注释，那么这就表明你将要编写的代码很难理解。</li>
+</ul>
+<ol>
+<li><strong>不要注释不好的代码，将它重写</strong></li>
+</ol>
+<ul>
+<li>如果遇到不好的代码，我们应提出问题，以提醒您稍后重构。标准库中的惯例是注意到它的人用 <code>TODO(username)</code> 的样式来注释。</li>
+</ul>
+<ol>
+<li><strong>与其注释一段代码，不如重构它</strong></li>
+</ol>
+<ul>
+<li>好的代码是最好的文档，如果需要些很多的注释来描述，不如重构这个代码。</li>
+</ul>
+<h1 id="五-包的设计">五. 包的设计</h1>
+<p>一个好的<code>Go</code>语言包应该具有低程度的源码级耦合，这样随着项目的增长，对一个包的更改不会跨代码库级联。</p>
+<ol>
+<li><strong>一个好的包从它的名字开始</strong></li>
+</ol>
+<ul>
+<li>好的包名称应该是唯一的，如果你发现有两个包需要用相同名称那么它可能是太通用了或者与其它包名重叠了，这个时候我们应该考虑修改包名</li>
+<li>避免使用类似<code>base</code>,<code>common</code>或<code>util</code>的包名称，由于这些包包含各种不相关的功能，因此很难根据包提供的内容来描述它们。像<code>utils</code>或<code>helper</code>这样的包名称通常出现在较大的项目中，这些项目已经开发了深层次包的结构。</li>
+<li>使用复数形式命名基础包，例如<code>strings</code>来处理字符串。</li>
+</ul>
+<ol>
+<li><strong>尽早 return而不是深度嵌套</strong></li>
+</ol>
+<ul>
+<li>由于Go语言的控制流不使用exception，因此不需要为 try和 catch块提供顶级结构而深度缩进代码。所以Go建议尽快return而不是深度嵌套。</li>
+</ul>
+<ol>
+<li><strong>让零值更有用</strong></li>
+</ol>
+<ul>
+<li>假设变量没有初始化，每个变量声明都会自动初始化为与零内存的内容相匹配的值。值的类型决定了其零值，对于数字类型它为<code>0</code>，对于指针类型为<code>nil</code>， slices、 map和 channel同样是<code>nil</code>。</li>
+<li>始终设置变量为已知默认值的属性对于程序的安全性和正确性非常重要，并且可以使 Go 语言程序更简单、更紧凑。</li>
+</ul>
+<h1 id="六-项目结构">六. 项目结构</h1>
+<p>通常一个项目是一个git仓库，每个项目都应该有一个明确的目的。您应该避免在一个包实现多个目的，这将有助于避免成为公共库。</p>
+<p>以<code>httpserver</code>为例，看通用的HTTP service项目的结构如下。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">httpserver
+├──cmd
+  ├──api
+  ├──cron
+  ├──processor
+├──common
+  ├──base62
+  ...
+├──config
+  ...
+├──context
+  ...
+├──docs
+  ...
+├──pkg
+  ...
+├──scripts
+  ...
+├──vendor
+  ...
+├──.gitlab-ci.yml
+├──Gopkg.lock
+├──Gopkg.toml
+├──README.md
+├──VERSION
+</code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>
+<p><strong>考虑更少，更大的包</strong></p>
+</li>
+<li>
+<ul>
+<li>如果只有一个文件，文件名应该和文件夹名称一样。</li>
+<li>如果有多个文件，应该按照不同的职责拆分为不同的文件，不同的文件应该负责包的不同区域。
+<code>Go 编译器并行编译每个包，在一个包中编译器并行编译每个函数，更改包中代码的布局不会影响编译时间。</code></li>
+</ul>
+</li>
+<li>
+<p><strong>优先内部测试再到外部测试</strong></p>
+</li>
+<li>
+<ul>
+<li>假设你的包名为<code>http2</code>，您可以编写<code>http2_test.go</code>文件并使用包<code>http2</code>声明。这样做会编译<code>http2_test.go</code>中的代码，就像它是<code>http2</code>包的一部分一样，这就是<code>内部测试</code>。如果<code>http2_test.go</code>文件并使用包<code>http2_test</code>声明，则成为<code>外部测试</code>。</li>
+<li>编写单元测试时使用内部测试，这样你就可以直接测试每个函数或方法，避免外部测试干扰。</li>
+<li>如果有<code>example</code>测试代码放在外部测试文件中。</li>
+</ul>
+</li>
+<li>
+<p><strong>确保main包内容尽可能的少</strong></p>
+</li>
+<li>
+<ul>
+<li><code>main</code>函数和<code>main</code>包的内容应尽可能少, 这是因为程序中只能有一个main函数。</li>
+<li>应该将所有业务逻辑从<code>main</code>函数中移出，最好是从<code>main</code>包中移出。</li>
+<li><code>main</code>应该做解析<code>flags</code>，开启数据库连接、开启日志等，然后将执行交给更高一级的对象。</li>
+</ul>
+</li>
+</ol>
+<h1 id="七-函数设计">七. 函数设计</h1>
+<p>函数设计非常的重要，如果函数没有设计好那会导致不可兼容的情况，导致程序维护性变差。</p>
+<ol>
+<li>
+<p><strong>设计难以被误用的 函数</strong></p>
+</li>
+<li>
+<ul>
+<li>警惕采用几个相同类型参数的函数，可能的解决方案是引入一个<code>helper</code>类型，它会负责如何正确地调用。</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    // 错误举例
+    func CopyFile(src, dest string) error {}
+
+    CopyFile(&#34;file1&#34;, &#34;file2&#34;)
+    CopyFile(&#34;file2&#34;, &#34;file1&#34;)
+    对于上面的函数调用，如果参数填错会导致文件被意外copy
+
+    // 准确举例
+    type Source string
+    func (s *Source) Copy(dest string) error{}
+
+    file1.Copy(file2)
+    file2.Copy(file1)
+    上述这种使用方式则比较不容易出错
+</code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>
+<p><strong>不鼓励使用nil作为参数</strong></p>
+</li>
+<li>
+<ul>
+<li>不要在同一个函数签名中混合使用可为<code>nil</code>和不能为<code>nil</code>的参数</li>
+</ul>
+</li>
+<li>
+<p><strong>首选可变参数函数而非[]T参数</strong></p>
+</li>
+<li>
+<ul>
+<li>例如<code>func ShutdownVMs(ids []string) error</code> 但是很多时候这些类型的函数只用一个参数调用，为了满足函数参数的要求，它必须打包到一个切片内。这会增加额外的测试负载，因为你应该涵盖这些情况在测试中。</li>
+</ul>
+</li>
+<li>
+<p><strong>让函数定义它们所需的行为</strong></p>
+</li>
+<li>
+<p><strong>空行来分解函数，让代码看起来更有层次感</strong></p>
+</li>
+</ol>
+<h1 id="八-错误处理">八. 错误处理</h1>
+<ol>
+<li>
+<p><strong>通过消除错误来消除错误处理</strong></p>
+</li>
+<li>
+<ul>
+<li>当遇到难以忍受的错误处理时，请尝试将某些操作提取到辅助程序类型中。</li>
+</ul>
+</li>
+<li>
+<p><strong>错误只处理一次</strong></p>
+</li>
+<li>
+<ul>
+<li>错误要么在当前位置处理，要么就返回给上层调用，不可同时处理否则就会导致重复的日志输出。</li>
+<li>为错误添加相关内容</li>
+</ul>
+</li>
+</ol>
+<h1 id="九-并发">九. 并发</h1>
+<p>Go 语言以<code>channel</code>以及<code>select和go</code>语句来支持并发。<code>如果Go语言程序的main函数返回，无论程序在一段时间内启动的其他goroutine在做什么, Go语言程序会无条件地退出。</code></p>
+<ol>
+<li>
+<p><strong>如果你的<code>goroutine</code>在得到另一个结果之前无法取得进展，那么让自己完成此工作而不是委托给其他<code>goroutine</code>会更简单。</strong></p>
+</li>
+<li>
+<p><strong>将并发性留给调用者</strong></p>
+</li>
+<li>
+<ul>
+<li>如果你的函数启动了<code>goroutine</code>，你必须为调用者提供一种明确停止<code>goroutine</code>的方法。把异步执行函数的决定留给该函数的调用者通常会更容易些。</li>
+</ul>
+</li>
+<li>
+<p><strong>永远不要启动一个停止不了的goroutine</strong></p>
+</li>
+<li>
+<ul>
+<li>应用程序应该将监视其状态和检测是否重启的工作留给另外的程序来做。不要让你的应用程序负责重新启动自己，最好从应用程序外部处理该过程。</li>
+</ul>
+</li>
+<li>
+<p><strong>只在main.main或 init函数中的使用panic</strong></p>
+</li>
+<li>
+<p><strong>一旦我们开启的所有<code>goroutine</code>都停止了， main.main就会返回并且进程会干净地停止</strong></p>
+</li>
+<li>
+<p><strong>每个Goroutine都需要有Recover机制，除非你允许程序Crash</strong></p>
+</li>
+</ol>
+<h1 id="十-工具">十. 工具</h1>
+<p>使用任何语言开发程序都需要有一个统一的规范，否则很容易造成风格不统一导致代码混乱不可维护。使用Golang开发有几个高效率工具</p>
+<ol>
+<li><code>gofmt</code> Golang的开发团队制定了统一的官方代码风格，并且推出了gofmt工具（gofmt或go fmt）来帮助开发者格式化他们的代码到统一的风格。gofmt是一个cli程序，会优先读取标准输入，如果传入了文件路径的话，会格式化这个文件，如果传入一个目录，会格式化目录中所有.go文件，如果不传参数，会格式化当前目录下的所有.go文件。<strong>go fmt命令，go fmt命令是gofmt的简单封装。</strong>
+常用的命令为 <code>go list ./... | xargs -n 1 gofmt -l -w</code></li>
+<li><code>go vet</code> go vet就是golang中提供的语法检查工具,可以让我检查出package或者源码文件中一些隐含的错误，规范我们的项目代码。
+常用的命令为 <code>go vet ./...</code></li>
+<li><code>golint</code> golint是用来检测Golang代码规范的，不同于gofmt和go vet。golint只是用于代码规范检查
+常用的命令为 <code>go list ./... | xargs -n 1 golint</code></li>
+</ol>
+<blockquote>
+<p>转自：陈国林</p>
+<p>链接：https://blog.csdn.net/chenguolinblog/article/details/90665174</p>
+</blockquote></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-05-31</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://luckly.work/go%E8%AF%AD%E8%A8%80%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E5%BB%BA%E8%AE%AE/" data-title="《Go语言最佳实践建议》" data-hashtags="go"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://luckly.work/go%E8%AF%AD%E8%A8%80%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E5%BB%BA%E8%AE%AE/" data-hashtag="go"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://luckly.work/go%E8%AF%AD%E8%A8%80%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E5%BB%BA%E8%AE%AE/" data-title="《Go语言最佳实践建议》"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://luckly.work/go%E8%AF%AD%E8%A8%80%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E5%BB%BA%E8%AE%AE/" data-title="《Go语言最佳实践建议》"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://luckly.work/go%E8%AF%AD%E8%A8%80%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E5%BB%BA%E8%AE%AE/" data-title="《Go语言最佳实践建议》" data-image="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/go/">go</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/go%E8%AF%AD%E8%A8%80%E5%AE%9E%E8%B7%B5%E7%BC%96%E5%86%99%E5%8F%AF%E7%BB%B4%E6%8A%A4%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%BB%BA%E8%AE%AE/" class="prev" rel="prev" title="《Go语言实践编写可维护的程序的建议》"><i class="fas fa-angle-left fa-fw"></i>《Go语言实践编写可维护的程序的建议》</a>
+            <a href="/emoji-support/" class="next" rel="next" title="Emoji 支持">Emoji 支持<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">早起的年轻人</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"早起的年轻人","id-2":"早起的年轻人"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
