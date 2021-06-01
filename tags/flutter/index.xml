@@ -4,7 +4,18 @@
         <link>https://luckly.work/tags/flutter/</link>
         <description>flutter - 标签 - Lucklyの博客 - 在阅读中遇见自己</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>852851198@qq.com (早起的年轻人)</managingEditor>
-            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 29 May 2021 12:46:36 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/tags/flutter/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 01 Jun 2021 13:54:15 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/tags/flutter/" rel="self" type="application/rss+xml" /><item>
+    <title>《Flutter文件下载器》</title>
+    <link>https://luckly.work/flutter%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%99%A8/</link>
+    <pubDate>Tue, 01 Jun 2021 13:54:15 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/flutter%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%99%A8/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>在这篇文章中，我们将构建一个简单的文件下载器，显示进度的视觉指示。</p>
+</blockquote>]]></description>
+</item><item>
     <title>《Flutter之深入理解Dart空安全》</title>
     <link>https://luckly.work/flutter%E4%B9%8B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3dart%E7%A9%BA%E5%AE%89%E5%85%A8/</link>
     <pubDate>Sat, 29 May 2021 12:46:36 &#43;0800</pubDate>
@@ -103,16 +114,5 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/U0a0aa2cc07574b5e8d6a15b6ea19bdfei.jpg" referrerpolicy="no-referrer">
             </div><p>学习flutter常用的资料</p>]]></description>
-</item><item>
-    <title>《Flutter面试基础》</title>
-    <link>https://luckly.work/flutter%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80/</link>
-    <pubDate>Sat, 24 Apr 2021 22:39:27 &#43;0800</pubDate>
-    <author>文章作者</author>
-    <guid>https://luckly.work/flutter%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png" referrerpolicy="no-referrer">
-            </div><blockquote>
-<p>本文主要介绍flutter面试相关，分为网络，dart和flutter</p>
-</blockquote>]]></description>
 </item></channel>
 </rss>
