@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>《什么是软件实施？软件实施前景几何?软件实施的面试题有那些？》 - Lucklyの博客 - 在阅读中遇见自己</title><meta name="Description" content="早起的年轻人做的网站"><meta property="og:title" content="《什么是软件实施？软件实施前景几何?软件实施的面试题有那些？》" />
+<meta property="og:description" content="
+本文主要介绍 软件实施的相关基础以及部分面试
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luckly.work/%E8%BD%AF%E4%BB%B6%E5%AE%9E%E6%96%BD/" />
+<meta property="og:image" content="https://luckly.work/logo.png"/>
+<meta property="article:published_time" content="2021-06-02T17:52:46+08:00" />
+<meta property="article:modified_time" content="2021-06-02T17:52:46+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://luckly.work/logo.png"/>
+
+<meta name="twitter:title" content="《什么是软件实施？软件实施前景几何?软件实施的面试题有那些？》"/>
+<meta name="twitter:description" content="
+本文主要介绍 软件实施的相关基础以及部分面试
+"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://luckly.work/%E8%BD%AF%E4%BB%B6%E5%AE%9E%E6%96%BD/" /><link rel="prev" href="https://luckly.work/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%A7%E5%85%A8/" /><link rel="next" href="https://luckly.work/emoji-support/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "《什么是软件实施？软件实施前景几何?软件实施的面试题有那些？》",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/luckly.work\/%E8%BD%AF%E4%BB%B6%E5%AE%9E%E6%96%BD\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/luckly.work\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "软件实施","wordcount":  4121 ,
+        "url": "https:\/\/luckly.work\/%E8%BD%AF%E4%BB%B6%E5%AE%9E%E6%96%BD\/","datePublished": "2021-06-02T17:52:46+08:00","dateModified": "2021-06-02T17:52:46+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/luckly.work\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "早起的年轻人"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lucklyの博客 - 在阅读中遇见自己"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/categories/flutter/"> Flutter </a><a class="menu-item" href="/categories/read/"> 读书笔记 </a><a class="menu-item" href="/categories/go/"> Go </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ITmxs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i> Github </a><a class="menu-item" href="/friend/"><i class='fas fa-user-friends'></i> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lucklyの博客 - 在阅读中遇见自己"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/categories/flutter/" title="">Flutter</a><a class="menu-item" href="/categories/read/" title="">读书笔记</a><a class="menu-item" href="/categories/go/" title="">Go</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ITmxs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>Github</a><a class="menu-item" href="/friend/" title=""><i class='fas fa-user-friends'></i>友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">《什么是软件实施？软件实施前景几何?软件实施的面试题有那些？》</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>早起的年轻人</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%9E%E6%96%BD/"><i class="far fa-folder fa-fw"></i>软件实施</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-02">2021-06-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4121 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#什么是软件实施师">什么是软件实施师？</a></li>
+        <li><a href="#软件实施工程师需掌握的基础知识">软件实施工程师需掌握的基础知识</a></li>
+        <li><a href="#软件实施的前景几何">软件实施的前景几何？</a></li>
+        <li><a href="#软件实施相关面试">软件实施相关面试</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>本文主要介绍 软件实施的相关基础以及部分面试</p>
+</blockquote>
+<p>事情是这样的，由于自己目前还没有对象，就想着在兰州找一份还不错的工作，于是投了一家在我的家乡还算不错的公司，对方却说有可能是软件实施岗位，</p>
+<p>今天有人问我，要不要了解一下软件实施这个岗位，于是趁机了解了一下，</p>
+<ol>
+<li>什么是软件实施？</li>
+<li>软件实施前景几何?</li>
+<li>软件实施掌握的基础知识有哪些？</li>
+<li>软件实施的面试题有那些？</li>
+</ol>
+<p>于是我趁机了解了一下，</p>
+<h2 id="什么是软件实施师">什么是软件实施师？</h2>
+<p>软件实施工程师主要进行软件前期的项目需求分析，对项目进行风险评估并解决这些风险，然后进行软件开发，后期对软件的进度做相关</p>
+<p>的评估。软件实施工程师的工作是软件产品服务主线的一个决定性环节，软件的成功离不开实施。</p>
+<h2 id="软件实施工程师需掌握的基础知识">软件实施工程师需掌握的基础知识</h2>
+<p>ERP软件知识、系统管理知识、数据库知识、硬件知识、网络知识等。</p>
+<h2 id="软件实施的前景几何">软件实施的前景几何？</h2>
+<p>目前看来 软件实施的前景就是软件开发&ndash;〉软件实施&ndash;〉项目软件经理&ndash;〉项目经理</p>
+<p>我分析几个原因:
+1、实施工程师与客户最近,能够直接了解客户需求,尤其是&quot;离岸开发&quot;模式,开发人员很难接触客户。</p>
+<p>2、实施工程师的技术要求一般不高，但要求技能比较全面，沟通能力也很重要。</p>
+<p>3、现场的压力一般要比开发大的多，经这个磨练，人的各个方面成长的特别快。</p>
+<p>软件测试的定义是：在规定的条件下对程序进行操作，以发现程序错误，衡量软件质量，并对其是否能满足设计要求进行评估的过程。</p>
+<h2 id="软件实施相关面试">软件实施相关面试</h2>
+<p>1、两电脑都在同一个网络环境中，A 电脑访问不到 B 电脑的共享文件。此现象可能是哪些 方面所导致？怎样处理？</p>
+<p>answer:首先你要确定是不是在一个工作组内，只有在一个工作组内才可以共享文件，然后看一个看一看有没有防火墙之类的，然后确定</p>
+<p>文件是不是已经共享</p>
+<p>2、 电脑开机时风扇转， 但是屏幕没有任何显示， 此现象可能是哪些方面所导致？怎样处理？</p>
+<p>answer:</p>
+<p>1.查看是否有报警声？如果没有接着看第二条。如果有可能是内存或者是显卡问题，建议都取下清理干净，看看是否ok！在经手指部分用</p>
+<p>橡皮擦擦拭</p>
+<p>2.主板问题，建议先去下 主板上的那块电池，放电主板！ 前提是要把全部的电源关掉！</p>
+<p>3.电源问题，建议换个电源试试！</p>
+<p>3、在做 SQL 自动备份时应该先开起什么服务?</p>
+<p>answer:SQLServer Agent 这个服务</p>
+<p>4、 在同一个网络环境中 A 电脑 IP： 192.168.1.100 ，电脑 IP： B 192.168.0.100， 路由器的 IP：192.168.1.1 。请问有那些方法可以让</p>
+<p>B 电脑即可以上公网也可 以访问到 A 电脑？</p>
+<p>answer:如果你的公网是需要拨号的，那么这需要两个路由器来进行转换，首先要使一个路由能上公网。再使用另一台路由器进行两个网</p>
+<p>段进行路由转换，在路由器中设置静态路由转换，一个为192.168.1.，一个为192.168.0,这样这两台电脑就能进行互访。把这台路由器和</p>
+<p>一台电脑分别连接到原公网的路由上就能使两个不同网段的电脑都能上网。如果你的公网不需要拨号，你可以把原连接公网的那台路由器</p>
+<p>更换为交换机就OK，其他连接同上</p>
+<p>5、你熟悉的远程有哪些方法？各种方法应该怎么配置？</p>
+<p>answer:</p>
+<p>1最简单的QQ上有，打开对话框 上边有个 “应用”图标 点击“远程协助”</p>
+<p>2在要远程的主机安装 “客户机”（一个小软件）端 自己 安装“主机”（软件） 就可以远程控制了 （网络上有下载）</p>
+<p>3还有就是一些大单位的专业通信系统 即时通 OA 之类的 有些远程协助功能（这种要花钱买）</p>
+<p>6、如果有一个不太懂电脑的客户，你应该采取什么样的方法去教他用公司的软件产品？</p>
+<p>answer:我觉得这是一个面试的题目，提问题的人想从其中看出你的为人处事能力。这个可以灵活回答的，如果软件产品比较难懂，你就</p>
+<p>可以先教一些简单的。</p>
+<p>再告诉他需要再了解哪些知识来掌握这个软件。如果软件产品比较简单，就可以直接一步一步的教他怎么操作，一直操作熟练就行了</p>
+<p>7、当你觉得工作的付出和你的收入不成正比的时候你会怎么想？</p>
+<p>answer:如果付出和收入不成正比到一定程度，到你无法忍受的地步，那么就试着让领导加薪或是跳槽</p>
+<p>8、在你进行实施的过程中，公司制作的一款软件系统缺少某一项功能，而且公司也明确表示不会再为系统做任何的修改或添加任何的功</p>
+<p>能，而客户也坚决要求</p>
+<p>需要这一项功能！对于实施人员来说，应该怎么去合理妥善处理这个问题？</p>
+<p>answer:说清楚你实施的是一个项目，不是定制软件。比如超市里卖的皮鞋和鞋匠做的皮鞋，这都是鞋子，但前者是商品，很多一样的商</p>
+<p>品，你可以买到差不多可以穿的舒服的鞋子；后者是定制，不仅是商品，更是一种劳动，是已完全针对客户需求而生产的，每个细节都是</p>
+<p>要求完美的。软件也是，没有客户需求的功能，公司既然表明无法实现，那么肯定是功能研发所耗费的时间,财力和利益冲突，你可以对客</p>
+<p>户说明增加功能要他支付更多的费用，甚至比买软件的价格还贵</p>
+<p>9.在项目实施过程中，使用者对产品提出了适合自己习惯的修改意见，但多个使用者相互矛盾，应该如何去处理？</p>
+<p>对于客户提出的修改意见，我们实施人员应该有自己的方案。当使用者之间意见出现不一致时，我们应当引导他们内部之间的意见统一，</p>
+<p>和客户经过沟通或确认后，找到切实可行的方案，双方认可并达成共识。</p>
+<p>10、系统启动后，不能连接数据库，可能是哪些方面的原因？</p>
+<p>（1）、和数据库有关的服务没启动；</p>
+<p>（2）、防火墙可能阻挡了数据库的端口；</p>
+<p>（3）、如数据库可以启动，而登陆不了，可能是密码错误或连接参数配置错误；</p>
+<p>（4）、数据库文件已被破坏或不存在</p>
+<p>12、你认为客户服务的重点是什么？</p>
+<p>随着市场的竞争进一步加剧，服务已经成为企业核心竞争力的要素之一，服务的重点是沟通，沟通可以消除客户的误会和不满，沟通可以</p>
+<p>提高客户的感知度。因此，我认为我们客户服务管理工作就应该从做好沟通的管理开始。</p>
+<p>自己一定要理解服务，理解服务能干什么，能做到什么，结合公司的业务能给客户提供什么服务。服务过程中是否能给客户提供优秀的服</p>
+<p>务，倾听客户的意见，持续改进服务方式。尽量在事件发生之前，避免或杜绝客户的投诉，投诉发生后，认真处理。</p>
+<p>13、触发器的作用是什么？</p>
+<p>触发器是针对数据表（库）的特殊的存储过程，当这个表发生了 Insert、Update或Delete操作时，数据库就会自动执行触发器所定义的</p>
+<p>SQL语句，从而确保对数据的处理必须符合这些SQL语句所定义的规则。</p>
+<p>14、SQL 数据库表名为 guest 、 数据库表名为 帐号 Accounts S0001 S0001 S0001 S0002 S0003 S0004 S0005 S0005 消费 Details 房费</p>
+<p>酒水 房费 酒水 房费</p>
+<p>房费 酒水 房费 时间 Date 2010-01-01 2010-01-02 2010-01-08 2010-01-29 2010-01-31 2010-02-01 2010-02-01 2010-02-02 金额</p>
+<p>Money 280 120 300 50</p>
+<p>180 230 100 128 班次 Class 001 001 003 002 001 001</p>
+<p>1） 查询出房费都大于 200 的帐号。 ） 查询出房费 房费都大于 帐号。 Select accounts form guest where money &gt;’200’</p>
+<p>2） 查询出 1 月份每个帐号酒水和房费的总金额。 月份每个帐号酒水和房费的总金额。 每个帐号酒水和房费的总金额 ） Select</p>
+<p>sum(detail),details form</p>
+<p>guest where details=’房费’or details=’酒水’ group by detail</p>
+<p>3） 删除 1 月份班次为空的记录。 月份班次为空的记录。 ） Delete form guest where date=&gt;’2010-01-01’ and date=&lt;’2010-01-31’and class is</p>
+<p>null
+4） 将不是房费的记帐代码的班次都更改为‘001’ ） 将不是房费的记帐代码的班次都更改为‘ ’ 。 Update guest set class=’001’were details &gt;&lt; ‘</p>
+<p>房费’
+5） 查询出消费都大于 100 的帐号。 的帐号。 ） 查询出消费都 Select distinct accounts form guest accounts not in (select distinct accounts form</p>
+<p>guest money &lt;’100’）</p>
+<p>15、已知表：</p>
+<p>Create Table Department</p>
+<p>( dept_id varchar(2) not null, – 部门编号</p>
+<p>dept_name varchar(20) not null, – 部门名称</p>
+<p>dept_leader varchar(10) –部门经理</p>
+<p>);</p>
+<p>Create Table Personnel</p>
+<p>( id varchar(4) not null, &ndash;员工号</p>
+<p>name varchar(10) not null, &ndash;姓名</p>
+<p>dept_id varchar(2) not null, &ndash;部门编号</p>
+<p>age integer, &ndash;年龄</p>
+<p>gzsj date, &ndash;参加工作时间</p>
+<p>technical_post varchar(10), &ndash;职称</p>
+<p>salary integer –薪水</p>
+<p>);</p>
+<p>1．写出表Department增加一条记录 和 更新一条记录的 SQL语句</p>
+<p>增加记录值 (‘12’, ‘研发部’, ‘张三’) ； 更新 dept_id=’12’的记录 (‘12’, ‘研发部’, ‘张三新’) ;</p>
+<p>参考答案：</p>
+<p>增加记录:Insert into Department(dept_id,dept_name,dept_leader) values (‘12’,’研发部’,’张三’)</p>
+<p>更新记录:Update Department dept_leader=’张三新’ where dept_id=’12’;</p>
+<p>需要给表Department增加一列字段notes，长度为10的字符串，默认值为‘0’ , 请写出相关SQL语句</p>
+<p>参考答案：</p>
+<p>Alter table Department add notes varchar(10) default 0;</p>
+<p>3.查找工资大于2000元的员工记录，并按员工号id升序排列</p>
+<p>参考答案：</p>
+<p>Select name from Personnel where salary integer&gt;2000 order by id;</p>
+<p>4.查找工资大于2000元的员工所在部门、部门编号、部门经理、员工名称
+参考答案：</p>
+<p>Select dept_name,dept_id,dept_leader from Department where dept_id in(select dept_id from Personnel where salary</p>
+<p>integer&gt;2000 );</p>
+<p>5.查找张三和李四所在部门所有人员的姓名</p>
+<p>参考答案：</p>
+<p>Select name from Personnel where name=’张三’ and name=’李四’;</p>
+<p>6、查看每个部门的部门经理和部门人数，按部门人数排序？</p>
+<p>参考答案：</p>
+<p>Select d.dept_leader,(select count(*) from Personnel p where d.dept_id=p.dept_id) from Department d,personnel p group by</p>
+<p>d.dept_id order by co;
+7、删除表Department中的所有记录</p>
+<p>参考答案：</p>
+<p>Delete from Department；</p>
+<p>8、删除表Department</p>
+<p>参考答案：</p>
+<p>Drop table Department；</p>
+<p>9、解释Oracle数据库、数据文件、表空间？</p>
+<p>参考答案：
+（1）、Oracle数据库：Oracle Database，又名Oracle RDBMS，或简称Oracle。是甲骨文公司的一款关系数据库管理系统。</p>
+<p>（2）、数据文件：每一个ORACLE数据库有一个或多个物理的数据文件(data file)。一个数据库的数据文件包含全部数据库数据。逻辑数</p>
+<p>据库结构(如表、索引)的数据物理地存储在数据库的数据文件中。</p>
+<p>（3）、表空间：表空间是数据库的逻辑划分，一个表空间只能属于一个数据库。所有的数据库对象都存放在指定的表空间中。但主要存</p>
+<p>放的是表，所以称作表空间。</p>
+<p>10、表、视图的区别？存储过程、函数的区别？</p>
+<p>参考答案：
+（1）、表和视图的区别：</p>
+<p>表：是数据库中的主要结构，它总是表示单个的、特定的集合。每个表至少包含一个字段，即一个主键，他唯一地标识表的每条记录。</p>
+<p>视图：是由来自数据库中的一个或多个表或多个表的字段所组成的一个虚拟的表。实际上它自身不存储任何数据，存储在数据库中的有关</p>
+<p>视图的唯一信息几句是它的结构。</p>
+<p>（2）、存储过程、函数的区别</p>
+<p>存储过程：是用户定义的一系列sql语句的集合，涉及特定表或其它对象的任务，用户可以调用存储过程。函数：通常是数据库已定义的</p>
+<p>方法，它接收参数并返回某种类型的值并且不涉及特定用户表。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-06-02</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://luckly.work/%E8%BD%AF%E4%BB%B6%E5%AE%9E%E6%96%BD/" data-title="《什么是软件实施？软件实施前景几何?软件实施的面试题有那些？》" data-hashtags="软件实施"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://luckly.work/%E8%BD%AF%E4%BB%B6%E5%AE%9E%E6%96%BD/" data-hashtag="软件实施"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://luckly.work/%E8%BD%AF%E4%BB%B6%E5%AE%9E%E6%96%BD/" data-title="《什么是软件实施？软件实施前景几何?软件实施的面试题有那些？》"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://luckly.work/%E8%BD%AF%E4%BB%B6%E5%AE%9E%E6%96%BD/" data-title="《什么是软件实施？软件实施前景几何?软件实施的面试题有那些？》"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://luckly.work/%E8%BD%AF%E4%BB%B6%E5%AE%9E%E6%96%BD/" data-title="《什么是软件实施？软件实施前景几何?软件实施的面试题有那些？》"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%9E%E6%96%BD/">软件实施</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/vscode%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%A7%E5%85%A8/" class="prev" rel="prev" title="《Vscode快捷键大全》"><i class="fas fa-angle-left fa-fw"></i>《Vscode快捷键大全》</a>
+            <a href="/emoji-support/" class="next" rel="next" title="Emoji 支持">Emoji 支持<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">早起的年轻人</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"早起的年轻人","id-2":"早起的年轻人"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
