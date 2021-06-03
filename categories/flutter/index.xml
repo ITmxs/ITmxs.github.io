@@ -4,7 +4,18 @@
         <link>https://luckly.work/categories/flutter/</link>
         <description>Flutter - 分类 - Lucklyの博客 - 在阅读中遇见自己</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>852851198@qq.com (早起的年轻人)</managingEditor>
-            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 01 Jun 2021 13:54:15 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/categories/flutter/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>852851198@qq.com (早起的年轻人)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 03 Jun 2021 11:08:53 &#43;0800</lastBuildDate><atom:link href="https://luckly.work/categories/flutter/" rel="self" type="application/rss+xml" /><item>
+    <title>《Dart_VM的相关简介与运行模式解析》</title>
+    <link>https://luckly.work/dart_vm%E7%9A%84%E7%9B%B8%E5%85%B3%E7%AE%80%E4%BB%8B%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/</link>
+    <pubDate>Thu, 03 Jun 2021 11:08:53 &#43;0800</pubDate>
+    <author>文章作者</author>
+    <guid>https://luckly.work/dart_vm%E7%9A%84%E7%9B%B8%E5%85%B3%E7%AE%80%E4%BB%8B%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/f77be1f477e980732d57475d3ddb69d.png" referrerpolicy="no-referrer">
+            </div><blockquote>
+<p>本文主要介绍本地执行 Dart 代码的组件集合Dart VM</p>
+</blockquote>]]></description>
+</item><item>
     <title>《Flutter文件下载器》</title>
     <link>https://luckly.work/flutter%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%99%A8/</link>
     <pubDate>Tue, 01 Jun 2021 13:54:15 &#43;0800</pubDate>
@@ -105,14 +116,5 @@
 <h2 id="前言">前言</h2>
 <p>Flutter优势主要体现在UI上&ndash;高性能且跨平台表现一致。但是针对平台(Android、IOS)的实现，如：获取电量、判断WiFi使用、调起WebView加载网页等，得调用特定平台的API包。Flutter Plugin就是为调用平台API而生。</p>
 <p>下文中所提及到的&quot;平台&quot;指的是Android、IOS两端。</p>]]></description>
-</item><item>
-    <title>《Flutter学习目录00》</title>
-    <link>https://luckly.work/flutter%E5%AD%A6%E4%B9%A0%E7%9B%AE%E5%BD%95/</link>
-    <pubDate>Tue, 18 May 2021 22:46:11 &#43;0800</pubDate>
-    <author>文章作者</author>
-    <guid>https://luckly.work/flutter%E5%AD%A6%E4%B9%A0%E7%9B%AE%E5%BD%95/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/U0a0aa2cc07574b5e8d6a15b6ea19bdfei.jpg" referrerpolicy="no-referrer">
-            </div><p>学习flutter常用的资料</p>]]></description>
 </item></channel>
 </rss>
