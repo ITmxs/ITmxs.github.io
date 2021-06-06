@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>《Flutter学习建议》 - Lucklyの博客 - 在阅读中遇见自己</title><meta name="Description" content="早起的年轻人做的网站"><meta property="og:title" content="《Flutter学习建议》" />
+<meta property="og:description" content="
+本文主要介绍Flutter 学习的建议
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://luckly.work/flutter%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE/" />
+<meta property="og:image" content="https://luckly.work/logo.png"/>
+<meta property="article:published_time" content="2021-06-05T10:18:31+08:00" />
+<meta property="article:modified_time" content="2021-06-05T10:18:31+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://luckly.work/logo.png"/>
+
+<meta name="twitter:title" content="《Flutter学习建议》"/>
+<meta name="twitter:description" content="
+本文主要介绍Flutter 学习的建议
+"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://luckly.work/flutter%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE/" /><link rel="prev" href="https://luckly.work/%E8%BD%AF%E8%80%83%E9%AB%98%E7%BA%A7-%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/" /><link rel="next" href="https://luckly.work/%E4%BF%A1%E6%81%AF%E5%8C%96%E4%B8%8E%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "《Flutter学习建议》",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/luckly.work\/flutter%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/luckly.work\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordcount":  2449 ,
+        "url": "https:\/\/luckly.work\/flutter%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE\/","datePublished": "2021-06-05T10:18:31+08:00","dateModified": "2021-06-05T10:18:31+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/luckly.work\/images\/avatar.png",
+                    "width":  528 ,
+                    "height":  560 
+                }},"author": {
+                "@type": "Person",
+                "name": "早起的年轻人"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lucklyの博客 - 在阅读中遇见自己"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/categories/flutter/"> Flutter </a><a class="menu-item" href="/categories/read/"> 读书笔记 </a><a class="menu-item" href="/categories/go/"> Go </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ITmxs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i> Github </a><a class="menu-item" href="/friend/"><i class='fas fa-user-friends'></i> 友链 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lucklyの博客 - 在阅读中遇见自己"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/categories/flutter/" title="">Flutter</a><a class="menu-item" href="/categories/read/" title="">读书笔记</a><a class="menu-item" href="/categories/go/" title="">Go</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ITmxs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>Github</a><a class="menu-item" href="/friend/" title=""><i class='fas fa-user-friends'></i>友链</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">《Flutter学习建议》</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>早起的年轻人</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-05">2021-06-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2449 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png"
+        data-srcset="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png, https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png 1.5x, https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png 2x"
+        data-sizes="auto"
+        alt="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png"
+        title="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#flutter-学习的建议">Flutter 学习的建议</a></li>
+    <li><a href="#大前端学习建议">大前端学习建议</a></li>
+    <li><a href="#关于持续写作">关于持续写作</a>
+      <ul>
+        <li><a href="#学习">学习</a></li>
+        <li><a href="#记忆">记忆</a></li>
+        <li><a href="#激励">激励</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>本文主要介绍Flutter 学习的建议</p>
+</blockquote>
+<h1 id="flutter-学习的建议">Flutter 学习的建议</h1>
+<blockquote>
+<p>对于前端 Flutter 的学习者，可以分享一下作者自己的学习经历吗？对于不同阶段的 Flutter 学习者可以分享一下自己的建议。</p>
+</blockquote>
+<p>学习 <code>Flutter</code> 最重要的一点就是要理解：<strong>Flutter 里的 <code>Widget</code> 不是真正的控件</strong>。</p>
+<p>虽然在使用 <code>Flutter</code> 时我们写的界面代码基本都是  <code>Widget</code> ，但是 <strong><code>Widget</code> 作为一个 <code>immutable</code> 对象，它不可能是真正工作的 UI 对象</strong>。</p>
+<p><strong>在 Flutter 里真正的 <code>View</code> 级别对象是 <code>Element</code> 和 <code>RenderObject</code></strong>， 其中 <code>Element</code> 的抽象对象就是 Flutter 里经常用到的 <code>BuildContext</code>。</p>
+<p>举一个我经常提到的例子：</p>
+<blockquote>
+<p>如下代码所示，其中 <code>testUseAll</code> 这个 <code>Text</code> 在同一个页面下在三处地方被使用，并且代码可以正常运行渲染，如果是一个真正的 <code>View</code> ，是不能在一个页面下这样被多个地方加载使用的。</p>
+</blockquote>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://mmbiz.qpic.cn/mmbiz_png/5Xv0xlEBe99x2EwM2FM7aRNETYCicXoJRXLV9ibuQY2FFCPkoiaiceicUoDAyV3QILNt83jQWZyqekXC9rSnLs9oMQQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"
+        data-srcset="https://mmbiz.qpic.cn/mmbiz_png/5Xv0xlEBe99x2EwM2FM7aRNETYCicXoJRXLV9ibuQY2FFCPkoiaiceicUoDAyV3QILNt83jQWZyqekXC9rSnLs9oMQQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1, https://mmbiz.qpic.cn/mmbiz_png/5Xv0xlEBe99x2EwM2FM7aRNETYCicXoJRXLV9ibuQY2FFCPkoiaiceicUoDAyV3QILNt83jQWZyqekXC9rSnLs9oMQQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1 1.5x, https://mmbiz.qpic.cn/mmbiz_png/5Xv0xlEBe99x2EwM2FM7aRNETYCicXoJRXLV9ibuQY2FFCPkoiaiceicUoDAyV3QILNt83jQWZyqekXC9rSnLs9oMQQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1 2x"
+        data-sizes="auto"
+        alt="https://mmbiz.qpic.cn/mmbiz_png/5Xv0xlEBe99x2EwM2FM7aRNETYCicXoJRXLV9ibuQY2FFCPkoiaiceicUoDAyV3QILNt83jQWZyqekXC9rSnLs9oMQQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"
+        title="图片" /></p>
+<p>所以 **Flutter 中 <code>Widget</code> 更多只是配置文件的地位：</p>
+<blockquote>
+<p><em>用于描述界面的配置代码，所以描述文件很大程度上并不用担心嵌套带来的性能问题，我们也可以通过配置模版去优化代码的可维护性</em>。</p>
+</blockquote>
+<p>所以对于学习 Flutter 我一直强调，<strong>比起去学习 Flutter 里上百个 <code>Widget</code> 的使用方式，更重要的是理解 <code>Widget</code> 背后的 <code>Element</code> 、 <code>RenderObject</code> 乃至 <code>Layer</code> 的工作原理</strong>，这样你才能系统地明白：</p>
+<ul>
+<li>Flutter 如何通过 <code>BoxConstraints</code> 和 <code>Size</code> 布局？</li>
+<li>Flutter 如何通过  <code>SliverConstraints</code> 和 <code>SliverGeometry</code> 完成列表的滑动和排版？</li>
+<li><code>Element</code> 在 Flutter 里的作用是什么？它是如何抽象为 <code>context</code> 并且连接 <code>Widget</code>  到 <code>RenderObject</code> ？</li>
+<li>Flutter 里每个 <code>Layer</code> 是如何独立工作？每个 <code>Route</code> 又是如何在一个画板和 <code>Canvas</code> 维持自己的独立性？</li>
+</ul>
+<p>只有搞清楚了这些问题，才可能对 <code>Flutter</code> 使用得心应手，能够在日常开发中“周旋”在 <code>Flutter</code> 的各种 UI 细节问题而不掉坑。</p>
+<h1 id="大前端学习建议">大前端学习建议</h1>
+<blockquote>
+<p>现在单点的技术在实际业务运用起来越来越没有优势，对于大前端的学习作者有什么建议吗？</p>
+</blockquote>
+<p><strong>首先不是说越来越没优势，而是对于庞大的开发者群里来说，深入底层的岗位和场景不多</strong>，前面也说过，如果没有对应的场景和平台，其实很难支持你在深入精通的路上发展。</p>
+<p>举个例子：</p>
+<blockquote>
+<p><em>你希望在音视频的路上有深入的发展，所以你开始学习 <code>FFMpeg</code> ，然后你学会了如何通过 <code>FFMpeg</code> 播放视频，转码编码，交叉编译等等&hellip;然后呢？</em></p>
+</blockquote>
+<p>如果你需要继续精通下来，就需要开始了解视频的封装协议、视频编码格式，音频编码格式、网络协议类似，然后需要去实践：</p>
+<ul>
+<li>如何针对不同格式的编码进行优化；</li>
+<li>不同协议如何优化和减少冗余；</li>
+<li>针对关键帧和帧序列如何优化；</li>
+<li>不同网络条件下对码率进行优化播放；</li>
+<li>直播如何追帧降低延迟；</li>
+<li>如何尽可能不失帧地压缩和传输视频；</li>
+</ul>
+<p>以上对应这些内容，如果你没有真实的场景和用户数据，很难支撑你在这条路持续精通深造，<strong>当然我不是劝你放弃，如果有能力和条件，肯定还是在某项技术能持续精通才是王道</strong>。</p>
+<p><strong>而什么是大前端？那就是知识的广度！这里的广度不是指你要懂很多技术，而是你要会技术的抽象与通用能力的拓展</strong>。</p>
+<p>大前端能力需要的是你能够在某个平台达到 75 分的能力，并且将这个分数在很短的时间内应用到其他平台，就像前面说的：</p>
+<ul>
+<li>把 <code>Android</code> 上关于 <code>Canvas</code> 的技能就利用到 <code>Flutter</code> 和 <code>Web</code> 上；</li>
+<li>响应式开发和状态管理的理解在 <code>RN</code> 和 <code>Flutter</code> 也能很好地利用，甚至在 <code>Jetpack Compose</code> 也可以快速的上手；</li>
+</ul>
+<p>技术的抽象能力让你的技术可以迁移适配，只需要短时间的文档和适应，就可以完成平台的工作，在我看来**大前端的未来 “不是我会什么所以做什么，而需要什么我就能做什么。”</p>
+<h1 id="关于持续写作">关于持续写作</h1>
+<blockquote>
+<p>我们也看到作者是掘金高等级作者里面更文频率非常高的作者，且内容质量都很好，写作带给你最大的影响是什么？有什么写作心得跟建议吗？</p>
+</blockquote>
+<p>写作给我最大的影响有三个方面：**学习、记忆和激励。</p>
+<h2 id="学习">学习</h2>
+<p>首先持续写作的基础是学习，事实上很多时候学习国外的文章和文档我是没有耐心的，<strong>而当选择把它翻译成中文输出时，这时候反而会耐下性子把对应的内容看完</strong>，因为不看完内容就没办法很好的翻译出效果。</p>
+<p>另外就是，<strong>当我在写文章时经常会写到某个点时，突然会停下来思考“为什么”？因为很多时候“知道一个东西”和“理解一个东西”是两个不同的概念</strong>。</p>
+<p>而当我写文章时，我就需要把”我知道”的变成“我理解”的状态，<strong>把零散的知识变成能够串通的体系</strong>，只有我真的理解了这个知识点“是什么”的时候，才能够把它转化为通熟易懂的文字，这其实就是我学习的一个过程。</p>
+<h2 id="记忆">记忆</h2>
+<p>首先持续写作的第二个目的就是记忆。</p>
+<p>在掘金上可以看到我写过很多类型的文章， 从 <code>Android</code> 、<code>React Native</code> 、<code>Weex</code> 到 <code>Flutter</code>，有介绍框架的，也有深入底层和问题集锦等，<strong>但是事实上很多内容写过一段时候后我可能就会忘了</strong>。</p>
+<p><strong>所以当我选择把自己想要的内容转化为文章后，在需要时，我就可以通过这些文章找回对应的记忆，这也是我产出的目的之一</strong>。</p>
+<h2 id="激励">激励</h2>
+<p>最后就是激励，<strong>写作对我来说是一个很好的正向激励，因为我写的东西有人看，并且有人喜欢，这就会给我持续产出的动力</strong>。</p>
+<p>我相信很多程序员都尝试过去做开源和写作，因为这其实本身就是很好的自我包装，但是这里面有个误区：<strong>那就是可能大家以为只要开源一个项目就能一夜爆火，只要写一篇好文就能一夜10W+，这其实很难，抱着这样的心态往往很容易就带来消沉</strong>。</p>
+<p>就我的写作经历而言，一篇文章一开始最多能有几百阅读就挺好的了，然后靠的就是时间和推广。</p>
+<p><strong>“酒香也怕巷子深”，所以写作也需要通推广</strong>，比如：</p>
+<ul>
+<li>通过配套项目去介绍你的文章；</li>
+<li>去各大平台投稿；</li>
+<li>去解答别人的问题，然后建立自己的社群；</li>
+</ul>
+<p>这是一个漫长的过程，但我一直比较喜欢一句话：“<strong>人们往往高估了短期的收益，低估了长期的回报</strong>”，持续分享和推广是一件很重要的因素。</p>
+<p>另外写作选题时可能会发现：“哦，原来网上已经有人写过了” ， 之后就放弃题材不写了，这是很正常的心态，<strong>但是这样的放弃就会让你越来越难产出内容，因为你不能保证你一定快过别人</strong>。</p>
+<p>其实当你有需要写内容时，发现别人已经产出过相应的内容后，<strong>那你可以参考下别人的内容是否和你的想法有什么不同，然后有什么遗漏或者可以升华的地方，甚至是你可以从另外的角度或者更系统的方式去描述你的观点</strong>。</p>
+<blockquote>
+<p>站在别人的肩膀上可以看得更远，当然不是让你 cv 抄袭，因为抄袭的意义不大，又不是小学生罚默写。</p>
+</blockquote>
+<p>最后，<strong>写作提供的服务是内容，期望得到的是关注和交流，所以要比较自己陷入不必要的情绪陷阱</strong>。</p>
+<p>“不要成为别人情绪的垃圾桶，那就在开始时把盖子盖上或者远离”，面对不善意的评论或者无效的交流，我会选择屏蔽或者远离，这样可能帮我节省出更多的时间来做有用的事情。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-06-05</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://luckly.work/flutter%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE/" data-title="《Flutter学习建议》"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://luckly.work/flutter%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://luckly.work/flutter%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE/" data-title="《Flutter学习建议》"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://luckly.work/flutter%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE/" data-title="《Flutter学习建议》"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://luckly.work/flutter%E5%AD%A6%E4%B9%A0%E5%BB%BA%E8%AE%AE/" data-title="《Flutter学习建议》" data-image="https://luckly007.oss-cn-beijing.aliyuncs.com/img/90c6cc12-742e-4c9f-b318-b912f163b8d0.png"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E8%BD%AF%E8%80%83%E9%AB%98%E7%BA%A7-%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E5%B8%88/" class="prev" rel="prev" title="《软考高级  信息系统项目管理师》"><i class="fas fa-angle-left fa-fw"></i>《软考高级  信息系统项目管理师》</a>
+            <a href="/%E4%BF%A1%E6%81%AF%E5%8C%96%E4%B8%8E%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86/" class="next" rel="next" title="《信息化与信息管理》">《信息化与信息管理》<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">早起的年轻人</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"早起的年轻人","id-2":"早起的年轻人"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
